@@ -11,7 +11,7 @@ export default function Counter({ value, suffix = "", prefix = "", className, du
   useIsoLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const format = (n: number) => `${prefix}${Math.round(n).toLocaleString("en-US")}${suffix}`;
+    const format = (n: number) => `${prefix}${Math.round(n)}${suffix}`;
     if (prefersReducedMotion()) {
       el.textContent = format(value);
       return;
@@ -35,7 +35,7 @@ export default function Counter({ value, suffix = "", prefix = "", className, du
   return (
     <span ref={ref} className={className}>
       {prefix}
-      {value.toLocaleString("en-US")}
+      {value}
       {suffix}
     </span>
   );

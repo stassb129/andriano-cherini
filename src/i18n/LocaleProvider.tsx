@@ -1,47 +1,48 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, type ReactNode } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { dictionaries, type Dictionary, type Locale } from "./dictionaries";
+import { localizePath } from "./config";
 
 const STORAGE_KEY = "ac-locale";
 
 type Ctx = {
   locale: Locale;
   setLocale: (l: Locale) => void;
+  /** Prefixes an internal path with the current locale. */
+  href: (path: string) => string;
   t: Dictionary;
   L: <T extends { en: string; ru: string }>(value: T) => string;
 };
 
 const LocaleCtx = createContext<Ctx | null>(null);
 
-function readStored(): Locale {
-  if (typeof window === "undefined") return "en";
-  const raw = window.localStorage.getItem(STORAGE_KEY);
-  if (raw === "ru" || raw === "en") return raw;
-  const nav = window.navigator.language?.toLowerCase() ?? "";
-  return nav.startsWith("ru") ? "ru" : "en";
-}
-
-export function LocaleProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("en");
-  const [ready, setReady] = useState(false);
+export function LocaleProvider({ locale, children }: { locale: Locale; children: ReactNode }) {
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
-    setLocaleState(readStored());
-    setReady(true);
-  }, []);
+    document.documentElement.lang = locale;
+    try {
+      window.localStorage.setItem(STORAGE_KEY, locale);
+    } catch {}
+  }, [locale]);
 
-  useEffect(() => {
-    if (!ready) return;
-    document.documentElement.lang = locale === "ru" ? "ru" : "en";
-    window.localStorage.setItem(STORAGE_KEY, locale);
-  }, [locale, ready]);
+  const setLocale = useCallback(
+    (l: Locale) => {
+      if (l === locale) return;
+      const target = localizePath(pathname || "/", l) + window.location.search + window.location.hash;
+      router.push(target, { scroll: false });
+    },
+    [locale, pathname, router],
+  );
 
-  const setLocale = useCallback((l: Locale) => setLocaleState(l), []);
+  const href = useCallback((path: string) => localizePath(path, locale), [locale]);
   const t = dictionaries[locale] as Dictionary;
   const L = useCallback(<T extends { en: string; ru: string }>(value: T) => value[locale], [locale]);
 
-  const value = useMemo(() => ({ locale, setLocale, t, L }), [locale, setLocale, t, L]);
+  const value = useMemo(() => ({ locale, setLocale, href, t, L }), [locale, setLocale, href, t, L]);
 
   return <LocaleCtx.Provider value={value}>{children}</LocaleCtx.Provider>;
 }

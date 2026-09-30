@@ -62,9 +62,11 @@
 
 .cardInfo {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 0.2rem 1rem;
+  min-width: 0;
 }
 
 .cardName {
@@ -93,10 +95,11 @@
   gap: 0.5rem;
   margin-top: 0.45rem;
   font-size: 0.6rem;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
   color: v.$cream-dim;
 
   i {
+    flex-shrink: 0;
     width: 0.8rem;
     height: 0.8rem;
     border-radius: 50%;

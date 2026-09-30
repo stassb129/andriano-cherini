@@ -13,6 +13,7 @@ import {
 } from "react";
 import { gsap, ScrollTrigger, prefersReducedMotion } from "@/lib/gsap";
 import { scrollToTop } from "@/lib/scroll";
+import { useLocale } from "@/i18n/LocaleProvider";
 import styles from "./layout.module.scss";
 
 type Ctx = { navigate: (href: string) => void };
@@ -98,10 +99,12 @@ type TLinkProps = LinkProps &
 /** Internal link that plays the curtain transition before navigating. */
 export function TLink({ href, onClick, children, ...rest }: TLinkProps) {
   const { navigate } = useTransitionNav();
-  const url = typeof href === "string" ? href : (href.pathname ?? "/");
+  const { href: localize } = useLocale();
+  const raw = typeof href === "string" ? href : (href.pathname ?? "/");
+  const url = raw.startsWith("/") ? localize(raw) : raw;
   return (
     <Link
-      href={href}
+      href={typeof href === "string" ? url : { ...href, pathname: url }}
       {...rest}
       onClick={(e) => {
         onClick?.(e);

@@ -26,7 +26,7 @@ export default function CollectionView({ initialCategory }: { initialCategory?: 
         eyebrow={c.eyebrow}
         title={c.title}
         intro={c.intro}
-        image={getProduct("urbino-oxford-nero")!.images[0]!}
+        image={getProduct("urbino-oxford-nero")!.images[5]!}
         meta={[...c.meta]}
       />
 
@@ -40,7 +40,7 @@ export default function CollectionView({ initialCategory }: { initialCategory?: 
 
       <section className={styles.feature}>
         <ParallaxImage
-          src={signature.images[1]!}
+          src={signature.images[5]!}
           alt="Fermo Derby"
           className={styles.featureImg}
           sizes="100vw"

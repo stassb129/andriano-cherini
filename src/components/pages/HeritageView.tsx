@@ -19,7 +19,7 @@ export default function HeritageView() {
 
   return (
     <>
-      <PageHero eyebrow={h.eyebrow} title={h.title} intro={h.intro} image="/images/atelier/master.jpg" meta={[...h.meta]} />
+      <PageHero eyebrow={h.eyebrow} title={h.title} intro={h.intro} image="/images/atelier/workshop-2.jpg" meta={[...h.meta]} />
 
       <section className="section light">
         <div className={`container ${styles.crestBand}`}>
@@ -44,7 +44,7 @@ export default function HeritageView() {
                 <span>{h.crestName}</span>
               </li>
               <li>
-                <strong>FORMA E COMFORT</strong>
+                <strong>TRADIZIONI SECOLARI</strong>
                 <span>{h.crestMotto}</span>
               </li>
             </Reveal>
@@ -76,9 +76,9 @@ export default function HeritageView() {
         </div>
       </section>
 
-      <Quote text={t.quote.text} by="Andriano Cherini" role={t.quote.role} image="/images/atelier/workshop-2.jpg" />
+      <Quote text={t.quote.text} by="Andriano Cherini" role={t.quote.role} image="/images/collection/urbino-oxford-moro/06.jpg" />
 
-      <NextChapter href="/atelier" eyebrow={h.nextEyebrow} title={h.next} image="/images/atelier/workshop.jpg" />
+      <NextChapter href="/atelier" eyebrow={h.nextEyebrow} title={h.next} image="/images/collection/urbino-oxford-nero/07.jpg" />
     </>
   );
 }

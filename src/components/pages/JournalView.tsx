@@ -15,7 +15,7 @@ export default function JournalView() {
 
   return (
     <>
-      <PageHero eyebrow={j.eyebrow} title={j.title} intro={j.intro} image="/images/atelier/tools.jpg" meta={[...j.meta]} />
+      <PageHero eyebrow={j.eyebrow} title={j.title} intro={j.intro} image="/images/collection/urbino-oxford-moro/03.jpg" meta={[...j.meta]} />
 
       <section className="section">
         <div className="container">
@@ -32,7 +32,7 @@ export default function JournalView() {
         </div>
       </section>
 
-      <NextChapter href="/contact" eyebrow={j.nextEyebrow} title={j.next} image="/images/italy/florence-duomo.jpg" />
+      <NextChapter href="/contact" eyebrow={j.nextEyebrow} title={j.next} image="/images/collection/urbino-oxford-moro/10.jpg" />
     </>
   );
 }

@@ -11,53 +11,53 @@ export type Chapter = {
 export const chapters: Chapter[] = [
   {
     year: "2014",
-    title: { en: "The start", ru: "Старт" },
+    title: { en: "The start", ru: "Начало" },
     text: {
-      en: "Andriano Cherini leaves mass-market footwear and starts a small brand in the Marche. The brief: classic men's shoes that stay comfortable until evening.",
-      ru: "Андриано Керини уходит из масс-маркета и запускает небольшой бренд в Марке. Бриф: классические мужские туфли, в которых удобно до вечера.",
+      en: "Andriano Cherini founds a small brand in the Marche. The aim: classic men's shoes that stay comfortable until evening.",
+      ru: "Андриано Керини основывает небольшой бренд в Марке. Цель — классические мужские туфли, в которых удобно до вечера.",
     },
     image: "/images/atelier/master.jpg",
-    caption: { en: "Fermo region, 2014", ru: "Регион Фермо, 2014" },
+    caption: { en: "Fermo, 2014", ru: "Фермо, 2014" },
   },
   {
     year: "2015",
     title: { en: "Name and crest", ru: "Имя и герб" },
     text: {
-      en: "The first pairs ship under the Cherini name. The crest appears: lion, unicorn, and the line Forma e comfort.",
-      ru: "Первые пары уходят под именем Cherini. Появляется герб: лев, единорог и строка Forma e comfort.",
+      en: "The first pairs are released under the Cherini name. The crest follows: a lion and a unicorn holding the AC shield.",
+      ru: "Первые пары выходят под именем Cherini. Появляется герб: лев и единорог держат щит с инициалами AC.",
     },
-    image: "/images/atelier/tools.jpg",
-    caption: { en: "Crest, 2015", ru: "Герб, 2015" },
+    image: "/images/brand/crest.jpg",
+    caption: { en: "The crest, 2015", ru: "Герб, 2015" },
   },
   {
     year: "2016",
     title: { en: "The Fermo Derby", ru: "Fermo Derby" },
     text: {
-      en: "A winter derby with shearling lining becomes the signature model — formal enough for the office, warm enough for the walk there.",
-      ru: "Зимние дерби с овчиной становятся визитной карточкой — достаточно строгие для офиса и достаточно тёплые для дороги до него.",
+      en: "A warm cap-toe derby becomes the signature model — formal enough for the office, warm enough for winter streets.",
+      ru: "Тёплые дерби с мыском становятся фирменной моделью — достаточно строгие для офиса и достаточно тёплые для зимы.",
     },
-    image: "/images/product/fermo-lining.jpg",
-    caption: { en: "First Fermo run", ru: "Первый тираж Fermo" },
+    image: "/images/collection/fermo-derby-nero/08.jpg",
+    caption: { en: "Fermo Derby", ru: "Fermo Derby" },
   },
   {
     year: "2018",
     title: { en: "ComfortForma", ru: "ComfortForma" },
     text: {
-      en: "The last is redrawn and the Ammortizzo heel insert arrives. Classic shape outside, softer step inside.",
-      ru: "Колодку пересобирают, появляется вставка Ammortizzo. Снаружи классика, внутри мягче шаг.",
+      en: "The last is redesigned and the Ammortizzo heel insert is introduced. A classic shape outside, a softer step inside.",
+      ru: "Колодку переработали и добавили вставку Ammortizzo. Снаружи классическая форма, внутри более мягкий шаг.",
     },
-    image: "/images/atelier/marking.jpg",
-    caption: { en: "ComfortForma last", ru: "Колодка ComfortForma" },
+    image: "/images/collection/fermo-derby-moro/10.jpg",
+    caption: { en: "Ammortizzo heel", ru: "Каблук Ammortizzo" },
   },
   {
-    year: "Today",
-    title: { en: "A clear collection", ru: "Понятная коллекция" },
+    year: "2026",
+    title: { en: "The collection today", ru: "Коллекция сегодня" },
     text: {
-      en: "Two models, two colours, one idea. We keep refining lasts, leather and comfort.",
-      ru: "Две модели, два цвета, одна идея. Мы продолжаем уточнять колодки, кожу и комфорт.",
+      en: "Two models in two colours: the Fermo Derby and the Urbino Oxford. We keep refining lasts, leather and comfort.",
+      ru: "Две модели в двух цветах: Fermo Derby и Urbino Oxford. Мы продолжаем дорабатывать колодки, кожу и комфорт.",
     },
-    image: "/images/atelier/workshop.jpg",
-    caption: { en: "Collection, 2026", ru: "Коллекция, 2026" },
+    image: "/images/collection/urbino-oxford-moro/04.jpg",
+    caption: { en: "Urbino Oxford, 2026", ru: "Urbino Oxford, 2026" },
   },
 ];
 
@@ -71,65 +71,64 @@ export type TimelineEntry = {
 export const timeline: TimelineEntry[] = [
   {
     year: "2012–13",
-    title: { en: "The brief", ru: "Бриф" },
+    title: { en: "The idea", ru: "Идея" },
     text: {
-      en: "Working in mass footwear, Andriano keeps hearing the same thing: beautiful shoes, tired feet by evening. He starts sketching a brand built around comfort.",
-      ru: "В масс-маркете Андриано снова слышит одно и то же: красивые туфли, а к вечеру стопы устали. Он начинает набрасывать бренд вокруг комфорта.",
+      en: "Working in the footwear industry, Andriano keeps hearing the same thing: the shoes look right, but feet are tired by evening. He starts working on a brand built around comfort.",
+      ru: "Работая в обувной индустрии, Андриано постоянно слышит одно и то же: туфли выглядят хорошо, но к вечеру ноги устают. Он начинает работать над брендом, построенным вокруг комфорта.",
     },
   },
   {
     year: "2014",
-    title: { en: "Brand launch", ru: "Запуск бренда" },
+    title: { en: "Founding", ru: "Основание" },
     text: {
-      en: "Cherini starts in the Marche footwear belt. First models, first online orders, a small workshop team.",
-      ru: "Cherini стартует в обувном поясе Марке. Первые модели, первые онлайн-заказы, небольшая команда.",
+      en: "Cherini is founded in the Marche. First models, first customers, a small team.",
+      ru: "В Марке основан Cherini. Первые модели, первые покупатели, небольшая команда.",
     },
-    image: "/images/atelier/master.jpg",
   },
   {
     year: "2015",
-    title: { en: "Crest and voice", ru: "Герб и голос" },
+    title: { en: "The crest", ru: "Герб" },
     text: {
-      en: "The crest is finalized. Packaging, care cards and the motto Forma e comfort become the brand face.",
-      ru: "Герб утверждён. Упаковка, карточки ухода и девиз Forma e comfort становятся лицом бренда.",
+      en: "The crest with the lion and unicorn appears, and the brand name goes on every insole.",
+      ru: "Появляется герб со львом и единорогом, а имя бренда — на каждой стельке.",
     },
-    image: "/images/brand/crest.jpg",
+    image: "/images/collection/urbino-oxford-nero/12.jpg",
   },
   {
     year: "2016",
     title: { en: "Fermo Derby", ru: "Fermo Derby" },
     text: {
-      en: "The shearling winter derby sells through and becomes the signature silhouette of the house.",
-      ru: "Зимние дерби с овчиной расходятся и закрепляются как фирменный силуэт дома.",
+      en: "The warm cap-toe derby becomes the brand's signature model.",
+      ru: "Тёплые дерби с мыском становятся фирменной моделью бренда.",
     },
-    image: "/images/product/fermo-lining.jpg",
+    image: "/images/collection/fermo-derby-moro/03.jpg",
   },
   {
     year: "2018",
-    title: { en: "Comfort tech", ru: "Комфорт-технологии" },
+    title: { en: "Comfort technologies", ru: "Технологии комфорта" },
     text: {
-      en: "ComfortForma last and Ammortizzo heel enter production — the technical core of later collections.",
-      ru: "В производство входят колодка ComfortForma и каблук Ammortizzo — техническое ядро следующих коллекций.",
+      en: "The ComfortForma last and the Ammortizzo heel go into production and become the technical basis of the collection.",
+      ru: "Колодка ComfortForma и каблук Ammortizzo идут в производство и становятся технической основой коллекции.",
     },
-    image: "/images/atelier/marking.jpg",
+    image: "/images/collection/urbino-oxford-nero/10.jpg",
   },
   {
     year: "2021",
-    title: { en: "Wider collection", ru: "Шире коллекция" },
+    title: { en: "Urbino Oxford", ru: "Urbino Oxford" },
     text: {
-      en: "Oxfords, loafers and boots join the line. Same idea: classic look, day-long wear.",
-      ru: "В линейку входят оксфорды, лоферы и ботинки. Та же идея: классика и носка на весь день.",
+      en: "The Urbino joins the Fermo: a closed-laced Oxford in croc-embossed leather.",
+      ru: "К Fermo присоединяется Urbino — оксфорд на закрытой шнуровке из кожи с тиснением под крокодила.",
     },
-    image: "/images/shoes/brown-oxford-top.jpg",
+    image: "/images/collection/urbino-oxford-nero/05.jpg",
   },
   {
     year: "2026",
     title: { en: "Today", ru: "Сегодня" },
     text: {
-      en: "A focused catalogue, clear technologies, and direct contact with the brand.",
-      ru: "Собранный каталог, понятные технологии и прямой контакт с брендом.",
+      en: "Two models in two colours, available on Ozon.",
+      ru: "Две модели в двух цветах, в продаже на Ozon.",
     },
-    image: "/images/atelier/workshop.jpg",
+    image: "/images/collection/fermo-derby-moro/05.jpg",
   },
 ];
 
@@ -137,22 +136,22 @@ export const values = [
   {
     title: { en: "One clear idea", ru: "Одна ясная идея" },
     text: {
-      en: "Formal shoes should look right and feel right after eight hours. Everything else is secondary.",
-      ru: "Классические туфли должны выглядеть уместно и оставаться удобными через восемь часов. Остальное вторично.",
+      en: "Classic shoes should look right and stay comfortable after eight hours. Everything else is secondary.",
+      ru: "Классические туфли должны хорошо выглядеть и оставаться удобными через восемь часов. Остальное вторично.",
     },
   },
   {
-    title: { en: "Technology inside", ru: "Технологии внутри" },
+    title: { en: "Comfort inside", ru: "Комфорт внутри" },
     text: {
-      en: "ComfortForma, Ammortizzo, shearling, grip soles — invisible from the outside, obvious by evening.",
-      ru: "ComfortForma, Ammortizzo, овчина, цепкие подошвы — снаружи не видно, к вечеру очевидно.",
+      en: "ComfortForma, Ammortizzo, warm lining, grippy soles — invisible from the outside, noticeable by evening.",
+      ru: "ComfortForma, Ammortizzo, тёплая подкладка, цепкая подошва — снаружи не видно, к вечеру заметно.",
     },
   },
   {
-    title: { en: "A real collection", ru: "Реальная коллекция" },
+    title: { en: "A small collection", ru: "Небольшая коллекция" },
     text: {
-      en: "We sell finished models from the catalogue. Simple questions, clear answers.",
-      ru: "Мы продаём готовые модели из каталога. Простые вопросы, понятные ответы.",
+      en: "Few models, each one refined over time.",
+      ru: "Немного моделей, и каждую мы дорабатываем со временем.",
     },
   },
 ];
@@ -162,7 +161,7 @@ export type Technology = {
   name: string;
   title: Loc;
   text: Loc;
-  stat: string;
+  stat: Loc;
   statLabel: Loc;
 };
 
@@ -172,66 +171,66 @@ export const technologies: Technology[] = [
     name: "Ammortizzo",
     title: { en: "Cushioning", ru: "Амортизация" },
     text: {
-      en: "A heel insert softens impact and reduces load on the joints — movement without fatigue.",
-      ru: "Вставка в каблуке смягчает удар и снижает нагрузку на суставы — движение без усталости.",
+      en: "An insert in the heel softens each step and reduces the load on the joints.",
+      ru: "Вставка в каблуке смягчает шаг и снижает нагрузку на суставы.",
     },
-    stat: "−32%",
-    statLabel: { en: "heel impact", ru: "удар в пятке" },
+    stat: { en: "2018", ru: "2018" },
+    statLabel: { en: "year introduced", ru: "год внедрения" },
   },
   {
     id: "comfortforma",
     name: "ComfortForma",
     title: { en: "Comfortable last", ru: "Удобная колодка" },
     text: {
-      en: "Room for the toes, a secure heel — formal silhouette with everyday fit.",
-      ru: "Место для пальцев, плотная пятка — классический силуэт с повседневной посадкой.",
+      en: "Room for the toes and a secure heel — a formal silhouette with an everyday fit.",
+      ru: "Свободно пальцам, плотно в пятке — строгий силуэт с повседневной посадкой.",
     },
-    stat: "2018",
-    statLabel: { en: "introduced", ru: "введена" },
+    stat: { en: "2018", ru: "2018" },
+    statLabel: { en: "year introduced", ru: "год внедрения" },
   },
   {
-    id: "shearling",
+    id: "lining",
     name: "Pelliccia",
-    title: { en: "Shearling lining", ru: "Овчина" },
+    title: { en: "Fur lining", ru: "Меховая подкладка" },
     text: {
-      en: "Natural merino lining for winter models — warm outdoors, breathable indoors.",
-      ru: "Натуральная мериносовая подкладка для зимы — тепло на улице, без духоты в помещении.",
+      en: "A soft, warm lining that keeps feet comfortable in the cold months.",
+      ru: "Мягкая тёплая подкладка, в которой комфортно в холодное время года.",
     },
-    stat: "14 mm",
-    statLabel: { en: "pile", ru: "ворс" },
+    stat: { en: "Warm", ru: "Тепло" },
+    statLabel: { en: "inside", ru: "внутри" },
   },
   {
     id: "grip",
     name: "Thermo-Grip",
-    title: { en: "All-weather sole", ru: "Всесезонная подошва" },
+    title: { en: "Treaded sole", ru: "Протекторная подошва" },
     text: {
-      en: "Flexible rubber compound with grip on wet stone and a leather waist for a classic profile.",
-      ru: "Гибкий резиновый компаунд с сцеплением на мокром камне и кожаной шейкой для классики.",
+      en: "A rubber and TPE sole that grips on wet and cold surfaces.",
+      ru: "Подошва из резины и ТЭП, которая держит на мокрой и холодной поверхности.",
     },
-    stat: "−20°C",
-    statLabel: { en: "stays flexible", ru: "остаётся гибкой" },
+    stat: { en: "All", ru: "Все" },
+    statLabel: { en: "seasons", ru: "сезоны" },
   },
   {
     id: "fit",
     name: "Tenuta",
     title: { en: "Secure fit", ru: "Надёжная посадка" },
     text: {
-      en: "A firm heel counter and balanced lacing keep the foot in place through the day.",
-      ru: "Плотный задник и продуманная шнуровка держат стопу на месте весь день.",
+      en: "A firm heel counter and balanced lacing keep the foot in place all day.",
+      ru: "Плотный задник и продуманная шнуровка держат стопу весь день.",
     },
-    stat: "All day",
-    statLabel: { en: "stable hold", ru: "стабильная фиксация" },
+    stat: { en: "All day", ru: "Весь день" },
+    statLabel: { en: "stable fit", ru: "устойчивая посадка" },
   },
   {
     id: "leather",
-    name: "Pieno Fiore",
-    title: { en: "Full-grain leather", ru: "Кожа полного зерна" },
+    name: "Pelle",
+    title: { en: "Leather insole", ru: "Кожаная стелька" },
     text: {
-      en: "Selected calf that breathes and takes a patina — built to look better with wear.",
-      ru: "Отобранный теленок, который дышит и берёт патину — со временем выглядит только лучше.",
+      en: "A leather insole that breathes and adapts to the foot over time.",
+      ru: "Кожаная стелька дышит и со временем принимает форму стопы.",
     },
-    stat: "Selected",
-    statLabel: { en: "hides only", ru: "только отбор" },
+    stat: { en: "100%", ru: "100%" },
+    statLabel: { en: "leather", ru: "кожа" },
   },
 ];
 
@@ -246,20 +245,20 @@ export type CraftStep = {
 export const craftSteps: CraftStep[] = [
   {
     n: "01",
-    title: { en: "Last & pattern", ru: "Колодка и лекало" },
+    title: { en: "Last & pattern", ru: "Колодка и лекала" },
     text: {
-      en: "Every model starts from a last. Patterns are cut to follow the grain of the leather.",
-      ru: "Каждая модель начинается с колодки. Лекала кроят по направлению зерна кожи.",
+      en: "Every model starts with a last. Patterns are cut along the grain of the leather.",
+      ru: "Каждая модель начинается с колодки. Лекала раскладывают по направлению волокон кожи.",
     },
-    image: "/images/atelier/marking.jpg",
+    image: "/images/atelier/pattern.jpg",
     duration: { en: "Design", ru: "Дизайн" },
   },
   {
     n: "02",
     title: { en: "Leather", ru: "Кожа" },
     text: {
-      en: "Hides are selected for density and finish. Winter models get shearling; summer models stay lighter.",
-      ru: "Кожу отбирают по плотности и отделке. Зимним моделям — овчина, летним — легче.",
+      en: "Leather is selected for density and finish.",
+      ru: "Кожу отбирают по плотности и качеству выделки.",
     },
     image: "/images/atelier/leather-roll.jpg",
     duration: { en: "Selection", ru: "Отбор" },
@@ -268,18 +267,18 @@ export const craftSteps: CraftStep[] = [
     n: "03",
     title: { en: "Cutting", ru: "Раскрой" },
     text: {
-      en: "Uppers are cut and prepared for closing — clean edges, consistent panels.",
-      ru: "Верх кроят и готовят к сборке — чистые края, ровные детали.",
+      en: "The upper parts are cut and prepared for stitching — clean edges, even pieces.",
+      ru: "Детали верха кроят и готовят к сборке — чистые края, ровные детали.",
     },
     image: "/images/atelier/cutting.jpg",
     duration: { en: "Cutting", ru: "Раскрой" },
   },
   {
     n: "04",
-    title: { en: "Closing", ru: "Сборка верха" },
+    title: { en: "Stitching", ru: "Сборка верха" },
     text: {
-      en: "Pieces are stitched into the upper. Seams stay dense and even.",
-      ru: "Детали сшивают в верх. Шов остаётся плотным и ровным.",
+      en: "The pieces are stitched into the upper with dense, even seams.",
+      ru: "Детали сшивают в заготовку верха плотным ровным швом.",
     },
     image: "/images/atelier/stitching.jpg",
     duration: { en: "Stitching", ru: "Строчка" },
@@ -288,18 +287,18 @@ export const craftSteps: CraftStep[] = [
     n: "05",
     title: { en: "Lasting", ru: "Затяжка" },
     text: {
-      en: "The upper is lasted so the leather learns the shape — then rests before soling.",
-      ru: "Верх затягивают на колодку, чтобы кожа запомнила форму — затем дают отдых перед подошвой.",
+      en: "The upper is pulled over the last so the leather takes its shape, then left to rest before soling.",
+      ru: "Верх затягивают на колодку, чтобы кожа приняла форму, и дают ей отлежаться перед прикреплением подошвы.",
     },
-    image: "/images/atelier/hands-leather.jpg",
-    duration: { en: "Rest", ru: "Отдых" },
+    image: "/images/collection/urbino-oxford-moro/07.jpg",
+    duration: { en: "Rest", ru: "Выдержка" },
   },
   {
     n: "06",
     title: { en: "Sole & heel", ru: "Подошва и каблук" },
     text: {
-      en: "Sole and heel are built; Ammortizzo sits inside the heel block where the model needs it.",
-      ru: "Собирают подошву и каблук; Ammortizzo ставят в каблук там, где модели это нужно.",
+      en: "The sole and heel are attached, with the Ammortizzo insert inside the heel.",
+      ru: "Прикрепляют подошву и каблук со вставкой Ammortizzo внутри.",
     },
     image: "/images/atelier/sanding.jpg",
     duration: { en: "Build", ru: "Сборка" },
@@ -308,60 +307,60 @@ export const craftSteps: CraftStep[] = [
     n: "07",
     title: { en: "Finishing", ru: "Отделка" },
     text: {
-      en: "Edges, polish and final checks — the shoe leaves ready to wear.",
-      ru: "Края, полировка и финальная проверка — туфля уходит готовой к носке.",
+      en: "Edges, polishing and a final check.",
+      ru: "Обработка урезов, полировка и финальная проверка.",
     },
     image: "/images/atelier/knife.jpg",
-    duration: { en: "Finish", ru: "Финиш" },
+    duration: { en: "Finish", ru: "Отделка" },
   },
   {
     n: "08",
-    title: { en: "Pack & ship", ru: "Упаковка" },
+    title: { en: "Packing", ru: "Упаковка" },
     text: {
-      en: "Trees, bag, care card — then the pair goes to the customer.",
-      ru: "Колодки, мешок, карточка ухода — и пара уходит к покупателю.",
+      en: "Each pair is inspected and packed.",
+      ru: "Каждую пару проверяют и упаковывают.",
     },
-    image: "/images/atelier/tools.jpg",
-    duration: { en: "Ship", ru: "Отправка" },
+    image: "/images/collection/fermo-derby-nero/07.jpg",
+    duration: { en: "Packing", ru: "Упаковка" },
   },
 ];
 
 export const leathers = [
   {
-    name: { en: "Box Calf", ru: "Бокс-каф" },
-    origin: { en: "Marche / Tuscany", ru: "Марке / Тоскана" },
+    name: { en: "Smooth leather", ru: "Гладкая кожа" },
+    origin: { en: "Polished finish", ru: "Полированная отделка" },
     text: {
-      en: "Dense calf for polished toes and clean formal lines.",
-      ru: "Плотный теленок для полированных мысков и чистой классики.",
+      en: "Dense leather for polished toes and clean formal lines.",
+      ru: "Плотная кожа для полированных мысков и строгих линий.",
     },
-    image: "/images/atelier/leather-roll-2.jpg",
+    image: "/images/collection/fermo-derby-nero/03.jpg",
   },
   {
-    name: { en: "Pebble-Grain", ru: "Пыльник" },
-    origin: { en: "Tuscany", ru: "Тоскана" },
+    name: { en: "Textured leather", ru: "Фактурная кожа" },
+    origin: { en: "Grain and croc emboss", ru: "Зернистая и под крокодила" },
     text: {
-      en: "Textured calf that hides scuffs — used on the Fermo vamp.",
-      ru: "Фактурная кожа, которая скрывает потёртости — на союзке Fermo.",
+      en: "Grain on the Fermo, croc embossing on the Urbino — texture that hides small scuffs.",
+      ru: "Зернистая фактура у Fermo и тиснение под крокодила у Urbino — фактура скрывает мелкие потёртости.",
     },
-    image: "/images/atelier/hands-leather.jpg",
+    image: "/images/collection/urbino-oxford-nero/03.jpg",
   },
   {
-    name: { en: "Merino Shearling", ru: "Мериносовая овчина" },
-    origin: { en: "Italy", ru: "Италия" },
+    name: { en: "Fur lining", ru: "Меховая подкладка" },
+    origin: { en: "Both models", ru: "Обе модели" },
     text: {
-      en: "Soft graphite pile for winter lining.",
-      ru: "Мягкий графитовый ворс для зимней подкладки.",
+      en: "A soft, warm lining for the cold months.",
+      ru: "Мягкая тёплая подкладка для холодного времени года.",
     },
-    image: "/images/product/fermo-lining.jpg",
+    image: "/images/collection/urbino-oxford-moro/12.jpg",
   },
   {
-    name: { en: "Sole leather & rubber", ru: "Подошвенная кожа и резина" },
-    origin: { en: "Selected mills", ru: "Отобранные фабрики" },
+    name: { en: "Rubber & TPE", ru: "Резина и ТЭП" },
+    origin: { en: "Sole", ru: "Подошва" },
     text: {
-      en: "Leather waist with grip rubber for wet streets.",
-      ru: "Кожаная шейка и цепкая резина для мокрых улиц.",
+      en: "A durable sole with good grip on wet streets.",
+      ru: "Износостойкая подошва с хорошим сцеплением на мокрой улице.",
     },
-    image: "/images/atelier/leather-roll.jpg",
+    image: "/images/collection/urbino-oxford-moro/11.jpg",
   },
 ];
 
@@ -370,7 +369,8 @@ export type Boutique = {
   name: Loc;
   address: string;
   hours: Loc;
-  phone: string;
+  phone?: string;
+  href?: string;
   image: string;
   note: Loc;
 };
@@ -382,34 +382,22 @@ export const boutiques: Boutique[] = [
     address: "Contrada San Michele 14, 63900 Fermo",
     hours: { en: "Mon – Fri · 10:00 – 18:00", ru: "Пн – Пт · 10:00 – 18:00" },
     phone: "+39 0734 000 121",
-    image: "/images/italy/stone-house.jpg",
+    image: "/images/product/fermo-lining.jpg",
     note: {
-      en: "Correspondence, wholesale and collection questions.",
-      ru: "Переписка, опт и вопросы по коллекции.",
-    },
-  },
-  {
-    city: "Milano",
-    name: { en: "Partner store", ru: "Партнёрский магазин" },
-    address: "Via della Spiga 22, 20121 Milano",
-    hours: { en: "Mon – Sat · 10:00 – 19:30", ru: "Пн – Сб · 10:00 – 19:30" },
-    phone: "+39 02 0000 2014",
-    image: "/images/italy/canal.jpg",
-    note: {
-      en: "Current collection available to view and buy.",
-      ru: "Актуальная коллекция — посмотреть и купить.",
+      en: "Correspondence, partnerships and questions about the collection.",
+      ru: "Переписка, сотрудничество и вопросы по коллекции.",
     },
   },
   {
     city: "Online",
-    name: { en: "Web shop", ru: "Интернет-магазин" },
-    address: "atelier@andrianocherini.com",
-    hours: { en: "Orders daily", ru: "Заказы ежедневно" },
-    phone: "+39 0734 000 121",
-    image: "/images/product/fermo-marble.jpg",
+    name: { en: "Official store on Ozon", ru: "Официальный магазин на Ozon" },
+    address: "ozon.ru",
+    hours: { en: "Orders 24/7", ru: "Заказы круглосуточно" },
+    href: "https://www.ozon.ru/search/?text=Andriano+Cherini",
+    image: "/images/collection/urbino-oxford-nero/04.jpg",
     note: {
-      en: "Full catalogue, sizes and shipping.",
-      ru: "Полный каталог, размеры и доставка.",
+      en: "The full collection, sizes and delivery.",
+      ru: "Вся коллекция, размеры и доставка.",
     },
   },
 ];

@@ -83,7 +83,7 @@ export default function AtelierView() {
 
       <section className={styles.atelierWide}>
         <ParallaxImage
-          src="/images/atelier/sanding.jpg"
+          src="/images/collection/urbino-oxford-moro/08.jpg"
           alt=""
           className={styles.atelierWideImg}
           sizes="100vw"
@@ -102,7 +102,7 @@ export default function AtelierView() {
       </section>
 
       <ContactCta />
-      <NextChapter href="/contact" eyebrow={a.nextEyebrow} title={a.next} image="/images/italy/florence-duomo.jpg" />
+      <NextChapter href="/contact" eyebrow={a.nextEyebrow} title={a.next} image="/images/collection/fermo-derby-nero/10.jpg" />
     </>
   );
 }

@@ -13,7 +13,7 @@ export default function ContactCta() {
   const { t } = useLocale();
   return (
     <section className={styles.visit}>
-      <ParallaxImage src="/images/italy/florence.jpg" alt="" className={styles.visitBg} sizes="100vw" speed={22} reveal={false} />
+      <ParallaxImage src="/images/collection/urbino-oxford-moro/05.jpg" alt="" className={styles.visitBg} sizes="100vw" speed={22} reveal={false} />
       <div className={styles.visitShade} />
       <div className={`container ${styles.visitInner}`}>
         <Reveal>

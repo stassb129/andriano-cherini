@@ -30,13 +30,13 @@ export const CATEGORY_LABEL: Record<Category, Loc> = {
   Oxford: { en: "Oxfords", ru: "Оксфорды" },
 };
 
-const OZON_BRAND = "https://www.ozon.ru/search/?text=Andriano+Cherini";
+export const OZON_BRAND = "https://www.ozon.ru/search/?text=Andriano+Cherini";
 
 const gallery = (slug: string, count: number) =>
   Array.from({ length: count }, (_, i) => `/images/collection/${slug}/${String(i + 1).padStart(2, "0")}.jpg`);
 
-const NERO: Loc = { en: "Black", ru: "Черный" };
-const MORO: Loc = { en: "Dark brown", ru: "Темно-коричневый" };
+const NERO: Loc = { en: "Black", ru: "Чёрный" };
+const MORO: Loc = { en: "Dark brown", ru: "Тёмно-коричневый" };
 
 const specs = (colour: Loc): Spec[] => [
   { label: { en: "Insole material", ru: "Материал стельки" }, value: { en: "Leather", ru: "Кожа" } },
@@ -58,16 +58,16 @@ const FERMO = {
   model: { en: "Cap-Toe Derby", ru: "Дерби с мыском" },
   category: "Derby" as Category,
   tagline: {
-    en: "Our signature derby — formal outside, warm and soft inside.",
-    ru: "Наша фирменная модель — строгая снаружи, тёплая и мягкая внутри.",
+    en: "The signature derby — formal outside, warm and soft inside.",
+    ru: "Фирменная модель — строгая снаружи, тёплая и мягкая внутри.",
   },
   description: {
     en: "A cap-toe derby in polished leather with open lacing and a soft fur lining. The treaded sole keeps its grip on wet streets while the silhouette stays office-ready.",
     ru: "Дерби с мыском из полированной кожи, открытая шнуровка и мягкая меховая подкладка. Протекторная подошва держит на мокрой улице, а силуэт остаётся уместным в офисе.",
   },
   story: {
-    en: "Named after Fermo, the town where the brand began. This is the shoe Andriano wanted from the start: classic lines and comfort that lasts until evening.",
-    ru: "Названа в честь Фермо — города, где начался бренд. Это та пара, с которой Андриано всё начинал: классические линии и комфорт до вечера.",
+    en: "Named after Fermo, the town where the brand began. It is the shoe Andriano had in mind from the start: classic lines and comfort that lasts until evening.",
+    ru: "Модель названа в честь Фермо — города, где начался бренд. Именно такую пару Андриано задумывал с самого начала: классические линии и комфорт до вечера.",
   },
   features: [
     { en: "Cap toe in polished leather", ru: "Мысок из полированной кожи" },
@@ -88,12 +88,12 @@ const URBINO = {
     ru: "Оксфорд на закрытой шнуровке с выразительной фактурой под крокодила.",
   },
   description: {
-    en: "A sleek Oxford in croc-embossed polished leather with closed lacing and a warm fur lining. Slim profile, clean sole edge — for evenings, events and days that call for something more.",
-    ru: "Оксфорд из полированной кожи с тиснением под крокодила, закрытая шнуровка и тёплая меховая подкладка. Узкий силуэт, аккуратный край подошвы — для вечера, событий и дней, когда хочется большего.",
+    en: "An Oxford in polished croc-embossed leather with closed lacing and a warm fur lining. A slim profile and a clean sole edge — suited to the office and to evening wear.",
+    ru: "Оксфорд из полированной кожи с тиснением под крокодила, закрытая шнуровка и тёплая меховая подкладка. Узкий силуэт и аккуратный край подошвы — уместен и в офисе, и вечером.",
   },
   story: {
-    en: "Named after Urbino in the Marche — a Renaissance town of clear proportions. The same restraint, with a texture that catches the light.",
-    ru: "Названа в честь Урбино в Марке — ренессансного города ясных пропорций. Та же сдержанность, но с фактурой, которая играет на свету.",
+    en: "Named after Urbino in the Marche, a Renaissance town known for its clear proportions. The same restraint, with a leather texture that catches the light.",
+    ru: "Модель названа в честь Урбино в Марке — ренессансного города с ясными пропорциями. Та же сдержанность, но с фактурой кожи, которая играет на свету.",
   },
   features: [
     { en: "Croc-embossed polished leather", ru: "Полированная кожа с тиснением под крокодила" },

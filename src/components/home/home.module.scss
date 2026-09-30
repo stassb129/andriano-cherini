@@ -645,7 +645,11 @@
 
 .anatomyStage {
   position: absolute;
-  inset: -4% -2% 8% -2%;
+  inset: -4% 0 8%;
+
+  @include m.respond-to(laptop) {
+    inset: -4% -2% 8% -2%;
+  }
 }
 
 .anatomyHud {

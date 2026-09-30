@@ -69,7 +69,7 @@ export default function ArticleView({ article }: { article: Article }) {
         href="/collection"
         eyebrow={t.collection.eyebrow}
         title={t.common.viewAll}
-        image="/images/product/fermo-marble.jpg"
+        image="/images/collection/urbino-oxford-nero/08.jpg"
       />
     </>
   );

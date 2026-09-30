@@ -41,7 +41,7 @@ export default function ProductView({ product }: { product: Product }) {
                   type="button"
                   className={`${styles.galleryThumb} ${i === active ? styles.galleryThumbActive : ""}`}
                   onClick={() => setActive(i)}
-                  aria-label={`${i + 1}`}
+                  aria-label={`${product.name} — ${i + 1} / ${product.images.length}`}
                   aria-pressed={i === active}
                 >
                   <Image src={src} alt="" fill sizes="96px" />

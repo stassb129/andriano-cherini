@@ -10,7 +10,7 @@ export default function Quote({ text, by, role, image }: Props) {
     <section className={`section ${styles.quote}`}>
       <div className={`container ${styles.quoteInner}`}>
         <Reveal className={styles.quotePortrait}>
-          <Image src={image} alt={by} fill sizes="200px" />
+          <Image src={image} alt="" fill sizes="200px" />
         </Reveal>
         <span className={styles.quoteMark} aria-hidden="true">
           “

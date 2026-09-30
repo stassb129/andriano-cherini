@@ -33,10 +33,10 @@ export default function AtelierMosaic() {
           </Reveal>
         </div>
 
-        <ParallaxImage src="/images/atelier/workshop.jpg" alt="" className={styles.mosaicA} speed={16} />
+        <ParallaxImage src="/images/collection/fermo-derby-moro/06.jpg" alt="" className={styles.mosaicA} speed={16} />
         <ParallaxImage src="/images/atelier/tools.jpg" alt="" className={styles.mosaicB} speed={26} revealFrom="left" />
-        <ParallaxImage src="/images/atelier/cutting.jpg" alt="" className={styles.mosaicC} speed={12} revealFrom="right" />
-        <ParallaxImage src="/images/atelier/leather-roll.jpg" alt="" className={styles.mosaicD} speed={22} revealFrom="top" />
+        <ParallaxImage src="/images/atelier/marking.jpg" alt="" className={styles.mosaicC} speed={12} revealFrom="right" />
+        <ParallaxImage src="/images/atelier/leather-roll-2.jpg" alt="" className={styles.mosaicD} speed={22} revealFrom="top" />
       </div>
     </section>
   );

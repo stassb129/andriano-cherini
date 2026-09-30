@@ -6,6 +6,7 @@ import { TLink } from "./Transition";
 import { scrollToTop } from "@/lib/scroll";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { CONTACT_EMAIL } from "@/components/ui/ContactForm";
+import { OZON_BRAND } from "@/data/products";
 import styles from "./layout.module.scss";
 
 export default function Footer() {
@@ -112,9 +113,9 @@ export default function Footer() {
       <div className={`container ${styles.footerBottom}`}>
         <span>{t.footer.copy}</span>
         <span className={styles.footerLegal}>
-          <a href="#">{t.common.privacy}</a>
-          <a href="#">{t.common.terms}</a>
-          <a href="#">{t.common.instagram}</a>
+          <a href={OZON_BRAND} target="_blank" rel="noopener noreferrer">
+            Ozon ↗
+          </a>
         </span>
         <button className={styles.footerTop2} onClick={() => scrollToTop(false)}>
           {t.common.backTop}

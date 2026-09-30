@@ -1,13 +1,38 @@
 /** @type {import('next').NextConfig} */
+
+const STATIC_CACHE = "public, max-age=604800, stale-while-revalidate=2592000";
+
 const nextConfig = {
   reactStrictMode: true,
+  poweredByHeader: false,
   sassOptions: {
     includePaths: ["./src/styles"],
   },
   images: {
     formats: ["image/avif", "image/webp"],
+    deviceSizes: [390, 640, 828, 1080, 1280, 1600, 1920],
+    minimumCacheTTL: 2678400,
+  },
+  experimental: {
+    optimizePackageImports: ["@react-three/drei", "gsap"],
   },
   allowedDevOrigins: ["172.19.0.1:3000", "localhost:3000"],
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+        ],
+      },
+      { source: "/images/:path*", headers: [{ key: "Cache-Control", value: STATIC_CACHE }] },
+      { source: "/models/:path*", headers: [{ key: "Cache-Control", value: STATIC_CACHE }] },
+      { source: "/:file(favicon.ico|apple-touch-icon.png|icon-192.png|icon-512.png|og.jpg)", headers: [{ key: "Cache-Control", value: STATIC_CACHE }] },
+    ];
+  },
   async redirects() {
     const retired = [
       "montegranaro-oxford",
@@ -17,11 +42,16 @@ const nextConfig = {
       "macerata-derby",
       "recanati-suede",
     ];
-    return [
-      { source: "/collection/fermo-derby", destination: "/collection/fermo-derby-nero", permanent: true },
-      { source: "/collection/urbino-oxford", destination: "/collection/urbino-oxford-nero", permanent: true },
-      ...retired.map((slug) => ({ source: `/collection/${slug}`, destination: "/collection", permanent: true })),
+    const moved = [
+      { from: "/collection/fermo-derby", to: "/collection/fermo-derby-nero" },
+      { from: "/collection/urbino-oxford", to: "/collection/urbino-oxford-nero" },
+      { from: "/boutiques", to: "/contact" },
+      ...retired.map((slug) => ({ from: `/collection/${slug}`, to: "/collection" })),
     ];
+    return moved.flatMap(({ from, to }) => [
+      { source: from, destination: to, permanent: true },
+      { source: `/en${from}`, destination: `/en${to}`, permanent: true },
+    ]);
   },
 };
 

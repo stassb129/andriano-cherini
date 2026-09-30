@@ -15,29 +15,29 @@ const FAQ = [
   {
     title: { en: "How do I choose a size?", ru: "Как выбрать размер?" },
     content: {
-      en: "Cherini lasts run true to EU size. If you are between sizes, take the larger. For the Fermo Derby, ComfortForma is generous in the forefoot — most keep their usual size.",
-      ru: "Колодки Cherini соответствуют EU. Если между размерами — берите больший. У Fermo Derby ComfortForma свободнее в носке — большинство берёт привычный размер.",
+      en: "Our shoes follow standard EU sizing. If you are between sizes, choose the larger one. With the fur lining, most customers take their usual size.",
+      ru: "Размеры соответствуют стандартной европейской сетке. Если вы между размерами, выбирайте больший. С учётом меховой подкладки большинство берёт свой обычный размер.",
     },
   },
   {
-    title: { en: "How do orders work?", ru: "Как оформить заказ?" },
+    title: { en: "Where can I buy?", ru: "Где купить?" },
     content: {
-      en: "Write to us by email with the model and size. We confirm availability and the next steps by reply.",
-      ru: "Напишите нам модель и размер. Наличие и следующие шаги подтверждаем ответом на письмо.",
+      en: "The collection is sold on Ozon. Delivery, payment and returns follow Ozon's terms.",
+      ru: "Коллекция продаётся на Ozon. Доставка, оплата и возврат — по правилам Ozon.",
     },
   },
   {
-    title: { en: "What is included?", ru: "Что входит в комплект?" },
+    title: { en: "Can I order through the website?", ru: "Можно ли заказать через сайт?" },
     content: {
-      en: "Shoe trees, a cotton bag and a care card with every pair.",
-      ru: "Колодки, хлопковый мешок и карточка ухода с каждой парой.",
+      en: "No, this website is for information only. For questions about a model, write to us by email.",
+      ru: "Нет, сайт носит информационный характер. С вопросами о модели пишите нам на почту.",
     },
   },
   {
-    title: { en: "Do you offer aftercare?", ru: "Есть ли обслуживание после покупки?" },
+    title: { en: "How do I care for the shoes?", ru: "Как ухаживать за обувью?" },
     content: {
-      en: "Yes — ask about resoling and seasonal care. We stay with the models we sell.",
-      ru: "Да — спрашивайте про перетяжку и сезонный уход. Мы остаёмся с моделями, которые продаём.",
+      en: "Brush after wear, use a cream in the shoe's colour, keep shoe trees inside and dry away from radiators.",
+      ru: "Чистите щёткой после носки, используйте крем в цвет обуви, храните с колодками и сушите вдали от батарей.",
     },
   },
 ];
@@ -48,7 +48,7 @@ export default function ContactView() {
 
   return (
     <>
-      <PageHero eyebrow={c.eyebrow} title={c.title} intro={c.intro} image="/images/italy/florence-duomo.jpg" meta={[...c.meta]} />
+      <PageHero eyebrow={c.eyebrow} title={c.title} intro={c.intro} image="/images/italy/stone-house.jpg" meta={[...c.meta]} />
 
       <section className="section light" id="write">
         <div className={`container ${styles.appoint}`}>
@@ -74,11 +74,21 @@ export default function ContactView() {
                   <p className="eyebrow">{b.city}</p>
                   <h3 className="t-h3">{L(b.name)}</h3>
                   <address>
-                    {b.address}
+                    {b.href ? (
+                      <a href={b.href} target="_blank" rel="noopener noreferrer">
+                        {b.address} ↗
+                      </a>
+                    ) : (
+                      b.address
+                    )}
                     <br />
                     {L(b.hours)}
-                    <br />
-                    <a href={`tel:${b.phone.replace(/\s/g, "")}`}>{b.phone}</a>
+                    {b.phone && (
+                      <>
+                        <br />
+                        <a href={`tel:${b.phone.replace(/\s/g, "")}`}>{b.phone}</a>
+                      </>
+                    )}
                   </address>
                   <p className="t-body">{L(b.note)}</p>
                 </div>
@@ -100,7 +110,7 @@ export default function ContactView() {
         </div>
       </section>
 
-      <NextChapter href="/" eyebrow={t.common.ourStory} title="Andriano Cherini" image="/images/product/fermo-marble.jpg" />
+      <NextChapter href="/" eyebrow={t.common.ourStory} title="Andriano Cherini" image="/images/collection/fermo-derby-moro/11.jpg" />
     </>
   );
 }

@@ -39,7 +39,7 @@ export default function Technologies({ compact = false }: { compact?: boolean })
                 <h3 className={styles.techTitle}>{L(tech.title)}</h3>
                 <p className="t-small">{L(tech.text)}</p>
                 <p className={styles.techStat}>
-                  <strong>{tech.stat}</strong>
+                  <strong>{L(tech.stat)}</strong>
                   <span>{L(tech.statLabel)}</span>
                 </p>
               </li>

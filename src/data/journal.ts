@@ -11,6 +11,8 @@ export type Article = {
   title: Loc;
   category: Loc;
   date: Loc;
+  /** ISO date for structured data and the sitemap. */
+  published: string;
   readTime: Loc;
   excerpt: Loc;
   cover: string;
@@ -21,38 +23,39 @@ export const articles: Article[] = [
   {
     slug: "the-start-2014",
     title: {
-      en: "How Cherini started in 2014",
-      ru: "Как Cherini начался в 2014",
+      en: "How Cherini started",
+      ru: "Как появился Cherini",
     },
     category: { en: "Story", ru: "История" },
     date: { en: "September 2026", ru: "Сентябрь 2026" },
-    readTime: { en: "4 min", ru: "4 мин" },
+    published: "2026-09-01",
+    readTime: { en: "3 min", ru: "3 мин" },
     excerpt: {
-      en: "A short note on leaving mass footwear and building a brand around form and comfort.",
-      ru: "Короткая заметка о выходе из масс-маркета и бренде вокруг формы и комфорта.",
+      en: "How the brand was founded in 2014 and why comfort became its core.",
+      ru: "Как бренд появился в 2014 году и почему комфорт стал его основой.",
     },
-    cover: "/images/atelier/master.jpg",
+    cover: "/images/collection/fermo-derby-moro/08.jpg",
     body: [
       {
         type: "p",
         text: {
-          en: "Andriano Cherini spent years in mass footwear hearing the same complaint: the shoe looked right, the feet were tired by evening. In 2014 he started a small brand in the Marche with one brief — classic men's shoes you can wear all day.",
-          ru: "Андриано Керини годы работал в масс-маркете и слышал одно и то же: туфля выглядит правильно, а к вечеру стопы устали. В 2014 он запустил небольшой бренд в Марке с одним брифом — классические мужские туфли на весь день.",
+          en: "Andriano Cherini worked in the footwear industry for years and kept hearing the same complaint: the shoes look right, but feet are tired by evening. In 2014 he founded a small brand in the Marche with one task — classic men's shoes you can wear all day.",
+          ru: "Андриано Керини много лет работал в обувной индустрии и постоянно слышал одно и то же: туфли выглядят хорошо, но к вечеру ноги устают. В 2014 году он основал небольшой бренд в Марке с одной задачей — классические мужские туфли, которые можно носить весь день.",
         },
       },
       {
         type: "quote",
         text: {
-          en: "Forma e comfort — that line still sits under the crest.",
-          ru: "Forma e comfort — эта строка до сих пор под гербом.",
+          en: "Forma e comfort — form and comfort, always together.",
+          ru: "Forma e comfort — форма и комфорт, всегда вместе.",
         },
         by: "Andriano Cherini",
       },
       {
         type: "p",
         text: {
-          en: "First pairs shipped under the Cherini name. A year later the crest arrived: lion, unicorn, and the motto. The story never needed a century of folklore — only a clear idea and a collection that keeps getting sharper.",
-          ru: "Первые пары ушли под именем Cherini. Через год появился герб: лев, единорог и девиз. Истории не нужен был век фольклора — только ясная идея и коллекция, которая становится точнее.",
+          en: "The first pairs were released under the Cherini name, and a year later came the crest with a lion and a unicorn. Since then the collection has stayed small, and each model keeps being refined.",
+          ru: "Первые пары вышли под именем Cherini, а через год появился герб со львом и единорогом. С тех пор коллекция остаётся небольшой, а каждую модель мы продолжаем дорабатывать.",
         },
       },
     ],
@@ -65,32 +68,33 @@ export const articles: Article[] = [
     },
     category: { en: "Technology", ru: "Технологии" },
     date: { en: "August 2026", ru: "Август 2026" },
+    published: "2026-08-01",
     readTime: { en: "3 min", ru: "3 мин" },
     excerpt: {
-      en: "Classic silhouette outside. Softened step inside — the technical core since 2018.",
-      ru: "Снаружи классический силуэт. Внутри мягче шаг — техническое ядро с 2018.",
+      en: "A classic silhouette outside, a softer step inside — the technical basis of the collection since 2018.",
+      ru: "Снаружи классический силуэт, внутри более мягкий шаг — техническая основа коллекции с 2018 года.",
     },
-    cover: "/images/atelier/stitching.jpg",
+    cover: "/images/collection/urbino-oxford-moro/09.jpg",
     body: [
       {
         type: "p",
         text: {
-          en: "In 2018 the last was redrawn. ComfortForma gave room in the forefoot and a secure heel. Ammortizzo — a cushioning insert in the heel — cut impact for long days on hard floors.",
-          ru: "В 2018 колодку пересобрали. ComfortForma дала свободу в носке и плотную пятку. Ammortizzo — амортизирующая вставка в каблуке — снизила удар на длинных днях по твёрдому полу.",
+          en: "In 2018 the last was redesigned. ComfortForma gave more room in the forefoot and a secure heel. Ammortizzo, a cushioning insert in the heel, softens each step on long days on hard floors.",
+          ru: "В 2018 году колодку переработали. ComfortForma дала больше свободы в носочной части и плотную посадку в пятке. Ammortizzo — амортизирующая вставка в каблуке — смягчает шаг, когда весь день проводишь на твёрдом полу.",
         },
       },
       {
         type: "h",
         text: {
-          en: "Invisible on purpose",
-          ru: "Невидимы нарочно",
+          en: "Invisible by design",
+          ru: "Незаметны снаружи",
         },
       },
       {
         type: "p",
         text: {
-          en: "You do not see these details in a photo. You feel them after eight hours. That is the point of the brand: form first, comfort always.",
-          ru: "На фото этих деталей не видно. Их чувствуешь через восемь часов. В этом смысл бренда: сначала форма, всегда комфорт.",
+          en: "These details are not visible in a photo. They become noticeable after a full day. That is the idea of the brand: form and comfort together.",
+          ru: "На фотографии этих деталей не видно. Они заметны к концу дня. В этом идея бренда: форма и комфорт вместе.",
         },
       },
     ],
@@ -99,37 +103,38 @@ export const articles: Article[] = [
     slug: "fermo-derby",
     title: {
       en: "The Fermo Derby since 2016",
-      ru: "Fermo Derby с 2016",
+      ru: "Fermo Derby с 2016 года",
     },
     category: { en: "Collection", ru: "Коллекция" },
     date: { en: "July 2026", ru: "Июль 2026" },
+    published: "2026-07-01",
     readTime: { en: "3 min", ru: "3 мин" },
     excerpt: {
-      en: "How a winter derby with shearling became the face of the house.",
-      ru: "Как зимние дерби с овчиной стали лицом дома.",
+      en: "How a warm cap-toe derby became the brand's signature model.",
+      ru: "Как тёплые дерби с мыском стали фирменной моделью бренда.",
     },
-    cover: "/images/product/fermo-marble.jpg",
+    cover: "/images/collection/fermo-derby-moro/04.jpg",
     body: [
       {
         type: "p",
         text: {
-          en: "The Fermo Derby arrived in 2016: pebble-grain vamp, polished cap, merino shearling, ComfortForma and Ammortizzo. Formal enough for the office, warm enough for the walk there.",
-          ru: "Fermo Derby появились в 2016: фактурная союзка, полированный мысок, мериносовая овчина, ComfortForma и Ammortizzo. Достаточно строгие для офиса и достаточно тёплые для дороги до него.",
+          en: "The Fermo Derby appeared in 2016: a textured vamp, a polished cap toe, a warm fur lining, the ComfortForma last and the Ammortizzo heel. Formal enough for the office, warm enough for winter streets.",
+          ru: "Fermo Derby появились в 2016 году: фактурная союзка, полированный мысок, тёплая меховая подкладка, колодка ComfortForma и каблук Ammortizzo. Достаточно строгие для офиса и достаточно тёплые для зимы.",
         },
       },
       {
         type: "image",
-        src: "/images/product/fermo-lining.jpg",
+        src: "/images/collection/fermo-derby-moro/09.jpg",
         caption: {
-          en: "Shearling lining — the winter detail that stayed.",
-          ru: "Овчина — зимняя деталь, которая осталась.",
+          en: "The fur lining of the Fermo.",
+          ru: "Меховая подкладка Fermo.",
         },
       },
       {
         type: "p",
         text: {
-          en: "It is still the signature model. Everything else in the collection — oxfords, loafers, boots — grows from the same idea.",
-          ru: "Это до сих пор фирменная модель. Всё остальное в коллекции — оксфорды, лоферы, ботинки — растёт из той же идеи.",
+          en: "It is still the signature model. The Urbino Oxford, which joined it later, follows the same idea.",
+          ru: "Это по-прежнему фирменная модель. Urbino Oxford, появившийся позже, построен на той же идее.",
         },
       },
     ],

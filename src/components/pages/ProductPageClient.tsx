@@ -17,7 +17,8 @@ export default function ProductPageClient({ product }: { product: Product }) {
   const { L, t, locale } = useLocale();
   const ru = locale === "ru";
   const related = products.filter((p) => p.slug !== product.slug);
-  const storyImage = product.images[2] ?? product.images[0]!;
+  const sibling = getVariants(product).find((v) => v.slug !== product.slug);
+  const storyImage = sibling?.images[2] ?? product.images[2] ?? product.images[0]!;
 
   return (
     <>
@@ -37,7 +38,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
               <p className="eyebrow">{t.productUi.storyEyebrow}</p>
             </Reveal>
             <SplitText
-              text={ru ? `Почему мы зовём её\n*${product.name}.*` : `Why we call it\n*${product.name}.*`}
+              text={ru ? `Почему модель называется\n*${product.name}.*` : `Why it is called\n*${product.name}.*`}
               className="t-h2"
             />
             <Reveal>

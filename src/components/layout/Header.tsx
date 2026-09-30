@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { gsap } from "@/lib/gsap";
@@ -8,11 +9,12 @@ import { lockScroll } from "@/lib/scroll";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { useTheme } from "@/i18n/ThemeProvider";
 import type { Locale } from "@/i18n/dictionaries";
+import { localizePath, stripLocale } from "@/i18n/config";
 import { TLink } from "./Transition";
 import styles from "./layout.module.scss";
 
 export default function Header() {
-  const pathname = usePathname();
+  const pathname = stripLocale(usePathname() || "/");
   const { t, locale, setLocale } = useLocale();
   const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
@@ -21,10 +23,10 @@ export default function Header() {
 
   const NAV = useMemo(
     () => [
-      { href: "/collection", label: t.nav.collection, image: "/images/product/fermo-marble.jpg" },
-      { href: "/heritage", label: t.nav.heritage, image: "/images/atelier/master.jpg" },
+      { href: "/collection", label: t.nav.collection, image: "/images/collection/urbino-oxford-nero/06.jpg" },
+      { href: "/heritage", label: t.nav.heritage, image: "/images/atelier/workshop-2.jpg" },
       { href: "/atelier", label: t.nav.atelier, image: "/images/atelier/workshop.jpg" },
-      { href: "/contact", label: t.nav.contact, image: "/images/italy/florence-duomo.jpg" },
+      { href: "/contact", label: t.nav.contact, image: "/images/italy/stone-house.jpg" },
     ],
     [t],
   );
@@ -97,14 +99,20 @@ export default function Header() {
             {(["en", "ru"] as Locale[]).map((l, i) => (
               <span key={l} style={{ display: "contents" }}>
                 {i > 0 && <span aria-hidden="true">/</span>}
-                <button
-                  type="button"
+                <Link
+                  href={localizePath(pathname, l)}
+                  hrefLang={l}
+                  lang={l}
+                  scroll={false}
                   className={`${styles.langBtn} ${locale === l ? styles.langActive : ""}`}
-                  onClick={() => setLocale(l)}
-                  aria-pressed={locale === l}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setLocale(l);
+                  }}
+                  aria-current={locale === l ? "true" : undefined}
                 >
                   {l.toUpperCase()}
-                </button>
+                </Link>
               </span>
             ))}
           </div>

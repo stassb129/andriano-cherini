@@ -54,7 +54,7 @@ export default function Timeline({ entries }: { entries: TimelineEntry[] }) {
           </div>
           {e.image && (
             <div className={styles.tlMedia}>
-              <Image src={e.image} alt="" fill sizes="(max-width: 1100px) 100vw, 28vw" />
+              <Image src={e.image} alt={`${e.year} — ${L(e.title)}`} fill sizes="(max-width: 1100px) 100vw, 28vw" />
             </div>
           )}
         </li>

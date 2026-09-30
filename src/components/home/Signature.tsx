@@ -18,7 +18,7 @@ export default function Signature() {
       <div className={`container ${styles.signatureGrid}`}>
         <div className={styles.signatureMedia}>
           <ParallaxImage
-            src={p.images[0]!}
+            src="/images/product/fermo-marble.jpg"
             alt="Fermo Derby"
             className={styles.signatureImg}
             sizes="(max-width: 1100px) 100vw, 55vw"
@@ -62,7 +62,7 @@ export default function Signature() {
           return (
             <figure key={label} className={styles.signatureDetail}>
               <div className={styles.signatureDetailImg}>
-                <ParallaxImage src={imgs[i]!} alt="" speed={8 + i * 4} sizes="33vw" />
+                <ParallaxImage src={imgs[i]!} alt={`Fermo Derby — ${label}`} speed={8 + i * 4} sizes="33vw" />
               </div>
               <figcaption>{label}</figcaption>
             </figure>

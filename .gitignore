@@ -4,3 +4,6 @@ out
 .env*.local
 .DS_Store
 *.tsbuildinfo
+
+# source photos and the uncompressed 3D model (not served)
+_originals/

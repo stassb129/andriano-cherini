@@ -18,7 +18,7 @@ export const FERMO_HALF_HEIGHT = (() => {
 })();
 
 export default function Shoe() {
-  const { scene } = useGLTF(FERMO_MODEL);
+  const { scene } = useGLTF(FERMO_MODEL, true, true);
 
   const prepared = useMemo(() => {
     const model = scene.clone(true);
@@ -67,4 +67,4 @@ export default function Shoe() {
   return <primitive object={prepared} />;
 }
 
-useGLTF.preload(FERMO_MODEL);
+useGLTF.preload(FERMO_MODEL, true, true);
