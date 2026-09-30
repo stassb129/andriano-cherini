@@ -9,7 +9,7 @@ import { onIntroDone } from "@/lib/scroll";
 import { useLocale } from "@/i18n/LocaleProvider";
 import styles from "./home.module.scss";
 
-const TITLE = "Andriano Cherini";
+const TITLE_WORDS = ["Andriano", "Cherini"] as const;
 
 export default function Hero() {
   const root = useRef<HTMLElement>(null);
@@ -41,7 +41,7 @@ export default function Hero() {
         scrollTrigger: { trigger: el, start: "top top", end: "bottom top", scrub: true },
       });
       gsap.to(`.${styles.heroWord}`, {
-        yPercent: -20,
+        yPercent: -18,
         ease: "none",
         scrollTrigger: { trigger: el, start: "top top", end: "bottom top", scrub: true },
       });
@@ -61,7 +61,6 @@ export default function Hero() {
         if (intro.progress() === 0 && !intro.isActive()) intro.play(0);
       };
       stopIntro = onIntroDone(play);
-      // If the preloader already finished (or never ran), still reveal the title.
       safety = setTimeout(play, 1200);
     }, el);
 
@@ -76,7 +75,7 @@ export default function Hero() {
     <section ref={root} className={styles.hero} aria-label="Andriano Cherini">
       <div className={styles.heroBg} aria-hidden="true">
         <Image
-          src="/images/hero/main.png"
+          src="/images/hero/croko.png"
           alt=""
           fill
           priority
@@ -94,13 +93,18 @@ export default function Hero() {
 
       <h1 className={styles.heroWord}>
         <span className="sr-only">{t.hero.titleSr}</span>
-        {TITLE.split("").map((c, i) => (
-          <span
-            key={`${c}-${i}`}
-            aria-hidden="true"
-            className={`${styles.heroGlyph} ${c === " " ? styles.heroSpace : ""}`}
-          >
-            <span className={styles.heroLetter}>{c === " " ? "\u00A0" : c}</span>
+        {TITLE_WORDS.map((word, wi) => (
+          <span key={word} className={styles.heroLine} aria-hidden="true">
+            {word.split("").map((c, i) => (
+              <span key={`${word}-${i}`} className={styles.heroGlyph}>
+                <span className={styles.heroLetter}>{c}</span>
+              </span>
+            ))}
+            {wi === 0 ? (
+              <span className={`${styles.heroGlyph} ${styles.heroSpace}`}>
+                <span className={styles.heroLetter}>{"\u00A0"}</span>
+              </span>
+            ) : null}
           </span>
         ))}
       </h1>
