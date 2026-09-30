@@ -612,6 +612,15 @@
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
+  background: v.$ink-soft;
+
+  /* ParallaxImage must fill this sized frame — its own box has no intrinsic height. */
+  > * {
+    position: absolute !important;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
 
   img {
     object-fit: cover;
