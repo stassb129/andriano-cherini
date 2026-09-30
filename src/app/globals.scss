@@ -136,6 +136,19 @@ body {
   overflow-x: hidden;
 }
 
+@media (pointer: fine) and (hover: hover) {
+  html.has-cursor,
+  html.has-cursor * {
+    cursor: none !important;
+  }
+
+  html.has-cursor input,
+  html.has-cursor textarea,
+  html.has-cursor select {
+    cursor: text !important;
+  }
+}
+
 body::after {
   content: "";
   position: fixed;

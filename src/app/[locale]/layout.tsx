@@ -6,6 +6,7 @@ import Preloader from "@/components/layout/Preloader";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
+import CustomCursor from "@/components/layout/CustomCursor";
 import { TransitionProvider } from "@/components/layout/Transition";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
 import { ThemeProvider } from "@/i18n/ThemeProvider";
@@ -99,6 +100,7 @@ export default async function RootLayout({
               <main id="main">{children}</main>
               <Footer />
             </TransitionProvider>
+            <CustomCursor />
             <Preloader />
           </LocaleProvider>
         </ThemeProvider>

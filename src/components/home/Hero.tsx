@@ -1,17 +1,18 @@
 "use client";
 
+import Image from "next/image";
 import { useRef } from "react";
-import ShoeCanvas from "@/components/three/ShoeCanvas";
 import { TLink } from "@/components/layout/Transition";
 import Magnetic from "@/components/motion/Magnetic";
-import { gsap, ScrollTrigger, useIsoLayoutEffect, prefersReducedMotion } from "@/lib/gsap";
+import { gsap, useIsoLayoutEffect, prefersReducedMotion } from "@/lib/gsap";
 import { onIntroDone } from "@/lib/scroll";
 import { useLocale } from "@/i18n/LocaleProvider";
 import styles from "./home.module.scss";
 
+const TITLE = "Andriano Cherini";
+
 export default function Hero() {
   const root = useRef<HTMLElement>(null);
-  const progress = useRef(0);
   const { t } = useLocale();
 
   useIsoLayoutEffect(() => {
@@ -19,47 +20,71 @@ export default function Hero() {
     if (!el) return;
     const reduced = prefersReducedMotion();
     let stopIntro = () => {};
+    let safety: ReturnType<typeof setTimeout> | undefined;
+
     const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: el,
-        start: "top top",
-        end: "bottom top",
-        onUpdate: (self) => {
-          progress.current = self.progress;
-        },
-      });
-      if (reduced) return;
-      gsap.to(`.${styles.heroWord}`, {
-        yPercent: -35,
-        opacity: 0.15,
+      const letters = el.querySelectorAll(`.${styles.heroLetter}`);
+      const bg = el.querySelector(`.${styles.heroBg}`);
+
+      if (reduced) {
+        gsap.set(letters, { yPercent: 0 });
+        gsap.set(bg, { autoAlpha: 1 });
+        return;
+      }
+
+      gsap.set(letters, { yPercent: 110 });
+      gsap.set(bg, { autoAlpha: 0, scale: 1.04 });
+
+      gsap.to(`.${styles.heroBg} img`, {
+        scale: 1.08,
         ease: "none",
         scrollTrigger: { trigger: el, start: "top top", end: "bottom top", scrub: true },
       });
+      gsap.to(`.${styles.heroWord}`, {
+        yPercent: -20,
+        ease: "none",
+        scrollTrigger: { trigger: el, start: "top top", end: "bottom top", scrub: true },
+      });
+
       const intro = gsap.timeline({ paused: true });
       intro
-        .fromTo(
-          `.${styles.heroWord} span`,
-          { yPercent: 105, y: 0 },
-          { yPercent: 0, y: 0, duration: 1.8, ease: "expo.out", stagger: 0.05 },
-        )
-        .fromTo(`.${styles.heroStage}`, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 2.2, ease: "expo.out" }, 0.2)
+        .to(bg, { autoAlpha: 1, scale: 1, duration: 2.2, ease: "expo.out" }, 0)
+        .to(letters, { yPercent: 0, duration: 1.65, ease: "expo.out", stagger: 0.028 }, 0.2)
         .fromTo(
           `[data-hero-fade]`,
-          { opacity: 0, y: 24 },
-          { opacity: 1, y: 0, duration: 1.2, ease: "expo.out", stagger: 0.08 },
-          0.6,
+          { opacity: 0, y: 22 },
+          { opacity: 1, y: 0, duration: 1.1, ease: "expo.out", stagger: 0.07 },
+          0.45,
         );
-      stopIntro = onIntroDone(() => intro.play());
+
+      const play = () => {
+        if (intro.progress() === 0 && !intro.isActive()) intro.play(0);
+      };
+      stopIntro = onIntroDone(play);
+      // If the preloader already finished (or never ran), still reveal the title.
+      safety = setTimeout(play, 1200);
     }, el);
+
     return () => {
       stopIntro();
+      if (safety) clearTimeout(safety);
       ctx.revert();
     };
   }, []);
 
   return (
     <section ref={root} className={styles.hero} aria-label="Andriano Cherini">
-      <div className={styles.heroGlow} aria-hidden="true" />
+      <div className={styles.heroBg} aria-hidden="true">
+        <Image
+          src="/images/hero/main.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          style={{ objectFit: "cover", objectPosition: "center" }}
+        />
+      </div>
+      <div className={styles.heroShade} aria-hidden="true" />
 
       <div className={styles.heroTop} data-hero-fade>
         <span>{t.hero.est}</span>
@@ -69,19 +94,16 @@ export default function Hero() {
 
       <h1 className={styles.heroWord}>
         <span className="sr-only">{t.hero.titleSr}</span>
-        {"Cherini".split("").map((c, i) => (
-          <span key={i} aria-hidden="true">
-            {c}
+        {TITLE.split("").map((c, i) => (
+          <span
+            key={`${c}-${i}`}
+            aria-hidden="true"
+            className={`${styles.heroGlyph} ${c === " " ? styles.heroSpace : ""}`}
+          >
+            <span className={styles.heroLetter}>{c === " " ? "\u00A0" : c}</span>
           </span>
         ))}
       </h1>
-
-      <div className={styles.heroStage}>
-        <ShoeCanvas mode="hero" progress={progress} />
-        <p className={styles.heroHint} data-hero-fade aria-hidden="true">
-          <span>↻</span> {t.hero.rotate}
-        </p>
-      </div>
 
       <div className={styles.heroBottom}>
         <div className={styles.heroIntro} data-hero-fade>
