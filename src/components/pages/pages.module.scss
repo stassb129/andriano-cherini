@@ -1,0 +1,1138 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+// =====================================================
+// Collection
+// =====================================================
+.filters {
+  display: grid;
+  gap: 1.2rem;
+  margin-bottom: 3rem;
+  padding-block: 1.5rem;
+  border-block: v.$hairline;
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  @include m.label;
+  @include m.focus-ring;
+
+  padding: 0.75rem 1.1rem;
+  border: v.$hairline;
+  border-radius: 999px;
+  color: v.$cream-dim;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+
+  sup {
+    margin-left: 0.35rem;
+    font-size: 0.55rem;
+    color: v.$brass;
+  }
+
+  &:hover {
+    color: v.$cream;
+    border-color: v.$brass-dim;
+  }
+}
+
+.chipActive {
+  background: v.$cream;
+  border-color: v.$cream;
+  color: v.$obsidian;
+
+  &:hover {
+    color: v.$obsidian;
+  }
+}
+
+.filterNote {
+  font-size: 0.8rem;
+  color: v.$cream-mute;
+}
+
+.grid {
+  display: grid;
+  gap: 3rem 1.5rem;
+
+  @include m.respond-to(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem 2rem;
+  }
+}
+
+.gridItem:nth-child(3n + 2) {
+  @include m.respond-to(laptop) {
+    margin-top: 4rem;
+  }
+}
+
+.gridEditorial {
+  display: grid;
+  gap: 1.5rem;
+  align-content: start;
+
+  @include m.respond-to(tablet) {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  @include m.respond-to(laptop) {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  blockquote {
+    font-family: v.$font-display;
+    font-style: italic;
+    font-size: clamp(1.6rem, 2.2vw, 2.1rem);
+    line-height: 1.2;
+  }
+
+  cite {
+    @include m.label;
+
+    display: block;
+    margin-top: 1.5rem;
+    font-style: normal;
+    color: v.$brass;
+  }
+}
+
+.gridEditorialImg {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.feature {
+  position: relative;
+  min-height: 90svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  @include m.on-ink;
+}
+
+.featureImg {
+  position: absolute !important;
+  inset: 0;
+}
+
+.featureShade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.2) 70%),
+    linear-gradient(180deg, transparent 40%, rgba(10, 10, 10, 0.9));
+}
+
+.featureInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.8rem;
+  padding-block: 7rem 4rem;
+}
+
+.featureFoot {
+  display: grid;
+  gap: 2rem;
+  justify-items: start;
+  max-width: 38rem;
+}
+
+.services {
+  display: grid;
+  gap: 1.5rem;
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  padding: 2.2rem;
+  border: v.$hairline;
+  transition:
+    border-color 0.4s ease,
+    background 0.4s ease;
+
+  &:hover {
+    border-color: v.$brass-dim;
+    background: v.$brass-faint;
+  }
+}
+
+.serviceN {
+  font-family: v.$font-display;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: v.$brass;
+}
+
+// =====================================================
+// Product
+// =====================================================
+.product {
+  padding-top: calc(var(--header-h) + 2rem);
+  padding-bottom: 4rem;
+}
+
+.productGrid {
+  display: grid;
+  gap: 2.5rem;
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: 1.35fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+}
+
+.gallery {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.galleryMain,
+.galleryThumb {
+  position: relative;
+  overflow: hidden;
+  background: v.$ink-soft;
+
+  img {
+    object-fit: cover;
+    transition: transform 1.6s v.$ease-premium;
+  }
+
+  &:hover img {
+    transform: scale(1.04);
+  }
+}
+
+.galleryMain {
+  aspect-ratio: 1;
+}
+
+.galleryRest {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(4.5rem, 1fr));
+  gap: 0.5rem;
+}
+
+.galleryThumb {
+  @include m.focus-ring;
+
+  aspect-ratio: 1;
+  border: 1px solid transparent;
+  opacity: 0.65;
+  transition:
+    opacity 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.galleryThumbActive {
+  border-color: v.$brass;
+  opacity: 1;
+}
+
+.info {
+  height: 100%;
+}
+
+.infoSticky {
+  display: grid;
+  gap: 1.8rem;
+
+  @include m.respond-to(laptop) {
+    position: sticky;
+    top: calc(var(--header-h) + 1.5rem);
+  }
+}
+
+.crumbs {
+  display: flex;
+  gap: 0.6rem;
+  font-size: 0.75rem;
+  color: v.$cream-mute;
+
+  a:hover {
+    color: v.$brass-light;
+  }
+}
+
+.infoHead {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.infoTitle {
+  font-family: v.$font-display;
+  font-weight: 300;
+  font-size: clamp(3rem, 5vw, 4.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+}
+
+.infoModel {
+  font-family: v.$font-display;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: v.$brass-light;
+}
+
+.infoTagline {
+  max-width: 30rem;
+  color: v.$cream-dim;
+  line-height: 1.7;
+}
+
+.variants {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.variantsLabel {
+  @include m.label;
+
+  color: v.$cream-mute;
+
+  span {
+    color: v.$cream;
+  }
+}
+
+.variantsRow {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.variant {
+  @include m.focus-ring;
+
+  position: relative;
+  width: 4.5rem;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid v.$cream-faint;
+  transition: border-color 0.3s ease;
+
+  img {
+    object-fit: cover;
+  }
+
+  &:hover {
+    border-color: v.$brass-dim;
+  }
+}
+
+.variantActive {
+  border-color: v.$brass;
+}
+
+.specs {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.specsTitle {
+  font-family: v.$font-display;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.specRow {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.9fr) 1.1fr;
+  gap: 1rem;
+  padding-block: 0.8rem;
+  border-bottom: v.$hairline;
+  font-size: 0.9rem;
+  line-height: 1.45;
+
+  dt {
+    color: v.$cream-mute;
+  }
+}
+
+.buy {
+  display: grid;
+  gap: 0.8rem;
+  justify-items: start;
+
+  > :first-child {
+    justify-self: stretch;
+  }
+}
+
+.sizes {
+  display: grid;
+  gap: 1rem;
+}
+
+.sizesHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    @include m.label;
+
+    color: v.$cream-dim;
+  }
+
+  a {
+    font-size: 0.75rem;
+  }
+}
+
+.sizeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(3.6rem, 1fr));
+  gap: 0.4rem;
+}
+
+.size {
+  @include m.focus-ring;
+
+  height: 3rem;
+  border: v.$hairline;
+  font-size: 0.85rem;
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+
+  &:hover:not(:disabled) {
+    border-color: v.$brass;
+  }
+
+  &:disabled {
+    color: v.$cream-mute;
+    text-decoration: line-through;
+    cursor: not-allowed;
+  }
+}
+
+.sizeActive {
+  background: v.$cream;
+  border-color: v.$cream;
+  color: v.$obsidian;
+}
+
+.sizeNote {
+  font-size: 0.75rem;
+  color: v.$cream-mute;
+  margin-bottom: 0.35rem;
+}
+
+.productAsk {
+  margin-top: 0.5rem;
+}
+
+.sizeError {
+  color: #d98c6a;
+}
+
+.productDesc {
+  margin-top: 5rem;
+
+  p {
+    max-width: 58rem;
+    font-size: clamp(1.5rem, 2.6vw, 2.4rem);
+  }
+}
+
+// ----- Story -----
+.storyGrid {
+  display: grid;
+  gap: 3rem;
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+}
+
+.storyImg {
+  aspect-ratio: 4 / 5;
+}
+
+.storyCopy {
+  display: grid;
+  gap: 1.8rem;
+  justify-items: start;
+}
+
+.storyStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  padding-block: 1.8rem;
+  border-block: v.$hairline-dark;
+
+  div {
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  span {
+    @include m.label;
+
+    font-size: 0.58rem;
+    color: rgba(10, 10, 10, 0.55);
+  }
+}
+
+.storyStats .storyNum {
+  font-family: v.$font-display;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 300;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1;
+  color: v.$brass;
+}
+
+.related {
+  display: grid;
+  gap: 2.5rem 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// =====================================================
+// Heritage
+// =====================================================
+.crestBand {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 5rem;
+  }
+}
+
+.crestMark {
+  position: relative;
+  width: min(72vw, 360px);
+  aspect-ratio: 1;
+  margin-inline: auto;
+  background: var(--crest-disc, #0c0b0a);
+  border-radius: 50%;
+  box-shadow: 0 24px 80px rgba(10, 10, 10, 0.18);
+  overflow: hidden;
+
+  img {
+    object-fit: contain;
+    padding: 12%;
+  }
+}
+
+/* On dark page grounds the large medal keeps a soft disc so the crest still reads */
+:global(html[data-theme="dark"]) .crestMark {
+  background: #111111;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+.crestCopy {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.crestLegend {
+  display: grid;
+  gap: 1.2rem;
+  padding-top: 0.5rem;
+
+  li {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  strong {
+    @include m.label;
+
+    color: v.$brass;
+  }
+
+  span {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(10, 10, 10, 0.68);
+  }
+}
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 4rem;
+  padding-left: 1.4rem;
+
+  @include m.respond-to(laptop) {
+    padding-left: 0;
+    gap: 5.5rem;
+  }
+}
+
+.tlTrack {
+  display: none;
+
+  @include m.respond-to(laptop) {
+    display: block;
+    position: absolute;
+    left: 11.2rem;
+    top: 0.4rem;
+    bottom: 0.4rem;
+    width: 1px;
+    background: v.$cream-faint;
+  }
+}
+
+.tlProgress {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: v.$brass;
+  transform-origin: top;
+}
+
+.tlItem {
+  position: relative;
+  display: grid;
+  gap: 1.4rem;
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: 10rem 1fr 22rem;
+    gap: 3.5rem;
+    align-items: start;
+  }
+}
+
+.tlDot {
+  display: none;
+
+  @include m.respond-to(laptop) {
+    display: block;
+    position: absolute;
+    left: 10.85rem;
+    top: 0.55rem;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: v.$obsidian;
+    border: 1px solid v.$brass;
+    z-index: 1;
+  }
+}
+
+.tlYear {
+  font-family: v.$font-display;
+  font-size: 2rem;
+  color: v.$brass;
+  line-height: 1;
+}
+
+.tlBody {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 36rem;
+}
+
+.tlMedia {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: v.$ink-soft;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.family {
+  display: grid;
+  gap: 2rem;
+
+  @include m.respond-to(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.familyCard {
+  display: grid;
+  gap: 1.1rem;
+
+  h3 {
+    font-family: v.$font-display;
+    font-size: 1.45rem;
+    font-weight: 400;
+  }
+
+  p {
+    @include m.label;
+
+    margin-top: 0.35rem;
+    color: v.$brass;
+  }
+
+  blockquote {
+    margin-top: 0.9rem;
+    font-family: v.$font-display;
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.35;
+    color: rgba(10, 10, 10, 0.72);
+  }
+}
+
+.familyImg {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.values {
+  display: grid;
+  gap: 1.5rem;
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.value {
+  display: grid;
+  gap: 1rem;
+  padding: 2rem;
+  border: v.$hairline;
+
+  span {
+    font-family: v.$font-display;
+    font-size: 2.4rem;
+    color: v.$brass;
+    line-height: 1;
+  }
+}
+
+// =====================================================
+// Atelier
+// =====================================================
+.atelierIntro {
+  display: grid;
+  gap: 1.6rem;
+  max-width: 46rem;
+}
+
+.craft {
+  display: grid;
+  gap: 3.5rem;
+}
+
+.craftRow {
+  display: grid;
+  gap: 1.4rem;
+  padding-bottom: 3.5rem;
+  border-bottom: v.$hairline-dark;
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: 8rem 1fr 28rem;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.craftMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.craftN {
+  font-family: v.$font-display;
+  font-size: 2.4rem;
+  color: v.$brass;
+  line-height: 1;
+}
+
+.craftTime {
+  @include m.label;
+
+  color: rgba(10, 10, 10, 0.45);
+}
+
+.craftCopy {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 32rem;
+}
+
+.craftMedia {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.leathers {
+  display: grid;
+  gap: 2rem;
+
+  @include m.respond-to(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.leather {
+  display: grid;
+  gap: 1rem;
+
+  h3 {
+    font-family: v.$font-display;
+    font-size: 1.5rem;
+  }
+}
+
+.leatherOrigin {
+  @include m.label;
+
+  margin: 0.4rem 0 0.7rem;
+  color: v.$brass;
+}
+
+.leatherImg {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.atelierWide {
+  position: relative;
+  min-height: 80svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  @include m.on-ink;
+}
+
+.atelierWideImg {
+  position: absolute !important;
+  inset: 0;
+}
+
+.atelierWideShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgba(10, 10, 10, 0.88));
+}
+
+.atelierWideCopy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.5rem;
+  padding-block: 6rem 4rem;
+  max-width: 46rem;
+}
+
+// =====================================================
+// Journal
+// =====================================================
+.journalGrid {
+  display: grid;
+  gap: 3rem 1.5rem;
+  margin-top: 4rem;
+
+  @include m.respond-to(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.essayHero {
+  position: relative;
+  min-height: 88svh;
+  display: flex;
+  align-items: flex-end;
+  @include m.on-ink;
+}
+
+.essayCover {
+  position: absolute;
+  inset: 0;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.essayShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.35), rgba(10, 10, 10, 0.88));
+}
+
+.essayHead {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.4rem;
+  padding-top: calc(var(--header-h) + 4rem);
+  padding-bottom: 3.5rem;
+  max-width: 52rem;
+}
+
+.essayBody {
+  display: grid;
+  gap: 1.6rem;
+  max-width: 44rem;
+  padding-block: 5rem;
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: v.$cream-dim;
+
+  h2 {
+    margin-top: 1.5rem;
+    color: v.$cream;
+  }
+
+  blockquote {
+    font-family: v.$font-display;
+    font-style: italic;
+    font-size: 1.7rem;
+    line-height: 1.35;
+    color: v.$cream;
+    padding-left: 1.4rem;
+    border-left: 1px solid v.$brass;
+  }
+
+  cite {
+    @include m.label;
+
+    display: block;
+    margin-top: 1rem;
+    font-style: normal;
+    color: v.$brass;
+  }
+}
+
+.essayFigure {
+  margin-block: 1.5rem;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    @include m.label;
+
+    margin-top: 0.8rem;
+    color: v.$cream-mute;
+  }
+}
+
+// =====================================================
+// Boutiques
+// =====================================================
+.shops {
+  display: grid;
+  gap: 3rem;
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.shop {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.shopImg {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.shopCopy {
+  display: grid;
+  gap: 0.7rem;
+
+  address {
+    font-style: normal;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: v.$cream-dim;
+  }
+
+  a:hover {
+    color: v.$brass-light;
+  }
+}
+
+.appoint {
+  display: grid;
+  gap: 3rem;
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.appointForm {
+  display: grid;
+  gap: 1.2rem;
+
+  label {
+    display: grid;
+    gap: 0.45rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(10, 10, 10, 0.55);
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: v.$hairline-dark;
+    background: transparent;
+    color: v.$obsidian;
+    font-size: 1rem;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+}
+
+.appointThanks {
+  font-family: v.$font-display;
+  font-size: 1.8rem;
+  align-self: center;
+}
+
+.faq {
+  max-width: 52rem;
+}
+
+// =====================================================
+// Next chapter
+// =====================================================
+.next {
+  position: relative;
+  display: block;
+  min-height: 56svh;
+  overflow: hidden;
+}
+
+.nextMedia {
+  position: absolute;
+  inset: 0;
+
+  img {
+    object-fit: cover;
+    transition: transform 1.8s v.$ease-premium;
+  }
+}
+
+.next:hover .nextMedia img {
+  transform: scale(1.06);
+}
+
+.nextInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1rem;
+  align-content: end;
+  min-height: 56svh;
+  padding-block: 4rem;
+  background: linear-gradient(180deg, transparent 20%, rgba(10, 10, 10, 0.82));
+}
+
+.nextTitle {
+  font-family: v.$font-display;
+  font-size: clamp(2.6rem, 6vw, 6rem);
+  line-height: 0.95;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+
+  span {
+    font-size: 0.45em;
+    color: v.$brass;
+  }
+}

@@ -1,0 +1,1211 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+// ================= Hero =================
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 640px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 55%, var(--c-hero-spot), transparent 70%),
+    radial-gradient(ellipse 90% 70% at 50% 110%, var(--c-hero-depth), transparent 70%),
+    v.$obsidian;
+}
+
+.heroGlow {
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  width: min(80vw, 900px);
+  aspect-ratio: 2.4;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(closest-side, var(--c-hero-glow), transparent);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.heroTop {
+  position: absolute;
+  top: calc(var(--header-h) + 1.2rem);
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: v.$gutter;
+
+  @include m.respond-to(tablet) {
+    padding-inline: v.$gutter-tablet;
+  }
+
+  span {
+    @include m.label;
+
+    color: v.$cream-mute;
+  }
+
+  span:nth-child(2) {
+    display: none;
+
+    @include m.respond-to(tablet) {
+      display: inline;
+    }
+  }
+}
+
+.heroCrest {
+  display: none;
+}
+
+.heroWord {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  transform: translateY(-78%);
+  font-family: v.$font-display;
+  font-weight: 300;
+  font-size: clamp(7rem, 29vw, 30rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+
+  span {
+    display: inline-block;
+    padding-bottom: 0.05em;
+    background: linear-gradient(180deg, var(--c-word-from) 15%, var(--c-word-to) 92%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+:global(.js) .heroWord span {
+  transform: translateY(105%);
+}
+
+:global(.js) .heroStage {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :global(.js) .heroWord span {
+    transform: none;
+  }
+
+  :global(.js) .heroStage {
+    opacity: 1;
+  }
+}
+
+.heroStage {
+  position: absolute;
+  inset: 5% 0 12%;
+  z-index: 2;
+
+  @include m.respond-to(tablet) {
+    inset: 2% 0 5%;
+  }
+}
+
+.heroHint {
+  @include m.label;
+
+  position: absolute;
+  left: 50%;
+  bottom: max(22%, 7.5rem);
+  z-index: 3;
+  display: none;
+  align-items: center;
+  gap: 0.55rem;
+  transform: translateX(-50%);
+  padding: 0.45rem 0.85rem;
+  border: 1px solid v.$cream-faint;
+  border-radius: 999px;
+  color: v.$cream-mute;
+  background: var(--c-header-scrolled);
+  backdrop-filter: blur(10px);
+  font-size: 0.58rem;
+  pointer-events: none;
+  letter-spacing: 0.22em;
+
+  span {
+    font-size: 0.85rem;
+    letter-spacing: 0;
+    color: v.$brass-light;
+  }
+
+  @include m.respond-to(tablet) {
+    display: inline-flex;
+  }
+}
+
+.heroBottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  display: grid;
+  gap: 1.5rem;
+  align-items: end;
+  padding: 0 v.$gutter 1.8rem;
+  pointer-events: none;
+
+  > * {
+    pointer-events: auto;
+  }
+
+  @include m.respond-to(tablet) {
+    grid-template-columns: 1fr auto 1fr;
+    padding: 0 v.$gutter-tablet 2.4rem;
+
+    .heroScroll {
+      grid-column: 2;
+    }
+  }
+}
+
+.heroIntro {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 24rem;
+}
+
+.heroKicker {
+  @include m.label;
+
+  color: v.$brass;
+}
+
+.heroLead {
+  font-family: v.$font-display;
+  font-size: clamp(1.3rem, 1.8vw, 1.7rem);
+  line-height: 1.25;
+}
+
+.heroCtas {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 0.6rem;
+}
+
+.heroScroll {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+  min-height: 3.5rem;
+
+  @include m.respond-to(tablet) {
+    display: flex;
+  }
+
+  i {
+    position: relative;
+    width: 1px;
+    height: 48px;
+    background: v.$cream-faint;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: v.$brass;
+      animation: scroll-line 2.2s v.$ease-inout infinite;
+    }
+  }
+}
+
+@keyframes scroll-line {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  60%,
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+// ================= Manifesto =================
+.manifesto {
+  position: relative;
+}
+
+.manifestoGrid {
+  display: grid;
+  gap: 2.5rem;
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: 1fr 3fr;
+    gap: 4rem;
+  }
+}
+
+.manifestoAside {
+  display: grid;
+  gap: 1.2rem;
+  align-content: start;
+  max-width: 18rem;
+}
+
+.manifestoCrest {
+  position: relative;
+  width: 96px;
+  aspect-ratio: 1;
+  opacity: 0.95;
+  @include m.crest-disc;
+}
+
+.manifestoText {
+  font-family: v.$font-display;
+  font-weight: 300;
+  font-size: clamp(2rem, 4.4vw, 4.6rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+
+.manifestoSign {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem 3rem;
+  margin-top: 2.5rem;
+}
+
+.manifestoSign {
+  font-family: v.$font-display;
+  font-style: italic;
+  font-size: 2.2rem;
+  color: v.$brass-light;
+}
+
+.manifestoImages {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 4.5rem;
+
+  @include m.respond-to(tablet) {
+    grid-template-columns: 1.6fr 1fr 0.9fr;
+    align-items: end;
+    gap: 2rem;
+  }
+}
+
+.manifestoImgA {
+  aspect-ratio: 16 / 11;
+}
+
+.manifestoImgB {
+  aspect-ratio: 3 / 4;
+
+  @include m.respond-to(tablet) {
+    transform: translateY(-5rem);
+  }
+}
+
+.manifestoCaption {
+  display: grid;
+  align-self: center;
+
+  > div {
+    display: grid;
+    gap: 1rem;
+  }
+}
+
+// ================= Chapters =================
+.chapters {
+  position: relative;
+  overflow: hidden;
+  background: v.$ink;
+  border-block: v.$hairline;
+  @include m.on-ink;
+}
+
+.chapterTrack {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 5rem v.$gutter;
+
+  @include m.respond-to(tablet) {
+    padding-inline: v.$gutter-tablet;
+  }
+
+  @include m.respond-to(laptop) {
+    flex-direction: row;
+    align-items: center;
+    gap: 7vw;
+    width: max-content;
+    height: 100svh;
+    padding: calc(var(--header-h) + 2rem) 6vw 4rem;
+  }
+}
+
+.chapterIntro {
+  display: grid;
+  gap: 1.6rem;
+  max-width: 34rem;
+
+  @include m.respond-to(laptop) {
+    width: 34vw;
+    flex-shrink: 0;
+  }
+}
+
+.chapterHint {
+  @include m.label;
+
+  display: none;
+  color: v.$brass;
+
+  span {
+    display: inline-block;
+    margin-left: 0.6rem;
+    animation: nudge 1.8s v.$ease-inout infinite;
+  }
+
+  @include m.respond-to(laptop) {
+    display: block;
+  }
+}
+
+@keyframes nudge {
+  50% {
+    transform: translateX(8px);
+  }
+}
+
+.chapter {
+  position: relative;
+  display: grid;
+  gap: 1.6rem;
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: 24vw 22vw;
+    align-items: end;
+    gap: 3vw;
+    flex-shrink: 0;
+  }
+}
+
+.chapterYear {
+  position: absolute;
+  top: -3.2rem;
+  right: 0;
+  z-index: 0;
+  font-family: v.$font-display;
+  font-weight: 300;
+  font-size: clamp(5rem, 13vw, 14rem);
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1px v.$brass-dim;
+  pointer-events: none;
+
+  @include m.respond-to(laptop) {
+    top: -8vh;
+    right: -2vw;
+  }
+}
+
+.chapterImage {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+
+  @include m.respond-to(laptop) {
+    height: 62vh;
+    aspect-ratio: auto;
+  }
+
+  img {
+    object-fit: cover;
+    transform: scale(1.25);
+  }
+}
+
+.chapterCaption {
+  @include m.label;
+
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  font-size: 0.6rem;
+  color: v.$cream;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+}
+
+.chapterText {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1rem;
+}
+
+.chapterNum {
+  @include m.label;
+
+  color: v.$brass;
+}
+
+.chapterEnd {
+  max-width: 24rem;
+
+  @include m.respond-to(laptop) {
+    width: 26vw;
+    flex-shrink: 0;
+    padding-right: 6vw;
+  }
+}
+
+.chapterProgress {
+  position: absolute;
+  left: 6vw;
+  right: 6vw;
+  bottom: 2.2rem;
+  display: none;
+  height: 1px;
+  background: v.$cream-faint;
+
+  div {
+    height: 100%;
+    background: v.$brass;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  @include m.respond-to(laptop) {
+    display: block;
+  }
+}
+
+// ================= Signature =================
+.signatureGrid {
+  display: grid;
+  gap: 3rem;
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: 1.15fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+}
+
+.signatureMedia {
+  position: relative;
+}
+
+.signatureImg {
+  aspect-ratio: 763 / 535;
+}
+
+.signatureStamp {
+  position: absolute;
+  right: -0.5rem;
+  bottom: -2rem;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  width: 128px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: v.$obsidian;
+  color: v.$cream;
+  font-family: v.$font-display;
+  font-style: italic;
+  font-size: 1rem;
+  box-shadow: 0 0 0 1px v.$brass-dim, 0 0 0 8px v.$ivory, 0 0 0 9px v.$brass-dim;
+
+  strong {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2.2rem;
+    color: v.$brass-light;
+    line-height: 1;
+  }
+
+  @include m.respond-to(tablet) {
+    right: -2rem;
+  }
+}
+
+.signatureCopy {
+  display: grid;
+  gap: 1.5rem;
+
+  :global(.accent) {
+    color: v.$brass;
+  }
+}
+
+.signatureList {
+  display: grid;
+  gap: 0.2rem;
+  border-top: v.$hairline-dark;
+
+  li {
+    position: relative;
+    padding: 0.85rem 0 0.85rem 1.8rem;
+    border-bottom: v.$hairline-dark;
+    font-size: 0.95rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 0.8rem;
+      height: 1px;
+      background: v.$brass;
+    }
+  }
+}
+
+.signatureBuy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem 2.5rem;
+  margin-top: 0.5rem;
+}
+
+.signatureDetails {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 5rem;
+
+  @include m.respond-to(tablet) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+.signatureDetail {
+  display: grid;
+  gap: 0.9rem;
+
+  figcaption {
+    @include m.label;
+
+    color: rgba(10, 10, 10, 0.6);
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.signatureDetailImg {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+    transition: transform 1.4s v.$ease-premium;
+  }
+}
+
+// ================= Anatomy =================
+.anatomy {
+  position: relative;
+  display: grid;
+  background:
+    radial-gradient(ellipse 50% 40% at 30% 50%, rgba(176, 141, 87, 0.1), transparent 70%),
+    v.$obsidian;
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: 1.4fr 1fr;
+  }
+}
+
+.anatomySticky {
+  position: sticky;
+  top: 0;
+  height: 55svh;
+  z-index: 0;
+
+  @include m.respond-to(laptop) {
+    height: 100svh;
+  }
+}
+
+.anatomyStage {
+  position: absolute;
+  inset: -4% -2% 8% -2%;
+}
+
+.anatomyHud {
+  position: absolute;
+  left: v.$gutter;
+  bottom: 1.5rem;
+  display: none;
+  gap: 1.2rem;
+
+  @include m.respond-to(laptop) {
+    display: grid;
+    left: v.$gutter-desktop;
+    bottom: 3rem;
+  }
+}
+
+.anatomyDots {
+  display: flex;
+  gap: 1.6rem;
+
+  li {
+    @include m.label;
+
+    display: grid;
+    gap: 0.4rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid v.$cream-faint;
+    color: v.$cream-mute;
+    transition: color 0.5s ease, border-color 0.5s ease;
+
+    span {
+      color: inherit;
+    }
+  }
+}
+
+.anatomyDotActive {
+  color: v.$cream !important;
+  border-top-color: v.$brass !important;
+
+  span {
+    color: v.$brass !important;
+  }
+}
+
+.anatomySteps {
+  position: relative;
+  z-index: 1;
+  padding: 0 v.$gutter 4rem;
+
+  @include m.respond-to(tablet) {
+    padding-inline: v.$gutter-tablet;
+  }
+
+  @include m.respond-to(laptop) {
+    padding: 0 v.$gutter-desktop 20vh 0;
+  }
+}
+
+.anatomyIntro {
+  display: grid;
+  gap: 1.3rem;
+  padding-block: 3rem 2rem;
+
+  @include m.respond-to(laptop) {
+    min-height: 60svh;
+    align-content: center;
+    padding-top: 20vh;
+  }
+}
+
+.anatomyStep {
+  display: grid;
+  gap: 1rem;
+  padding: 2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  background: rgba(17, 17, 17, 0.85);
+  border: v.$hairline;
+  backdrop-filter: blur(8px);
+  opacity: 0.4;
+  transition:
+    opacity 0.7s ease,
+    border-color 0.7s ease;
+
+  @include m.respond-to(laptop) {
+    min-height: 70svh;
+    align-content: center;
+    padding: 0 0 0 2.5rem;
+    margin: 0;
+    background: none;
+    border: none;
+    border-left: v.$hairline;
+    backdrop-filter: none;
+  }
+}
+
+.anatomyStepActive {
+  opacity: 1;
+  border-color: v.$brass-dim;
+
+  @include m.respond-to(laptop) {
+    border-left-color: v.$brass;
+  }
+}
+
+.anatomyNum {
+  font-family: v.$font-display;
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px v.$brass;
+}
+
+.anatomyLabel {
+  @include m.label;
+
+  color: v.$brass;
+}
+
+.anatomyStat {
+  font-family: v.$font-display;
+  font-style: italic;
+  font-size: 1.6rem;
+  color: v.$brass-light;
+}
+
+// ================= Collection preview =================
+.collectionGrid {
+  display: grid;
+  gap: 3rem 1.5rem;
+
+  @include m.respond-to(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: repeat(4, 1fr);
+
+    > *:nth-child(even) {
+      margin-top: 4rem;
+    }
+  }
+}
+
+// ================= Numbers =================
+.numbers {
+  position: relative;
+  overflow: hidden;
+  padding-block: 7rem;
+  @include m.on-ink;
+
+  @include m.respond-to(tablet) {
+    padding-block: 10rem;
+  }
+}
+
+.numbersBg {
+  position: absolute !important;
+  inset: 0;
+}
+
+.numbersShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.6) 50%, rgba(10, 10, 10, 0.92));
+}
+
+.numbersInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 4rem;
+}
+
+.numbersHead {
+  display: grid;
+  gap: 1.3rem;
+  max-width: 44rem;
+}
+
+.numbersGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 1.5rem;
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  li {
+    display: grid;
+    gap: 0.8rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid v.$brass-dim;
+  }
+}
+
+.numbersValue {
+  font-family: v.$font-display;
+  font-weight: 300;
+  font-size: clamp(3rem, 6vw, 6.5rem);
+  line-height: 0.9;
+  color: v.$cream;
+  font-variant-numeric: tabular-nums;
+}
+
+.numbersLabel {
+  @include m.label;
+
+  color: v.$cream-dim;
+  line-height: 1.6;
+}
+
+// ================= Technologies =================
+.tech {
+  background: v.$ink;
+  @include m.on-ink;
+}
+
+.techLayout {
+  display: grid;
+  gap: 2.5rem;
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: 1fr 1.6fr;
+    gap: 3rem;
+    align-items: start;
+  }
+}
+
+.techVisual {
+  position: relative;
+
+  @include m.respond-to(laptop) {
+    position: sticky;
+    top: calc(var(--header-h) + 2rem);
+  }
+}
+
+.techImg {
+  aspect-ratio: 4 / 5;
+
+  img {
+    object-position: 40% center !important;
+  }
+}
+
+.techTag {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.9rem 1.1rem;
+  background: rgba(10, 10, 10, 0.78);
+  backdrop-filter: blur(10px);
+  border: v.$hairline-brass;
+  font-size: 0.85rem;
+
+  span {
+    @include m.label;
+
+    color: v.$brass;
+  }
+}
+
+.techGrid {
+  display: grid;
+  gap: 1px;
+  background: v.$cream-faint;
+  border: v.$hairline;
+
+  @include m.respond-to(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.techGridWide {
+  @include m.respond-to(laptop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.techLayout:has(.techGridWide) {
+  grid-template-columns: 1fr;
+}
+
+.techCard {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  padding: 2rem 1.6rem;
+  background: v.$ink;
+  transition: background-color 0.6s ease;
+
+  &:hover {
+    background: v.$ink-soft;
+
+    .techStat strong {
+      color: v.$brass-light;
+    }
+  }
+}
+
+.techTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.techNum {
+  @include m.label;
+
+  color: v.$brass;
+}
+
+.techName {
+  font-family: v.$font-display;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: v.$cream-dim;
+}
+
+.techTitle {
+  font-family: v.$font-display;
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 1.1;
+}
+
+.techStat {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  padding-top: 1rem;
+  margin-top: 0.4rem;
+  border-top: v.$hairline;
+
+  strong {
+    font-family: v.$font-display;
+    font-weight: 400;
+    font-size: 1.8rem;
+    transition: color 0.4s ease;
+  }
+
+  span {
+    @include m.label;
+
+    font-size: 0.6rem;
+    color: v.$cream-mute;
+  }
+}
+
+// ================= Atelier mosaic =================
+.mosaicGrid {
+  display: grid;
+  gap: 1.5rem;
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 2rem;
+  }
+}
+
+.mosaicCopy {
+  display: grid;
+  gap: 1.5rem;
+  align-content: center;
+
+  @include m.respond-to(laptop) {
+    grid-column: 1 / 6;
+    grid-row: 1 / 3;
+    padding-right: 2rem;
+  }
+}
+
+.mosaicCta {
+  margin-top: 0.5rem;
+}
+
+.mosaicA {
+  aspect-ratio: 4 / 5;
+
+  @include m.respond-to(laptop) {
+    grid-column: 7 / 13;
+    grid-row: 1 / 2;
+    aspect-ratio: 5 / 4;
+  }
+}
+
+.mosaicB {
+  aspect-ratio: 1;
+
+  @include m.respond-to(laptop) {
+    grid-column: 6 / 9;
+    grid-row: 2 / 3;
+  }
+}
+
+.mosaicC {
+  aspect-ratio: 3 / 4;
+
+  @include m.respond-to(laptop) {
+    grid-column: 9 / 13;
+    grid-row: 2 / 4;
+    aspect-ratio: 4 / 5;
+  }
+}
+
+.mosaicD {
+  aspect-ratio: 16 / 10;
+
+  @include m.respond-to(laptop) {
+    grid-column: 2 / 9;
+    grid-row: 3 / 4;
+  }
+}
+
+// ================= Quote =================
+.quote {
+  border-block: v.$hairline;
+}
+
+.quoteInner {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.quotePortrait {
+  position: relative;
+  width: 120px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid v.$brass;
+
+  img {
+    object-fit: cover;
+    filter: grayscale(0.4);
+  }
+}
+
+.quoteMark {
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: v.$font-display;
+  font-size: 24rem;
+  line-height: 1;
+  color: v.$brass-faint;
+  pointer-events: none;
+}
+
+.quoteText {
+  position: relative;
+  max-width: 20ch;
+  font-family: v.$font-display;
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(2.2rem, 5vw, 5rem);
+  line-height: 1.05;
+}
+
+.quoteBy {
+  display: grid;
+  gap: 0.4rem;
+
+  span {
+    font-family: v.$font-display;
+    font-size: 1.4rem;
+    color: v.$brass-light;
+  }
+
+  small {
+    @include m.label;
+
+    color: v.$cream-mute;
+  }
+}
+
+// ================= Journal =================
+.journalGrid {
+  display: grid;
+  gap: 3rem 2rem;
+
+  @include m.respond-to(tablet) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// ================= Visit =================
+.visit {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  @include m.on-ink;
+}
+
+.visitBg {
+  position: absolute !important;
+  inset: 0;
+}
+
+.visitShade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.1) 65%),
+    linear-gradient(180deg, rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.35) 40%, rgba(10, 10, 10, 0.95));
+}
+
+.visitInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 2rem;
+  padding-block: 8rem 4rem;
+}
+
+.visitFoot {
+  display: grid;
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: v.$hairline;
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: 1.4fr 1fr auto;
+    align-items: end;
+  }
+
+  p {
+    max-width: 36rem;
+  }
+}
+
+.visitCities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+
+  li {
+    font-family: v.$font-display;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: v.$cream;
+  }
+
+  li + li::before {
+    content: "·";
+    margin-right: 1.5rem;
+    color: v.$brass;
+  }
+}

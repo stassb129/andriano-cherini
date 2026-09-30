@@ -1,0 +1,68 @@
+// ============================================
+// Andriano Cherini — design tokens
+// Colours resolve from CSS variables (theme).
+// ============================================
+
+// Surfaces & text (theme-aware)
+$obsidian: var(--c-bg);
+$ink: var(--c-ink);
+$ink-soft: var(--c-ink-soft);
+$cream: var(--c-fg);
+$cream-dim: var(--c-fg-dim);
+$cream-mute: var(--c-fg-mute);
+$cream-faint: var(--c-fg-faint);
+$ivory: var(--c-panel);
+$ivory-deep: var(--c-panel-deep);
+$brass: var(--c-brass);
+$brass-light: var(--c-brass-light);
+$brass-dim: var(--c-brass-dim);
+$brass-faint: var(--c-brass-faint);
+$navy: var(--c-navy);
+$umber: var(--c-umber);
+
+// Fixed inks for buttons / on-brass text (do not invert with theme)
+$ink-fixed: var(--c-ink-fixed);
+$paper-fixed: var(--c-paper-fixed);
+
+// Typography
+$font-display: var(--font-display), "Cormorant Garamond", Georgia, serif;
+$font-sans: var(--font-sans), -apple-system, "Helvetica Neue", sans-serif;
+
+$tracking-micro: 0.16em;
+$tracking-wide: 0.28em;
+
+$fs-micro: 0.6875rem;
+$fs-small: 0.875rem;
+$fs-body: 1rem;
+$fs-lg: 1.25rem;
+
+// Layout
+$container-max: 1600px;
+$gutter: 1.25rem;
+$gutter-tablet: 2.5rem;
+$gutter-desktop: 4rem;
+
+$section-y: 5rem;
+$section-y-tablet: 7rem;
+
+$hairline: 1px solid $cream-faint;
+$hairline-brass: 1px solid $brass-dim;
+$hairline-dark: 1px solid var(--c-line-strong);
+
+// Motion
+$ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+$ease-inout: cubic-bezier(0.76, 0, 0.24, 1);
+
+// Breakpoints
+$bp-tablet: 768px;
+$bp-laptop: 1100px;
+$bp-desktop: 1440px;
+
+// Z-index
+$z-grain: 1;
+$z-header: 50;
+$z-menu: 60;
+$z-drawer: 70;
+$z-cursor: 90;
+$z-curtain: 100;
+$z-preloader: 110;

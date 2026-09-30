@@ -1,0 +1,897 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+// ================= Header =================
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: v.$z-header;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: var(--header-h);
+  padding-inline: v.$gutter;
+  color: v.$cream;
+  transition:
+    transform 0.8s v.$ease-premium,
+    background-color 0.6s ease,
+    backdrop-filter 0.6s ease,
+    box-shadow 0.6s ease;
+
+  @include m.respond-to(tablet) {
+    padding-inline: v.$gutter-tablet;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: v.$cream-faint;
+    transform: scaleX(0);
+    transition: transform 1s v.$ease-premium;
+  }
+}
+
+/*
+  Light theme: keep a frosted bar from the first paint so dark nav/crest
+  never sink into dark page-hero photos while the bar is still "transparent".
+  Dark theme keeps the classic clear → glass on scroll.
+*/
+:global(html:not([data-theme="dark"])) .header {
+  background: var(--c-header-scrolled);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 40px rgba(28, 24, 20, 0.06);
+
+  &::after {
+    transform: scaleX(1);
+  }
+}
+
+.headerScrolled {
+  background: var(--c-header-scrolled);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  &::after {
+    transform: scaleX(1);
+  }
+}
+
+.headerHidden {
+  transform: translateY(-100%);
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.navLinks {
+  display: none;
+  gap: 2.2rem;
+
+  @include m.respond-to(laptop) {
+    display: flex;
+  }
+}
+
+.navLink {
+  @include m.label;
+  @include m.focus-ring;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: v.$cream;
+  padding-block: 0.4rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: v.$brass;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.6s v.$ease-premium;
+  }
+
+  &:hover::after,
+  &.navActive::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+.navActive {
+  color: v.$brass-light;
+}
+
+.menuBtn {
+  @include m.focus-ring;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+
+  @include m.respond-to(laptop) {
+    display: none;
+  }
+}
+
+.menuLabel {
+  @include m.label;
+}
+
+.burger {
+  position: relative;
+  width: 26px;
+  height: 10px;
+
+  i {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transition: transform 0.6s v.$ease-premium, top 0.6s v.$ease-premium;
+  }
+
+  i:first-child {
+    top: 0;
+  }
+
+  i:last-child {
+    top: 9px;
+    width: 65%;
+  }
+}
+
+.burgerOpen i:first-child {
+  top: 5px;
+  transform: rotate(45deg);
+}
+
+.burgerOpen i:last-child {
+  top: 5px;
+  width: 100%;
+  transform: rotate(-45deg);
+}
+
+.brand {
+  @include m.focus-ring;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.brandCrest {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  @include m.crest-disc;
+}
+
+.brandWord {
+  display: none;
+  font-family: v.$font-display;
+  font-size: 1.25rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  line-height: 1;
+
+  small {
+    display: block;
+    margin-top: 0.35rem;
+    font-family: v.$font-sans;
+    font-size: 0.56rem;
+    letter-spacing: 0.4em;
+    color: v.$brass;
+  }
+
+  @include m.respond-to(tablet) {
+    display: block;
+  }
+}
+
+.navRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+.hideMobile {
+  display: none;
+
+  @include m.respond-to(laptop) {
+    display: inline-flex;
+  }
+}
+
+.bagCount {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.4rem;
+  height: 1.4rem;
+  padding-inline: 0.3rem;
+  border: 1px solid v.$brass;
+  border-radius: 999px;
+  font-size: 0.6rem;
+  letter-spacing: 0;
+  color: v.$brass-light;
+}
+
+.lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-right: 0.4rem;
+
+  > span {
+    color: v.$cream-mute;
+    font-size: 0.65rem;
+  }
+}
+
+.langBtn {
+  @include m.label;
+  @include m.focus-ring;
+
+  padding: 0.2rem 0.15rem;
+  color: v.$cream-mute;
+  font-size: 0.65rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: v.$cream;
+  }
+}
+
+.langActive {
+  color: v.$brass-light;
+}
+
+.themeBtn {
+  @include m.focus-ring;
+
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem;
+  border-radius: 999px;
+}
+
+.themeTrack {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 3.1rem;
+  height: 1.55rem;
+  padding: 0.18rem;
+  border: 1px solid v.$cream-faint;
+  border-radius: 999px;
+  background: v.$cream-faint;
+}
+
+.themeSun,
+.themeMoon {
+  position: relative;
+  z-index: 1;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin: 0 auto;
+  border-radius: 50%;
+  opacity: 0.45;
+  transition: opacity 0.35s v.$ease-premium;
+}
+
+.themeSun {
+  background: radial-gradient(circle at 40% 40%, v.$brass-light, v.$brass);
+  box-shadow: 0 0 0 1px rgba(143, 106, 56, 0.2);
+}
+
+.themeMoon {
+  background: transparent;
+  box-shadow:
+    inset -0.22rem 0 0 0 v.$cream-dim,
+    0 0 0 1px transparent;
+}
+
+.themeThumb {
+  position: absolute;
+  top: 0.15rem;
+  left: 0.15rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background: v.$brass;
+  box-shadow: 0 2px 8px rgba(28, 24, 20, 0.18);
+  transition: transform 0.4s v.$ease-premium;
+}
+
+.themeTrack[data-theme-active="light"] {
+  .themeSun {
+    opacity: 1;
+  }
+
+  .themeThumb {
+    transform: translateX(0);
+  }
+}
+
+.themeTrack[data-theme-active="dark"] {
+  .themeMoon {
+    opacity: 1;
+  }
+
+  .themeThumb {
+    transform: translateX(1.45rem);
+    background: v.$brass-light;
+  }
+}
+
+// ================= Menu =================
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: v.$z-menu - 11;
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--header-h) + 2rem) v.$gutter 1.5rem;
+  background: v.$obsidian;
+  visibility: hidden;
+  clip-path: inset(0 0 100% 0);
+
+  @include m.respond-to(tablet) {
+    padding-inline: v.$gutter-tablet;
+  }
+}
+
+.menuInner {
+  flex: 1;
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+
+  @include m.respond-to(tablet) {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+.menuRow {
+  overflow: hidden;
+  border-bottom: v.$hairline;
+}
+
+.menuItem {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  padding-block: 0.6rem;
+  font-family: v.$font-display;
+  font-weight: 300;
+  font-size: clamp(2.6rem, 9vw, 5.5rem);
+  line-height: 1.05;
+  transition: color 0.4s ease, padding-left 0.6s v.$ease-premium;
+
+  &:hover {
+    color: v.$brass-light;
+    padding-left: 1rem;
+  }
+}
+
+.menuNum {
+  @include m.label;
+
+  color: v.$brass;
+}
+
+.menuVisual {
+  position: relative;
+  display: none;
+  aspect-ratio: 4 / 5;
+  max-height: 68vh;
+  overflow: hidden;
+
+  @include m.respond-to(tablet) {
+    display: block;
+  }
+}
+
+.menuImage {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.08);
+  transition:
+    opacity 0.8s ease,
+    transform 1.4s v.$ease-premium;
+}
+
+.menuImageActive {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.menuFoot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.6rem 2rem;
+  padding-top: 1.5rem;
+  border-top: v.$hairline;
+
+  span {
+    @include m.label;
+
+    color: v.$cream-mute;
+  }
+}
+
+// ================= Curtain =================
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: v.$z-curtain;
+  display: grid;
+  place-items: center;
+  background: v.$ink;
+  visibility: hidden;
+  transform: translateY(100%);
+  border-top: 1px solid v.$brass-dim;
+}
+
+.curtainMark {
+  text-align: center;
+
+  span {
+    display: block;
+    font-family: v.$font-display;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  em {
+    @include m.label;
+
+    display: block;
+    margin-top: 1rem;
+    font-style: normal;
+    color: v.$brass;
+  }
+}
+
+// ================= Preloader =================
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: v.$z-preloader;
+  display: grid;
+  place-items: center;
+  background: v.$obsidian;
+  clip-path: inset(0 0 0% 0);
+}
+
+.preContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.preCrest {
+  position: relative;
+  width: min(52vw, 220px);
+  aspect-ratio: 1;
+  opacity: 0;
+  @include m.crest-disc;
+}
+
+.preWord {
+  display: flex;
+  overflow: hidden;
+  font-family: v.$font-display;
+  font-style: italic;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  color: v.$cream;
+
+  span {
+    display: inline-block;
+    transform: translateY(110%);
+  }
+}
+
+.preBar {
+  width: 180px;
+  height: 1px;
+  background: v.$cream-faint;
+
+  i {
+    display: block;
+    height: 100%;
+    background: v.$brass;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+}
+
+.preCount {
+  @include m.label;
+
+  color: v.$brass;
+  font-variant-numeric: tabular-nums;
+}
+
+// ================= Cursor =================
+.cursorDot,
+.cursorRing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: v.$z-cursor;
+  pointer-events: none;
+  opacity: 0;
+  border-radius: 50%;
+}
+
+.cursorDot {
+  width: 6px;
+  height: 6px;
+  background: v.$brass;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cursorDotHide {
+  opacity: 0 !important;
+}
+
+.cursorRing {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid v.$brass-dim;
+  transition:
+    width 0.5s v.$ease-premium,
+    height 0.5s v.$ease-premium,
+    background-color 0.5s ease,
+    border-color 0.5s ease;
+
+  span {
+    @include m.label;
+
+    font-size: 0.6rem;
+    color: v.$obsidian;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.cursorLink {
+  width: 64px;
+  height: 64px;
+  border-color: v.$brass;
+  background: rgba(176, 141, 87, 0.08);
+}
+
+.cursorLabel {
+  width: 96px;
+  height: 96px;
+  border-color: v.$brass;
+  background: v.$brass;
+
+  span {
+    opacity: 1;
+  }
+}
+
+// ================= Bag =================
+.bag {
+  position: fixed;
+  inset: 0;
+  z-index: v.$z-drawer;
+  pointer-events: none;
+}
+
+.bagOpen {
+  pointer-events: auto;
+}
+
+.bagBackdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  cursor: pointer;
+
+  .bagOpen & {
+    opacity: 1;
+  }
+}
+
+.bagPanel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 460px);
+  padding: 1.5rem;
+  background: v.$ink;
+  border-left: v.$hairline-brass;
+  transform: translateX(100%);
+  transition: transform 0.8s v.$ease-premium;
+  overflow-y: auto;
+
+  .bagOpen & {
+    transform: translateX(0);
+  }
+
+  @include m.respond-to(tablet) {
+    padding: 2rem 2.2rem;
+  }
+}
+
+.bagHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: v.$hairline;
+}
+
+.bagClose {
+  @include m.label;
+  @include m.focus-ring;
+}
+
+.bagEmpty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.bagList {
+  flex: 1;
+  padding-block: 1rem;
+}
+
+.bagItem {
+  display: grid;
+  grid-template-columns: 84px 1fr auto;
+  gap: 1rem;
+  padding-block: 1.1rem;
+  border-bottom: v.$hairline;
+}
+
+.bagThumb {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.bagName {
+  font-family: v.$font-display;
+  font-size: 1.4rem;
+}
+
+.bagRemove {
+  @include m.label;
+
+  margin-top: 0.6rem;
+  color: v.$cream-mute;
+
+  &:hover {
+    color: v.$brass;
+  }
+}
+
+.bagPrice {
+  font-family: v.$font-display;
+  font-size: 1.2rem;
+}
+
+.bagFoot {
+  display: grid;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: v.$hairline;
+}
+
+.bagTotal {
+  display: flex;
+  justify-content: space-between;
+  font-family: v.$font-display;
+  font-size: 1.5rem;
+}
+
+// ================= Footer =================
+.footer {
+  position: relative;
+  padding-top: 6rem;
+  background: v.$ink;
+  border-top: v.$hairline-brass;
+  overflow: hidden;
+  @include m.on-ink;
+}
+
+.footerTop {
+  display: grid;
+  gap: 4rem;
+
+  @include m.respond-to(laptop) {
+    grid-template-columns: 1fr 1.4fr;
+  }
+}
+
+.footerLetter {
+  display: grid;
+  gap: 1.4rem;
+  align-content: start;
+  max-width: 34rem;
+}
+
+.footerForm {
+  display: grid;
+  gap: 0.75rem;
+  border-bottom: 1px solid v.$brass;
+  padding-bottom: 0.4rem;
+
+  input {
+    width: 100%;
+    min-width: 0;
+    padding: 0.85rem 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid v.$cream-faint;
+    color: v.$cream;
+    font-size: 1rem;
+
+    &::placeholder {
+      color: v.$cream-mute;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom-color: v.$brass;
+    }
+  }
+}
+
+.footerSubmit {
+  @include m.label;
+  @include m.focus-ring;
+
+  justify-self: start;
+  margin-top: 0.35rem;
+  color: v.$brass-light;
+}
+
+.footerThanks {
+  font-family: v.$font-display;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: v.$brass-light;
+}
+
+.footerCols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 2rem;
+
+  @include m.respond-to(tablet) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  li + li {
+    margin-top: 0.7rem;
+  }
+}
+
+.footerHead {
+  @include m.label;
+
+  margin-bottom: 1.3rem;
+  color: v.$brass;
+}
+
+.footerLink {
+  font-size: 0.95rem;
+  color: v.$cream-dim;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: v.$cream;
+  }
+}
+
+.footerAddress {
+  font-style: normal;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: v.$cream-dim;
+
+  a:hover {
+    color: v.$brass-light;
+  }
+}
+
+.footerMark {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  margin-top: 5rem;
+}
+
+.footerCrest {
+  position: relative;
+  width: 150px;
+  aspect-ratio: 1;
+  margin-bottom: -1.5rem;
+  z-index: 1;
+
+  img {
+    object-fit: contain;
+  }
+}
+
+.footerWord {
+  font-family: v.$font-display;
+  font-weight: 300;
+  font-size: clamp(3rem, 13.5vw, 16rem);
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px v.$brass-dim;
+}
+
+.footerBottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-block: 1.8rem;
+  margin-top: 2rem;
+  border-top: v.$hairline;
+
+  span,
+  a,
+  button {
+    @include m.label;
+
+    font-size: 0.6rem;
+    color: v.$cream-mute;
+  }
+
+  a:hover,
+  button:hover {
+    color: v.$brass;
+  }
+}
+
+.footerLegal {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footerTop2 {
+  @include m.focus-ring;
+}
