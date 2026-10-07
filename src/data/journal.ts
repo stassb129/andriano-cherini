@@ -40,7 +40,7 @@ export const articles: Article[] = [
         type: "p",
         text: {
           en: "Andriano Cherini worked in the footwear industry for years and kept hearing the same complaint: the shoes look right, but feet are tired by evening. In 2014 he founded a small brand in the Marche with one task — classic men's shoes you can wear all day.",
-          ru: "Андриано Керини много лет работал в обувной индустрии и постоянно слышал одно и то же: туфли выглядят хорошо, но к вечеру ноги устают. В 2014 году он основал небольшой бренд в Марке с одной задачей — классические мужские туфли, которые можно носить весь день.",
+          ru: "Андриано Черини много лет работал в обувной индустрии и постоянно слышал одно и то же: туфли выглядят хорошо, но к вечеру ноги устают. В 2014 году он основал небольшой бренд в Марке с одной задачей — классические мужские туфли, которые можно носить весь день.",
         },
       },
       {

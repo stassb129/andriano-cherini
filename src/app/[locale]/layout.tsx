@@ -69,6 +69,7 @@ export default async function RootLayout({
     "@type": "Organization",
     "@id": `${SITE_URL}/#organization`,
     name: SITE_NAME,
+    alternateName: "Андриано Черини",
     url: SITE_URL,
     logo: absoluteUrl("/icon-512.png"),
     foundingDate: "2014",

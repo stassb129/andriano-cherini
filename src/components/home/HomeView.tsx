@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import Hero from "@/components/home/Hero";
+import Hero from "@/components/home/Hero/Hero";
 import Manifesto from "@/components/home/Manifesto";
 import Chapters from "@/components/home/Chapters";
 import Signature from "@/components/home/Signature";

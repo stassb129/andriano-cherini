@@ -14,7 +14,7 @@ export const chapters: Chapter[] = [
     title: { en: "The start", ru: "Начало" },
     text: {
       en: "Andriano Cherini founds a small brand in the Marche. The aim: classic men's shoes that stay comfortable until evening.",
-      ru: "Андриано Керини основывает небольшой бренд в Марке. Цель — классические мужские туфли, в которых удобно до вечера.",
+      ru: "Андриано Черини основывает небольшой бренд в Марке. Цель — классические мужские туфли, в которых удобно до вечера.",
     },
     image: "/images/atelier/master.jpg",
     caption: { en: "Fermo, 2014", ru: "Фермо, 2014" },

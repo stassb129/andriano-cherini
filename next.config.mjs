@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 
 const STATIC_CACHE = "public, max-age=604800, stale-while-revalidate=2592000";
+// Matches vercel.json. Rename the .glb file when replacing the model, or browsers keep the old one.
+const IMMUTABLE_CACHE = "public, max-age=31536000, immutable";
 
 const nextConfig = {
+  output: "standalone",
   reactStrictMode: true,
   poweredByHeader: false,
   sassOptions: {
@@ -11,6 +14,7 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [390, 640, 828, 1080, 1280, 1600, 1920],
+    qualities: [75, 85],
     minimumCacheTTL: 2678400,
   },
   experimental: {
@@ -29,7 +33,7 @@ const nextConfig = {
         ],
       },
       { source: "/images/:path*", headers: [{ key: "Cache-Control", value: STATIC_CACHE }] },
-      { source: "/models/:path*", headers: [{ key: "Cache-Control", value: STATIC_CACHE }] },
+      { source: "/models/:path*", headers: [{ key: "Cache-Control", value: IMMUTABLE_CACHE }] },
       { source: "/:file(favicon.ico|apple-touch-icon.png|icon-192.png|icon-512.png|og.jpg)", headers: [{ key: "Cache-Control", value: STATIC_CACHE }] },
     ];
   },

@@ -53,10 +53,17 @@ export default function Header() {
     lockScroll(menuOpen);
   }, [menuOpen]);
 
+  const onHero = pathname === "/" && !scrolled && !menuOpen;
+
   return (
     <>
       <header
-        className={[styles.header, scrolled && styles.headerScrolled, hidden && !menuOpen && styles.headerHidden]
+        className={[
+          styles.header,
+          scrolled && styles.headerScrolled,
+          hidden && !menuOpen && styles.headerHidden,
+          onHero && styles.headerOnHero,
+        ]
           .filter(Boolean)
           .join(" ")}
       >
