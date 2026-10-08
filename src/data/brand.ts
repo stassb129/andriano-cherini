@@ -20,21 +20,11 @@ export const chapters: Chapter[] = [
     caption: { en: "Fermo, 2014", ru: "Фермо, 2014" },
   },
   {
-    year: "2015",
-    title: { en: "Name and crest", ru: "Имя и герб" },
-    text: {
-      en: "The first pairs are released under the Cherini name. The crest follows: a lion and a unicorn holding the AC shield.",
-      ru: "Первые пары выходят под именем Cherini. Появляется герб: лев и единорог держат щит с инициалами AC.",
-    },
-    image: "/images/brand/crest.jpg",
-    caption: { en: "The crest, 2015", ru: "Герб, 2015" },
-  },
-  {
     year: "2016",
     title: { en: "The Fermo Derby", ru: "Fermo Derby" },
     text: {
-      en: "A warm cap-toe derby becomes the signature model — formal enough for the office, warm enough for winter streets.",
-      ru: "Тёплые дерби с мыском становятся фирменной моделью — достаточно строгие для офиса и достаточно тёплые для зимы.",
+      en: "A warm cap-toe derby — formal enough for the office, warm enough for winter streets. Open lacing, polished leather, soft lining.",
+      ru: "Тёплые дерби с мыском — достаточно строгие для офиса и достаточно тёплые для зимы. Открытая шнуровка, полированная кожа, мягкая подкладка.",
     },
     image: "/images/collection/fermo-derby-nero/08.jpg",
     caption: { en: "Fermo Derby", ru: "Fermo Derby" },
@@ -48,6 +38,16 @@ export const chapters: Chapter[] = [
     },
     image: "/images/collection/fermo-derby-moro/10.jpg",
     caption: { en: "Ammortizzo heel", ru: "Каблук Ammortizzo" },
+  },
+  {
+    year: "2021",
+    title: { en: "The Urbino Oxford", ru: "Urbino Oxford" },
+    text: {
+      en: "A closed-laced Oxford in croc-embossed leather joins the Fermo. Two silhouettes, each in black and dark brown.",
+      ru: "К Fermo присоединяется оксфорд на закрытой шнуровке из кожи с тиснением под крокодила. Два силуэта, каждый в чёрном и тёмно-коричневом.",
+    },
+    image: "/images/collection/urbino-oxford-nero/05.jpg",
+    caption: { en: "Urbino Oxford", ru: "Urbino Oxford" },
   },
   {
     year: "2026",
@@ -81,25 +81,16 @@ export const timeline: TimelineEntry[] = [
     year: "2014",
     title: { en: "Founding", ru: "Основание" },
     text: {
-      en: "Cherini is founded in the Marche. First models, first customers, a small team.",
-      ru: "В Марке основан Cherini. Первые модели, первые покупатели, небольшая команда.",
+      en: "Cherini is founded in the Marche: a small team and a focus on classic shoes built for all-day comfort.",
+      ru: "В Марке основан Cherini: небольшая команда и фокус на классических туфлях, в которых удобно весь день.",
     },
-  },
-  {
-    year: "2015",
-    title: { en: "The crest", ru: "Герб" },
-    text: {
-      en: "The crest with the lion and unicorn appears, and the brand name goes on every insole.",
-      ru: "Появляется герб со львом и единорогом, а имя бренда — на каждой стельке.",
-    },
-    image: "/images/collection/urbino-oxford-nero/12.jpg",
   },
   {
     year: "2016",
     title: { en: "Fermo Derby", ru: "Fermo Derby" },
     text: {
-      en: "The warm cap-toe derby becomes the brand's signature model.",
-      ru: "Тёплые дерби с мыском становятся фирменной моделью бренда.",
+      en: "The warm cap-toe derby — open lacing, polished leather, soft lining — for the office and winter streets.",
+      ru: "Тёплые дерби с мыском — открытая шнуровка, полированная кожа, мягкая подкладка — для офиса и зимней улицы.",
     },
     image: "/images/collection/fermo-derby-moro/03.jpg",
   },
@@ -125,8 +116,8 @@ export const timeline: TimelineEntry[] = [
     year: "2026",
     title: { en: "Today", ru: "Сегодня" },
     text: {
-      en: "Two models in two colours, available on Ozon.",
-      ru: "Две модели в двух цветах, в продаже на Ozon.",
+      en: "Two models in two colours — four variants in total.",
+      ru: "Две модели в двух цветах — четыре варианта.",
     },
     image: "/images/collection/fermo-derby-moro/05.jpg",
   },
@@ -148,10 +139,10 @@ export const values = [
     },
   },
   {
-    title: { en: "A small collection", ru: "Небольшая коллекция" },
+    title: { en: "A focused collection", ru: "Сдержанная коллекция" },
     text: {
-      en: "Few models, each one refined over time.",
-      ru: "Немного моделей, и каждую мы дорабатываем со временем.",
+      en: "Two silhouettes, four variants — each one refined over time.",
+      ru: "Два силуэта, четыре варианта — и каждый мы дорабатываем со временем.",
     },
   },
 ];
@@ -361,43 +352,5 @@ export const leathers = [
       ru: "Износостойкая подошва с хорошим сцеплением на мокрой улице.",
     },
     image: "/images/collection/urbino-oxford-moro/11.jpg",
-  },
-];
-
-export type Boutique = {
-  city: string;
-  name: Loc;
-  address: string;
-  hours: Loc;
-  phone?: string;
-  href?: string;
-  image: string;
-  note: Loc;
-};
-
-export const boutiques: Boutique[] = [
-  {
-    city: "Fermo",
-    name: { en: "Brand office", ru: "Офис бренда" },
-    address: "Contrada San Michele 14, 63900 Fermo",
-    hours: { en: "Mon – Fri · 10:00 – 18:00", ru: "Пн – Пт · 10:00 – 18:00" },
-    phone: "+39 0734 000 121",
-    image: "/images/product/fermo-lining.jpg",
-    note: {
-      en: "Correspondence, partnerships and questions about the collection.",
-      ru: "Переписка, сотрудничество и вопросы по коллекции.",
-    },
-  },
-  {
-    city: "Online",
-    name: { en: "Official store on Ozon", ru: "Официальный магазин на Ozon" },
-    address: "ozon.ru",
-    hours: { en: "Orders 24/7", ru: "Заказы круглосуточно" },
-    href: "https://www.ozon.ru/search/?text=Andriano+Cherini",
-    image: "/images/collection/urbino-oxford-nero/04.jpg",
-    note: {
-      en: "The full collection, sizes and delivery.",
-      ru: "Вся коллекция, размеры и доставка.",
-    },
   },
 ];

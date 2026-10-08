@@ -22,30 +22,35 @@ export default function HeritageView() {
       <PageHero eyebrow={h.eyebrow} title={h.title} intro={h.intro} image="/images/atelier/workshop-2.jpg" meta={[...h.meta]} />
 
       <section className="section light">
-        <div className={`container ${styles.crestBand}`}>
-          <Reveal className={styles.crestMark}>
-            <Image src="/images/brand/crest.png" alt="Andriano Cherini crest" fill sizes="280px" />
+        <div className={`container ${styles.modelsBand}`}>
+          <Reveal className={styles.modelsMedia}>
+            <Image
+              src="/images/collection/fermo-derby-nero/08.jpg"
+              alt="Fermo Derby and Urbino Oxford"
+              fill
+              sizes="(max-width: 900px) 100vw, 40vw"
+            />
           </Reveal>
-          <div className={styles.crestCopy}>
+          <div className={styles.modelsCopy}>
             <Reveal>
-              <p className="eyebrow">{h.crestEyebrow}</p>
+              <p className="eyebrow">{h.modelsEyebrow}</p>
             </Reveal>
-            <SplitText text={h.crestTitle} className="t-h2" />
+            <SplitText text={h.modelsTitle} className="t-h2" />
             <Reveal>
-              <p className="t-lead">{h.crestLead}</p>
+              <p className="t-lead">{h.modelsLead}</p>
             </Reveal>
-            <Reveal as="ul" className={styles.crestLegend} stagger={0.08}>
+            <Reveal as="ul" className={styles.modelsLegend} stagger={0.08}>
               <li>
-                <strong>A · C</strong>
-                <span>{h.crestA}</span>
+                <strong>FERMO DERBY</strong>
+                <span>{h.modelsFermo}</span>
               </li>
               <li>
-                <strong>ANDRIANO CHERINI</strong>
-                <span>{h.crestName}</span>
+                <strong>URBINO OXFORD</strong>
+                <span>{h.modelsUrbino}</span>
               </li>
               <li>
-                <strong>TRADIZIONI SECOLARI</strong>
-                <span>{h.crestMotto}</span>
+                <strong>NERO · MORO</strong>
+                <span>{h.modelsColours}</span>
               </li>
             </Reveal>
           </div>

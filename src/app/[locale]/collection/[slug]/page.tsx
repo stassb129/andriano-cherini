@@ -21,8 +21,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const title = `${p.name} — ${p.model[locale]}, ${colour}`;
   const description =
     locale === "ru"
-      ? `${p.tagline.ru} Мужские туфли Andriano Cherini ${p.name}, цвет ${colour}. Кожаная стелька, меховая подкладка. В продаже на Ozon.`
-      : `${p.tagline.en} Andriano Cherini ${p.name} men's shoes in ${colour}. Leather insole, fur lining. Available on Ozon.`;
+      ? `${p.tagline.ru} Мужские туфли Andriano Cherini ${p.name}, цвет ${colour}. Кожаная стелька, меховая подкладка.`
+      : `${p.tagline.en} Andriano Cherini ${p.name} men's shoes in ${colour}. Leather insole, fur lining.`;
   return pageMetadata({ locale, path: `/collection/${p.slug}`, title, description, image: p.images[0] });
 }
 

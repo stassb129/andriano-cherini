@@ -32,7 +32,7 @@ export default function JournalView() {
         </div>
       </section>
 
-      <NextChapter href="/contact" eyebrow={j.nextEyebrow} title={j.next} image="/images/collection/urbino-oxford-moro/10.jpg" />
+      <NextChapter href="/collection" eyebrow={j.nextEyebrow} title={j.next} image="/images/collection/urbino-oxford-moro/10.jpg" />
     </>
   );
 }

@@ -11,7 +11,6 @@ import { TransitionProvider } from "@/components/layout/Transition";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
 import { ThemeProvider } from "@/i18n/ThemeProvider";
 import { LOCALES, isLocale, localizePath } from "@/i18n/config";
-import { OZON_BRAND } from "@/data/products";
 import { SITE_NAME, SITE_URL, absoluteUrl } from "@/lib/seo";
 import "../globals.scss";
 
@@ -74,7 +73,6 @@ export default async function RootLayout({
     logo: absoluteUrl("/icon-512.png"),
     foundingDate: "2014",
     address: { "@type": "PostalAddress", addressLocality: "Fermo", addressRegion: "Marche", addressCountry: "IT" },
-    sameAs: [OZON_BRAND],
   };
   const website = {
     "@context": "https://schema.org",

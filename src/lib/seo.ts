@@ -60,15 +60,15 @@ export function pageMetadata({ locale, path, title, description, image, type = "
 }
 
 /** Static page titles and descriptions, kept short for search snippets. */
-export const PAGE_SEO: Record<"home" | "collection" | "heritage" | "atelier" | "journal" | "contact", { title: Loc; description: Loc }> = {
+export const PAGE_SEO: Record<"home" | "collection" | "heritage" | "atelier" | "journal", { title: Loc; description: Loc }> = {
   home: {
     title: {
       en: "Andriano Cherini — Italian Men's Shoes since 2014",
       ru: "Andriano Cherini — итальянская мужская обувь с 2014 года",
     },
     description: {
-      en: "Classic men's shoes from Fermo, Italy: the Fermo cap-toe derby and the Urbino Oxford with fur lining and cushioned heel. Available on Ozon.",
-      ru: "Классические мужские туфли из Фермо, Италия: дерби Fermo и оксфорд Urbino с меховой подкладкой и амортизацией в каблуке. В продаже на Ozon.",
+      en: "Classic men's shoes from Fermo, Italy: the Fermo cap-toe derby and the Urbino Oxford with fur lining and cushioned heel.",
+      ru: "Классические мужские туфли из Фермо, Италия: дерби Fermo и оксфорд Urbino с меховой подкладкой и амортизацией в каблуке.",
     },
   },
   collection: {
@@ -81,8 +81,8 @@ export const PAGE_SEO: Record<"home" | "collection" | "heritage" | "atelier" | "
   heritage: {
     title: { en: "Brand Story", ru: "История бренда" },
     description: {
-      en: "Andriano Cherini — a shoe brand from Fermo, founded in 2014. The crest, the timeline and the principles behind the collection.",
-      ru: "Andriano Cherini — обувной бренд из Фермо, основанный в 2014 году. Герб, хроника и принципы, на которых построена коллекция.",
+      en: "Andriano Cherini — a shoe brand from Fermo, founded in 2014. The models, the timeline and the principles behind the collection.",
+      ru: "Andriano Cherini — обувной бренд из Фермо, основанный в 2014 году. Модели, хроника и принципы, на которых построена коллекция.",
     },
   },
   atelier: {
@@ -97,13 +97,6 @@ export const PAGE_SEO: Record<"home" | "collection" | "heritage" | "atelier" | "
     description: {
       en: "Short notes from Andriano Cherini: how the brand started, comfort technologies and the Fermo Derby.",
       ru: "Короткие заметки Andriano Cherini: как появился бренд, технологии комфорта и модель Fermo Derby.",
-    },
-  },
-  contact: {
-    title: { en: "Contact and Where to Buy", ru: "Контакты и где купить" },
-    description: {
-      en: "Questions about sizes or a specific model — write to Andriano Cherini. The collection is sold on Ozon.",
-      ru: "Вопросы о размере или конкретной модели — напишите Andriano Cherini. Коллекция продаётся на Ozon.",
     },
   },
 };

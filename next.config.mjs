@@ -49,7 +49,8 @@ const nextConfig = {
     const moved = [
       { from: "/collection/fermo-derby", to: "/collection/fermo-derby-nero" },
       { from: "/collection/urbino-oxford", to: "/collection/urbino-oxford-nero" },
-      { from: "/boutiques", to: "/contact" },
+      { from: "/boutiques", to: "/" },
+      { from: "/contact", to: "/" },
       ...retired.map((slug) => ({ from: `/collection/${slug}`, to: "/collection" })),
     ];
     return moved.flatMap(({ from, to }) => [

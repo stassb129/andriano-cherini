@@ -26,7 +26,6 @@ export default function Header() {
       { href: "/collection", label: t.nav.collection, image: "/images/collection/urbino-oxford-nero/06.jpg" },
       { href: "/heritage", label: t.nav.heritage, image: "/images/atelier/workshop-2.jpg" },
       { href: "/atelier", label: t.nav.atelier, image: "/images/atelier/workshop.jpg" },
-      { href: "/contact", label: t.nav.contact, image: "/images/italy/stone-house.jpg" },
     ],
     [t],
   );
@@ -197,7 +196,6 @@ function Menu({
         </div>
       </div>
       <div className={styles.menuFoot}>
-        <span>atelier@andrianocherini.com</span>
         <span>Fermo · Italia</span>
         <span>{motto}</span>
       </div>

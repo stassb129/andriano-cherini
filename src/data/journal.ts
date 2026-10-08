@@ -54,8 +54,8 @@ export const articles: Article[] = [
       {
         type: "p",
         text: {
-          en: "The first pairs were released under the Cherini name, and a year later came the crest with a lion and a unicorn. Since then the collection has stayed small, and each model keeps being refined.",
-          ru: "Первые пары вышли под именем Cherini, а через год появился герб со львом и единорогом. С тех пор коллекция остаётся небольшой, а каждую модель мы продолжаем дорабатывать.",
+          en: "The collection stays small: the Fermo Derby and the Urbino Oxford, each in black and dark brown. Four variants, each one refined over time.",
+          ru: "Коллекция остаётся небольшой: Fermo Derby и Urbino Oxford, каждая в чёрном и тёмно-коричневом. Четыре варианта, и каждый мы продолжаем дорабатывать.",
         },
       },
     ],

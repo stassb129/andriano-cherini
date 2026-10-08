@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import Accordion from "@/components/ui/Accordion";
-import ContactForm from "@/components/ui/ContactForm";
 import Reveal from "@/components/motion/Reveal";
 import { TLink } from "@/components/layout/Transition";
 import { CATEGORY_LABEL, getVariants, type Product } from "@/data/products";
@@ -14,9 +13,7 @@ export default function ProductView({ product }: { product: Product }) {
   const { L, t } = useLocale();
   const ui = t.productUi;
   const [active, setActive] = useState(0);
-  const [askOpen, setAskOpen] = useState(false);
   const main = product.images[active] ?? product.images[0]!;
-  const about = `${product.name} · ${L(product.model)} · ${L(product.colour)}`;
   const variants = getVariants(product);
 
   return (
@@ -100,22 +97,6 @@ export default function ProductView({ product }: { product: Product }) {
               </dl>
             </div>
 
-            <div className={styles.buy}>
-              <a href={product.ozonUrl} target="_blank" rel="noopener noreferrer" className="btn btn--solid btn--block">
-                {ui.ozon} ↗
-              </a>
-              <p className={styles.sizeNote}>{ui.inquireHint}</p>
-              {!askOpen ? (
-                <button type="button" className="link-line" onClick={() => setAskOpen(true)}>
-                  {ui.inquire}
-                </button>
-              ) : (
-                <div className={styles.productAsk}>
-                  <ContactForm about={about} dark />
-                </div>
-              )}
-            </div>
-
             <Accordion
               items={[
                 {
@@ -129,7 +110,6 @@ export default function ProductView({ product }: { product: Product }) {
                   ),
                 },
                 { title: ui.care, content: <p>{ui.careBody}</p> },
-                { title: ui.delivery, content: <p>{ui.deliveryBody}</p> },
               ]}
             />
           </div>

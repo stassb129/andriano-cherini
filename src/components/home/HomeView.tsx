@@ -10,7 +10,6 @@ import Numbers from "@/components/home/Numbers";
 import Technologies from "@/components/home/Technologies";
 import AtelierMosaic from "@/components/home/AtelierMosaic";
 import Quote from "@/components/home/Quote";
-import ContactCta from "@/components/home/ContactCta";
 import Marquee from "@/components/motion/Marquee";
 import { useLocale } from "@/i18n/LocaleProvider";
 
@@ -29,7 +28,6 @@ export default function HomeView() {
       <Technologies />
       <AtelierMosaic />
       <Quote text={t.quote.text} by="Andriano Cherini" role={t.quote.role} image="/images/collection/fermo-derby-nero/04.jpg" />
-      <ContactCta />
     </>
   );
 }

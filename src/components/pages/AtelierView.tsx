@@ -5,7 +5,6 @@ import PageHero from "@/components/ui/PageHero";
 import SectionHead from "@/components/ui/SectionHead";
 import NextChapter from "@/components/pages/NextChapter";
 import Technologies from "@/components/home/Technologies";
-import ContactCta from "@/components/home/ContactCta";
 import Reveal from "@/components/motion/Reveal";
 import ParallaxImage from "@/components/motion/ParallaxImage";
 import SplitText from "@/components/motion/SplitText";
@@ -101,8 +100,7 @@ export default function AtelierView() {
         </div>
       </section>
 
-      <ContactCta />
-      <NextChapter href="/contact" eyebrow={a.nextEyebrow} title={a.next} image="/images/collection/fermo-derby-nero/10.jpg" />
+      <NextChapter href="/collection" eyebrow={a.nextEyebrow} title={a.next} image="/images/collection/fermo-derby-nero/10.jpg" />
     </>
   );
 }

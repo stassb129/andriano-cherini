@@ -26,7 +26,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: a.published,
       images: [a.cover],
     })),
-    { path: "/contact", priority: 0.5, changeFrequency: "yearly" },
   ];
 
   return entries.flatMap((e) =>

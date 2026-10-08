@@ -20,7 +20,6 @@ export type Product = {
   features: Loc[];
   specs: Spec[];
   images: string[];
-  ozonUrl: string;
 };
 
 export const CATEGORIES: Category[] = ["Derby", "Oxford"];
@@ -29,8 +28,6 @@ export const CATEGORY_LABEL: Record<Category, Loc> = {
   Derby: { en: "Derbies", ru: "Дерби" },
   Oxford: { en: "Oxfords", ru: "Оксфорды" },
 };
-
-export const OZON_BRAND = "https://www.ozon.ru/search/?text=Andriano+Cherini";
 
 const gallery = (slug: string, count: number) =>
   Array.from({ length: count }, (_, i) => `/images/collection/${slug}/${String(i + 1).padStart(2, "0")}.jpg`);
@@ -66,8 +63,8 @@ const FERMO = {
     ru: "Дерби с мыском из полированной кожи, открытая шнуровка и мягкая меховая подкладка. Протекторная подошва держит на мокрой улице, а силуэт остаётся уместным в офисе.",
   },
   story: {
-    en: "Named after Fermo, the town where the brand began. It is the shoe Andriano had in mind from the start: classic lines and comfort that lasts until evening.",
-    ru: "Модель названа в честь Фермо — города, где начался бренд. Именно такую пару Андриано задумывал с самого начала: классические линии и комфорт до вечера.",
+    en: "Named after Fermo, the town where the brand began: classic lines and comfort that lasts until evening.",
+    ru: "Модель названа в честь Фермо — города, где начался бренд: классические линии и комфорт до вечера.",
   },
   features: [
     { en: "Cap toe in polished leather", ru: "Мысок из полированной кожи" },
@@ -113,7 +110,6 @@ export const products: Product[] = [
     badge: { en: "Signature", ru: "Фирменная" },
     specs: specs(NERO),
     images: gallery("fermo-derby-nero", 11),
-    ozonUrl: OZON_BRAND,
   },
   {
     ...FERMO,
@@ -122,7 +118,6 @@ export const products: Product[] = [
     swatch: "#3a2620",
     specs: specs(MORO),
     images: gallery("fermo-derby-moro", 11),
-    ozonUrl: OZON_BRAND,
   },
   {
     ...URBINO,
@@ -131,7 +126,6 @@ export const products: Product[] = [
     swatch: "#0c0c0e",
     specs: specs(NERO),
     images: gallery("urbino-oxford-nero", 12),
-    ozonUrl: OZON_BRAND,
   },
   {
     ...URBINO,
@@ -140,7 +134,6 @@ export const products: Product[] = [
     swatch: "#3a2620",
     specs: specs(MORO),
     images: gallery("urbino-oxford-moro", 12),
-    ozonUrl: OZON_BRAND,
   },
 ];
 

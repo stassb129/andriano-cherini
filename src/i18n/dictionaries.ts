@@ -6,7 +6,6 @@ export type Dictionary = {
     collection: string;
     heritage: string;
     atelier: string;
-    contact: string;
     menu: string;
     close: string;
     homeAria: string;
@@ -91,36 +90,24 @@ export type Dictionary = {
     cta: string;
   };
   quote: { text: string; role: string };
-  contact: {
-    eyebrow: string;
-    title: string;
-    lead: string;
-    cta: string;
-  };
   common: {
     viewAll: string;
     allShoes: string;
     ourStory: string;
-    subscribe: string;
-    email: string;
     backTop: string;
-    privacy: string;
-    terms: string;
-    instagram: string;
   };
   footer: {
-    letter: string;
-    letterTitle: string;
-    letterBody: string;
-    thanks: string;
+    placeEyebrow: string;
+    placeTitle: string;
+    placeBody: string;
     collection: string;
     house: string;
-    bottega: string;
+    place: string;
+    since: string;
     fermoDerby: string;
     oxfords: string;
     heritage: string;
     atelier: string;
-    contact: string;
     copy: string;
   };
   heritage: {
@@ -128,12 +115,12 @@ export type Dictionary = {
     title: string;
     intro: string;
     meta: string[];
-    crestEyebrow: string;
-    crestTitle: string;
-    crestLead: string;
-    crestA: string;
-    crestName: string;
-    crestMotto: string;
+    modelsEyebrow: string;
+    modelsTitle: string;
+    modelsLead: string;
+    modelsFermo: string;
+    modelsUrbino: string;
+    modelsColours: string;
     timeEyebrow: string;
     timeTitle: string;
     timeIntro: string;
@@ -162,24 +149,6 @@ export type Dictionary = {
     next: string;
     nextEyebrow: string;
   };
-  contactPage: {
-    eyebrow: string;
-    title: string;
-    intro: string;
-    meta: string[];
-    whereEyebrow: string;
-    whereTitle: string;
-    whereIntro: string;
-    writeEyebrow: string;
-    writeTitle: string;
-    writeBody: string;
-    name: string;
-    message: string;
-    send: string;
-    thanks: string;
-    faqEyebrow: string;
-    faqTitle: string;
-  };
   collectionPage: {
     eyebrow: string;
     title: string;
@@ -202,14 +171,9 @@ export type Dictionary = {
     collection: string;
     about: string;
     colour: string;
-    ozon: string;
-    inquire: string;
-    inquireHint: string;
     details: string;
     care: string;
     careBody: string;
-    delivery: string;
-    deliveryBody: string;
     storyEyebrow: string;
     colours: string;
   };
@@ -232,7 +196,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
       collection: "Collection",
       heritage: "Story",
       atelier: "Workshop",
-      contact: "Contact",
       menu: "Menu",
       close: "Close",
       homeAria: "Andriano Cherini — home",
@@ -256,7 +219,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     manifesto: {
       eyebrow: "Why we started",
       aside: "Andriano Cherini founded the brand in 2014 after years in the footwear industry.",
-      text: "One task from the start: *classic shoes that stay comfortable all day.* Clean lines, careful finishing and considered comfort inside.",
+      text: "One clear task: *classic shoes that stay comfortable all day.* Clean lines, careful finishing and considered comfort inside.",
       sign: "Andriano Cherini",
       link: "Read the story",
       placeEyebrow: "Le Marche, Italia",
@@ -345,36 +308,24 @@ export const dictionaries: Record<Locale, Dictionary> = {
       text: "A good shoe is one you forget you are wearing.",
       role: "Founder",
     },
-    contact: {
-      eyebrow: "Contact",
-      title: "Questions about\nthe *collection?*",
-      lead: "Write to us about sizes or a specific model. We reply within two working days.",
-      cta: "Write to us",
-    },
     common: {
       viewAll: "View the collection",
       allShoes: "All shoes",
       ourStory: "Our story",
-      subscribe: "Subscribe",
-      email: "Your email",
       backTop: "Back to top ↑",
-      privacy: "Privacy",
-      terms: "Terms",
-      instagram: "Instagram",
     },
     footer: {
-      letter: "Write to us",
-      letterTitle: "A short note is enough.",
-      letterBody: "Model and size — we reply by email within two working days.",
-      thanks: "Thank you. Your mail client should open shortly.",
+      placeEyebrow: "Fermo · Italia",
+      placeTitle: "A brand from\nthe *Marche.*",
+      placeBody: "Andriano Cherini has been making classic men's shoes in Fermo since 2014.",
       collection: "Collection",
       house: "Brand",
-      bottega: "Contact",
+      place: "Origin",
+      since: "Since 2014",
       fermoDerby: "The Fermo Derby",
       oxfords: "The Urbino Oxford",
       heritage: "Story",
       atelier: "Workshop",
-      contact: "Contact",
       copy: "© 2026 Andriano Cherini · Fermo since 2014",
     },
     heritage: {
@@ -383,13 +334,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
       intro:
         "Andriano Cherini founded the brand in 2014 in the Marche. The aim: a classic shoe you can wear all day.",
       meta: ["Founded 2014", "Fermo, Marche", "Forma e comfort"],
-      crestEyebrow: "The crest · 2015",
-      crestTitle: "Lion and\n*unicorn.*",
-      crestLead:
-        "The crest was drawn in 2015: the lion stands for craft, the unicorn for fine leather. The ribbon below reads Tradizioni secolari.",
-      crestA: "The founder's initials.",
-      crestName: "The name as it appears on the insole.",
-      crestMotto: "Centuries-old traditions — a nod to the shoemaking heritage of the Marche.",
+      modelsEyebrow: "The collection",
+      modelsTitle: "Two models.\n*Four variants.*",
+      modelsLead:
+        "A small line built around two silhouettes: the Fermo Derby and the Urbino Oxford. Each comes in black and dark brown.",
+      modelsFermo: "Open-laced cap-toe derby with a warm lining — for the office and for winter streets.",
+      modelsUrbino: "Closed-laced Oxford in croc-embossed leather — a narrower, more formal profile.",
+      modelsColours: "Nero and Moro — the same lasts, two finishes of leather.",
       timeEyebrow: "Timeline",
       timeTitle: "From idea\nto *collection.*",
       timeIntro: "Key dates in the brand's history.",
@@ -404,52 +355,34 @@ export const dictionaries: Record<Locale, Dictionary> = {
       intro: "Patterns, lasting, finishing and the comfort details inside every pair.",
       meta: ["Process", "Comfort", "Finishing"],
       ruleEyebrow: "Approach",
-      ruleTitle: "Few models.\n*Done well.*",
+      ruleTitle: "A focused line.\n*No compromise.*",
       ruleLead: "We develop lasts and models as one line and refine them over time. Classic outside, comfortable inside.",
       stepsEyebrow: "Process",
       stepsTitle: "From leather\nto *finish.*",
       stepsIntro: "The main stages behind every pair.",
       leatherEyebrow: "Materials",
       leatherTitle: "Materials\nwe *choose.*",
-      leatherIntro: "Smooth and textured leather, warm lining, soles chosen for grip and durability.",
+      leatherIntro: "High-quality natural leather, warm lining, soles chosen for grip and durability.",
       promiseEyebrow: "Care",
       promiseTitle: "Made to be\n*worn.*",
-      promiseLead: "With regular care the leather keeps its look for years. Questions about care — write to us.",
-      next: "Contact us",
+      promiseLead: "With regular care the leather keeps its look for years.",
+      next: "The collection",
       nextEyebrow: "Next",
-    },
-    contactPage: {
-      eyebrow: "Contact",
-      title: "Write to\nthe *brand.*",
-      intro: "Sizes, models, care — we reply by email within two working days.",
-      meta: ["atelier@andrianocherini.com", "Fermo · Italia"],
-      whereEyebrow: "Where",
-      whereTitle: "Where to\n*find us.*",
-      whereIntro: "The brand office in Fermo and the official store on Ozon.",
-      writeEyebrow: "Message",
-      writeTitle: "Write to us.",
-      writeBody: "Tell us the model and your usual size.",
-      name: "Name",
-      message: "Message",
-      send: "Send",
-      thanks: "Thank you. Your mail client should open shortly.",
-      faqEyebrow: "FAQ",
-      faqTitle: "Quick answers.",
     },
     collectionPage: {
       eyebrow: "Collection · 2026",
       title: "Two models.\nOne *idea.*",
       intro: "A cap-toe derby and a croc-embossed Oxford, each in black and dark brown.",
-      meta: ["2 models", "2 colours", "Since 2014", "On Ozon"],
+      meta: ["2 models", "2 colours", "Since 2014"],
       featureEyebrow: "Signature · Since 2016",
       featureTitle: "The Fermo,\n*up close.*",
       featureLead: "Polished cap toe, fur lining, treaded sole — the brand's signature derby.",
       featureCta: "View the Fermo",
       careEyebrow: "Good to know",
-      careTitle: "Buying\n*and care.*",
+      careTitle: "Materials\nand *care.*",
       care: [
-        { title: "Where to buy", text: "The collection is sold on Ozon. Delivery and returns follow Ozon's terms." },
-        { title: "Sizes", text: "Not sure about the size? Write to us before ordering." },
+        { title: "Leather", text: "Smooth polished leather on the Fermo, croc-embossed leather on the Urbino. Both take a cream well." },
+        { title: "Fit", text: "The ComfortForma last leaves room for the toes and holds the heel — a formal silhouette with an everyday fit." },
         { title: "Care", text: "Brush after wear, use a cream in the shoe's colour, keep shoe trees inside between wears." },
       ],
       filterAll: "All shoes",
@@ -462,16 +395,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       collection: "Collection",
       about: "About the product",
       colour: "Colour",
-      ozon: "View on Ozon",
-      inquire: "Ask about this model",
-      inquireHint: "Sold on Ozon. Questions about size or fit — write to us.",
       details: "Details",
       care: "Care",
       careBody:
         "Brush after wear and let the pair rest for a day. Use a neutral cream or one in the shoe's colour, keep shoe trees inside, dry away from radiators.",
-      delivery: "Where to buy",
-      deliveryBody:
-        "Andriano Cherini is sold on Ozon. Delivery, payment and returns follow Ozon's terms. This website is for information only.",
       storyEyebrow: "The model",
       colours: "colours",
     },
@@ -481,7 +408,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       intro: "The brand's beginnings, its comfort technologies and the Fermo Derby.",
       meta: ["Since 2014", "Fermo", "Forma e comfort"],
       nextEyebrow: "Next",
-      next: "Write to us",
+      next: "The collection",
       back: "← Notes",
     },
     preloader: { motto: "Forma e comfort" },
@@ -492,7 +419,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
       collection: "Коллекция",
       heritage: "История",
       atelier: "Мастерская",
-      contact: "Контакты",
       menu: "Меню",
       close: "Закрыть",
       homeAria: "Andriano Cherini — на главную",
@@ -516,7 +442,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     manifesto: {
       eyebrow: "С чего всё началось",
       aside: "Андриано Черини основал бренд в 2014 году после нескольких лет работы в обувной индустрии.",
-      text: "С самого начала одна задача: *классические туфли, в которых удобно весь день.* Чистые линии, аккуратная отделка и продуманный комфорт внутри.",
+      text: "Одна ясная задача: *классические туфли, в которых удобно весь день.* Чистые линии, аккуратная отделка и продуманный комфорт внутри.",
       sign: "Андриано Черини",
       link: "Читать историю",
       placeEyebrow: "Марке, Италия",
@@ -605,36 +531,24 @@ export const dictionaries: Record<Locale, Dictionary> = {
       text: "Хорошие туфли — те, о которых забываешь, пока их носишь.",
       role: "Основатель",
     },
-    contact: {
-      eyebrow: "Контакты",
-      title: "Вопросы\nпо *коллекции?*",
-      lead: "Напишите о размере или конкретной модели. Ответим в течение двух рабочих дней.",
-      cta: "Написать нам",
-    },
     common: {
       viewAll: "Вся коллекция",
       allShoes: "Все модели",
       ourStory: "История",
-      subscribe: "Подписаться",
-      email: "Ваш email",
       backTop: "Наверх ↑",
-      privacy: "Конфиденциальность",
-      terms: "Условия",
-      instagram: "Instagram",
     },
     footer: {
-      letter: "Напишите нам",
-      letterTitle: "Короткого письма достаточно.",
-      letterBody: "Модель и размер — ответим по почте в течение двух рабочих дней.",
-      thanks: "Спасибо. Сейчас должен открыться почтовый клиент.",
+      placeEyebrow: "Фермо · Италия",
+      placeTitle: "Бренд из\n*Марке.*",
+      placeBody: "Andriano Cherini делает классические мужские туфли в Фермо с 2014 года.",
       collection: "Коллекция",
       house: "Бренд",
-      bottega: "Контакты",
+      place: "Происхождение",
+      since: "С 2014",
       fermoDerby: "Fermo Derby",
       oxfords: "Urbino Oxford",
       heritage: "История",
       atelier: "Мастерская",
-      contact: "Контакты",
       copy: "© 2026 Andriano Cherini · Фермо с 2014",
     },
     heritage: {
@@ -643,13 +557,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
       intro:
         "Андриано Черини основал бренд в 2014 году в Марке. Цель — классические туфли, которые можно носить весь день.",
       meta: ["Основан в 2014", "Фермо, Марке", "Forma e comfort"],
-      crestEyebrow: "Герб · 2015",
-      crestTitle: "Лев и\n*единорог.*",
-      crestLead:
-        "Герб появился в 2015 году: лев символизирует ремесло, единорог — хорошую кожу. На ленте внизу — надпись Tradizioni secolari.",
-      crestA: "Инициалы основателя.",
-      crestName: "Имя бренда на стельке.",
-      crestMotto: "«Вековые традиции» — отсылка к обувному ремеслу Марке.",
+      modelsEyebrow: "Коллекция",
+      modelsTitle: "Две модели.\n*Четыре варианта.*",
+      modelsLead:
+        "Небольшая линия из двух силуэтов: Fermo Derby и Urbino Oxford. Каждая — в чёрном и тёмно-коричневом цвете.",
+      modelsFermo: "Дерби с мыском на открытой шнуровке и тёплой подкладке — для офиса и зимней улицы.",
+      modelsUrbino: "Оксфорд на закрытой шнуровке из кожи с тиснением под крокодила — более узкий и строгий профиль.",
+      modelsColours: "Nero и Moro — те же колодки, две отделки кожи.",
       timeEyebrow: "Хроника",
       timeTitle: "От идеи\nк *коллекции.*",
       timeIntro: "Ключевые даты в истории бренда.",
@@ -664,52 +578,34 @@ export const dictionaries: Record<Locale, Dictionary> = {
       intro: "Лекала, затяжка, отделка и решения для комфорта внутри каждой пары.",
       meta: ["Процесс", "Комфорт", "Отделка"],
       ruleEyebrow: "Подход",
-      ruleTitle: "Немного моделей.\n*Сделанных хорошо.*",
+      ruleTitle: "Сдержанная линия.\n*Без компромиссов.*",
       ruleLead: "Мы развиваем колодки и модели как единую линию и дорабатываем их со временем. Снаружи классика, внутри комфорт.",
       stepsEyebrow: "Процесс",
       stepsTitle: "От кожи\nк *отделке.*",
       stepsIntro: "Основные этапы работы над каждой парой.",
       leatherEyebrow: "Материалы",
       leatherTitle: "Материалы,\nкоторые мы *выбираем.*",
-      leatherIntro: "Гладкая и фактурная кожа, тёплая подкладка, подошвы с хорошим сцеплением и долгим сроком службы.",
+      leatherIntro: "Высококачественная натуральная кожа, тёплая подкладка, подошвы с хорошим сцеплением и долгим сроком службы.",
       promiseEyebrow: "Уход",
       promiseTitle: "Сделаны,\nчтобы *носить.*",
-      promiseLead: "При регулярном уходе кожа сохраняет вид годами. Вопросы по уходу — напишите нам.",
-      next: "Написать нам",
+      promiseLead: "При регулярном уходе кожа сохраняет вид годами.",
+      next: "Коллекция",
       nextEyebrow: "Дальше",
-    },
-    contactPage: {
-      eyebrow: "Контакты",
-      title: "Напишите\n*бренду.*",
-      intro: "Размеры, модели, уход — ответим по почте в течение двух рабочих дней.",
-      meta: ["atelier@andrianocherini.com", "Фермо · Италия"],
-      whereEyebrow: "Где мы",
-      whereTitle: "Как нас\n*найти.*",
-      whereIntro: "Офис бренда в Фермо и официальный магазин на Ozon.",
-      writeEyebrow: "Сообщение",
-      writeTitle: "Напишите нам.",
-      writeBody: "Укажите модель и размер, который обычно носите.",
-      name: "Имя",
-      message: "Сообщение",
-      send: "Отправить",
-      thanks: "Спасибо. Сейчас должен открыться почтовый клиент.",
-      faqEyebrow: "FAQ",
-      faqTitle: "Короткие ответы.",
     },
     collectionPage: {
       eyebrow: "Коллекция · 2026",
       title: "Две модели.\nОдна *идея.*",
       intro: "Дерби с мыском и оксфорд с тиснением под крокодила — каждая модель в чёрном и тёмно-коричневом цвете.",
-      meta: ["2 модели", "2 цвета", "С 2014", "На Ozon"],
+      meta: ["2 модели", "2 цвета", "С 2014"],
       featureEyebrow: "Фирменная · С 2016",
       featureTitle: "Fermo\n*вблизи.*",
       featureLead: "Полированный мысок, меховая подкладка, протекторная подошва — фирменная модель бренда.",
       featureCta: "Открыть Fermo",
       careEyebrow: "Полезно знать",
-      careTitle: "Покупка\n*и уход.*",
+      careTitle: "Материалы\nи *уход.*",
       care: [
-        { title: "Где купить", text: "Коллекция продаётся на Ozon. Доставка и возврат — по правилам Ozon." },
-        { title: "Размер", text: "Сомневаетесь в размере — напишите нам до заказа." },
+        { title: "Кожа", text: "Гладкая полированная кожа у Fermo, тиснение под крокодила у Urbino. Обе хорошо принимают крем." },
+        { title: "Посадка", text: "Колодка ComfortForma даёт свободу пальцам и держит пятку — строгий силуэт с повседневной посадкой." },
         { title: "Уход", text: "Чистите щёткой после носки, используйте крем в цвет обуви, храните с колодками." },
       ],
       filterAll: "Все модели",
@@ -720,18 +616,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     productUi: {
       collection: "Коллекция",
-      about: "О товаре",
+      about: "О модели",
       colour: "Цвет",
-      ozon: "Смотреть на Ozon",
-      inquire: "Спросить об этой модели",
-      inquireHint: "Продаётся на Ozon. Вопросы о размере и посадке — напишите нам.",
       details: "Детали",
       care: "Уход",
       careBody:
         "Чистите щёткой после носки и давайте паре отдохнуть день. Используйте нейтральный крем или крем в цвет обуви, храните с колодками, сушите вдали от батарей.",
-      delivery: "Где купить",
-      deliveryBody:
-        "Andriano Cherini продаётся на Ozon. Доставка, оплата и возврат — по правилам Ozon. Сайт носит информационный характер.",
       storyEyebrow: "О модели",
       colours: "цвета",
     },
@@ -741,7 +631,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       intro: "О том, как появился бренд, о технологиях комфорта и о модели Fermo Derby.",
       meta: ["С 2014", "Фермо", "Forma e comfort"],
       nextEyebrow: "Дальше",
-      next: "Написать нам",
+      next: "Коллекция",
       back: "← Заметки",
     },
     preloader: { motto: "Forma e comfort" },

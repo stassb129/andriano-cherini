@@ -387,85 +387,6 @@
   }
 }
 
-.buy {
-  display: grid;
-  gap: 0.8rem;
-  justify-items: start;
-
-  > :first-child {
-    justify-self: stretch;
-  }
-}
-
-.sizes {
-  display: grid;
-  gap: 1rem;
-}
-
-.sizesHead {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  span {
-    @include m.label;
-
-    color: v.$cream-dim;
-  }
-
-  a {
-    font-size: 0.75rem;
-  }
-}
-
-.sizeGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(3.6rem, 1fr));
-  gap: 0.4rem;
-}
-
-.size {
-  @include m.focus-ring;
-
-  height: 3rem;
-  border: v.$hairline;
-  font-size: 0.85rem;
-  transition:
-    border-color 0.3s ease,
-    background 0.3s ease,
-    color 0.3s ease;
-
-  &:hover:not(:disabled) {
-    border-color: v.$brass;
-  }
-
-  &:disabled {
-    color: v.$cream-mute;
-    text-decoration: line-through;
-    cursor: not-allowed;
-  }
-}
-
-.sizeActive {
-  background: v.$cream;
-  border-color: v.$cream;
-  color: v.$obsidian;
-}
-
-.sizeNote {
-  font-size: 0.75rem;
-  color: v.$cream-mute;
-  margin-bottom: 0.35rem;
-}
-
-.productAsk {
-  margin-top: 0.5rem;
-}
-
-.sizeError {
-  color: #d98c6a;
-}
-
 .productDesc {
   margin-top: 5rem;
 
@@ -549,45 +470,34 @@
 // =====================================================
 // Heritage
 // =====================================================
-.crestBand {
+.modelsBand {
   display: grid;
   gap: 3rem;
   align-items: center;
 
   @include m.respond-to(laptop) {
-    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-columns: 0.9fr 1.1fr;
     gap: 5rem;
   }
 }
 
-.crestMark {
+.modelsMedia {
   position: relative;
-  width: min(72vw, 360px);
-  aspect-ratio: 1;
-  margin-inline: auto;
-  background: var(--crest-disc, #0c0b0a);
-  border-radius: 50%;
-  box-shadow: 0 24px 80px rgba(10, 10, 10, 0.18);
+  width: 100%;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
 
   img {
-    object-fit: contain;
-    padding: 12%;
+    object-fit: cover;
   }
 }
 
-/* On dark page grounds the large medal keeps a soft disc so the crest still reads */
-:global(html[data-theme="dark"]) .crestMark {
-  background: #111111;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
-}
-
-.crestCopy {
+.modelsCopy {
   display: grid;
   gap: 1.6rem;
 }
 
-.crestLegend {
+.modelsLegend {
   display: grid;
   gap: 1.2rem;
   padding-top: 0.5rem;
@@ -1005,96 +915,6 @@
     margin-top: 0.8rem;
     color: v.$cream-mute;
   }
-}
-
-// =====================================================
-// Boutiques
-// =====================================================
-.shops {
-  display: grid;
-  gap: 3rem;
-
-  @include m.respond-to(laptop) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.shop {
-  display: grid;
-  gap: 1.4rem;
-}
-
-.shopImg {
-  position: relative;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-
-  img {
-    object-fit: cover;
-  }
-}
-
-.shopCopy {
-  display: grid;
-  gap: 0.7rem;
-
-  address {
-    font-style: normal;
-    font-size: 0.92rem;
-    line-height: 1.7;
-    color: v.$cream-dim;
-  }
-
-  a:hover {
-    color: v.$brass-light;
-  }
-}
-
-.appoint {
-  display: grid;
-  gap: 3rem;
-
-  @include m.respond-to(laptop) {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-  }
-}
-
-.appointForm {
-  display: grid;
-  gap: 1.2rem;
-
-  label {
-    display: grid;
-    gap: 0.45rem;
-    font-size: 0.78rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(10, 10, 10, 0.55);
-  }
-
-  input,
-  select,
-  textarea {
-    width: 100%;
-    padding: 0.9rem 1rem;
-    border: v.$hairline-dark;
-    background: transparent;
-    color: v.$obsidian;
-    font-size: 1rem;
-    letter-spacing: 0;
-    text-transform: none;
-  }
-}
-
-.appointThanks {
-  font-family: v.$font-display;
-  font-size: 1.8rem;
-  align-self: center;
-}
-
-.faq {
-  max-width: 52rem;
 }
 
 // =====================================================

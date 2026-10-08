@@ -9,7 +9,6 @@ import Reveal from "@/components/motion/Reveal";
 import Marquee from "@/components/motion/Marquee";
 import Magnetic from "@/components/motion/Magnetic";
 import { TLink } from "@/components/layout/Transition";
-import ContactCta from "@/components/home/ContactCta";
 import { CATEGORIES, SIGNATURE_SLUG, getProduct, type Category } from "@/data/products";
 import { useLocale } from "@/i18n/LocaleProvider";
 import styles from "@/components/pages/pages.module.scss";
@@ -77,8 +76,6 @@ export default function CollectionView({ initialCategory }: { initialCategory?: 
           </Reveal>
         </div>
       </section>
-
-      <ContactCta />
     </>
   );
 }
