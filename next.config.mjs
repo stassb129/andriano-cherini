@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 
 const STATIC_CACHE = "public, max-age=604800, stale-while-revalidate=2592000";
-// Matches vercel.json. Rename the .glb file when replacing the model, or browsers keep the old one.
-const IMMUTABLE_CACHE = "public, max-age=31536000, immutable";
 
 const nextConfig = {
   output: "standalone",
@@ -18,7 +16,7 @@ const nextConfig = {
     minimumCacheTTL: 2678400,
   },
   experimental: {
-    optimizePackageImports: ["@react-three/drei", "gsap"],
+    optimizePackageImports: ["gsap"],
   },
   allowedDevOrigins: ["172.19.0.1:3000", "localhost:3000"],
   async headers() {
@@ -33,7 +31,6 @@ const nextConfig = {
         ],
       },
       { source: "/images/:path*", headers: [{ key: "Cache-Control", value: STATIC_CACHE }] },
-      { source: "/models/:path*", headers: [{ key: "Cache-Control", value: IMMUTABLE_CACHE }] },
       { source: "/:file(favicon.ico|apple-touch-icon.png|icon-192.png|icon-512.png|og.jpg)", headers: [{ key: "Cache-Control", value: STATIC_CACHE }] },
     ];
   },
@@ -47,8 +44,13 @@ const nextConfig = {
       "recanati-suede",
     ];
     const moved = [
-      { from: "/collection/fermo-derby", to: "/collection/fermo-derby-nero" },
-      { from: "/collection/urbino-oxford", to: "/collection/urbino-oxford-nero" },
+      { from: "/collection/fermo-derby", to: "/collection/classico-nero" },
+      { from: "/collection/fermo-derby-nero", to: "/collection/classico-nero" },
+      { from: "/collection/fermo-derby-moro", to: "/collection/classico-moro" },
+      { from: "/collection/urbino-oxford", to: "/collection/caiman-nero" },
+      { from: "/collection/urbino-oxford-nero", to: "/collection/caiman-nero" },
+      { from: "/collection/urbino-oxford-moro", to: "/collection/caiman-moro" },
+      { from: "/journal/fermo-derby", to: "/journal/classico-derby" },
       { from: "/boutiques", to: "/" },
       { from: "/contact", to: "/" },
       ...retired.map((slug) => ({ from: `/collection/${slug}`, to: "/collection" })),

@@ -4,19 +4,20 @@ import Image from "next/image";
 import { useMemo } from "react";
 import { TLink } from "./Transition";
 import { scrollToTop } from "@/lib/scroll";
+import { getFamilies } from "@/data/products";
 import { useLocale } from "@/i18n/LocaleProvider";
 import styles from "./layout.module.scss";
 
 export default function Footer() {
   const { t } = useLocale();
+  const families = getFamilies();
   const columns = useMemo(
     () => [
       {
         title: t.footer.collection,
         links: [
           { href: "/collection", label: t.common.allShoes },
-          { href: "/collection/fermo-derby-nero", label: t.footer.fermoDerby },
-          { href: "/collection/urbino-oxford-nero", label: t.footer.oxfords },
+          ...families.map((p) => ({ href: `/collection/${p.slug}`, label: p.name })),
         ],
       },
       {
@@ -27,7 +28,7 @@ export default function Footer() {
         ],
       },
     ],
-    [t],
+    [t, families],
   );
 
   return (

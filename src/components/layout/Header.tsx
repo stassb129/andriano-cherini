@@ -23,7 +23,7 @@ export default function Header() {
 
   const NAV = useMemo(
     () => [
-      { href: "/collection", label: t.nav.collection, image: "/images/collection/urbino-oxford-nero/06.jpg" },
+      { href: "/collection", label: t.nav.collection, image: "/andreano_cherini_collection/model_2/color_2/1.png" },
       { href: "/heritage", label: t.nav.heritage, image: "/images/atelier/workshop-2.jpg" },
       { href: "/atelier", label: t.nav.atelier, image: "/images/atelier/workshop.jpg" },
     ],
@@ -52,7 +52,7 @@ export default function Header() {
     lockScroll(menuOpen);
   }, [menuOpen]);
 
-  const onHero = pathname === "/" && !scrolled && !menuOpen;
+  const onHero = (pathname === "/" || pathname === "/collection") && !scrolled && !menuOpen;
 
   return (
     <>

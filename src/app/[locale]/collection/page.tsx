@@ -6,7 +6,7 @@ type Props = { params: Promise<{ locale: string }>; searchParams: Promise<{ c?: 
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  return staticPageMetadata("collection", resolveLocale(locale), "/collection", "/images/collection/urbino-oxford-nero/06.jpg");
+  return staticPageMetadata("collection", resolveLocale(locale), "/collection", "/andreano_cherini_collection/model_2/color_2/1.png");
 }
 
 export default async function CollectionPage({ searchParams }: Props) {

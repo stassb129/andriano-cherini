@@ -4,13 +4,13 @@ import SectionHead from "@/components/ui/SectionHead";
 import ProductCard from "@/components/ui/ProductCard";
 import Reveal from "@/components/motion/Reveal";
 import { TLink } from "@/components/layout/Transition";
-import { products } from "@/data/products";
+import { getFamilies } from "@/data/products";
 import { useLocale } from "@/i18n/LocaleProvider";
 import styles from "./home.module.scss";
 
 export default function CollectionPreview() {
   const { t } = useLocale();
-  const items = products;
+  const items = getFamilies();
   return (
     <section className="section">
       <div className="container">

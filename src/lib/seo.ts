@@ -67,15 +67,15 @@ export const PAGE_SEO: Record<"home" | "collection" | "heritage" | "atelier" | "
       ru: "Andriano Cherini — итальянская мужская обувь с 2014 года",
     },
     description: {
-      en: "Classic men's shoes from Fermo, Italy: the Fermo cap-toe derby and the Urbino Oxford with fur lining and cushioned heel.",
-      ru: "Классические мужские туфли из Фермо, Италия: дерби Fermo и оксфорд Urbino с меховой подкладкой и амортизацией в каблуке.",
+      en: "Classic men's shoes from Fermo, Italy: Classico, Caiman and Apron — derby and Oxford with fur lining and cushioned heel.",
+      ru: "Классические мужские туфли из Фермо, Италия: Classico, Caiman и Apron — дерби и оксфорд с меховой подкладкой и амортизацией в каблуке.",
     },
   },
   collection: {
     title: { en: "Collection — Men's Derby and Oxford Shoes", ru: "Коллекция — мужские дерби и оксфорды" },
     description: {
-      en: "The Fermo cap-toe derby and the Urbino croc-embossed Oxford in black and dark brown. Leather insole, fur lining, rubber and TPE sole.",
-      ru: "Дерби Fermo с мыском и оксфорд Urbino с тиснением под крокодила в чёрном и тёмно-коричневом цвете. Кожаная стелька, меховая подкладка, подошва из резины и ТЭП.",
+      en: "Classico, Caiman and Apron in black, dark brown and navy. High-quality natural leather, fur lining, rubber and TPE sole.",
+      ru: "Classico, Caiman и Apron в чёрном, тёмно-коричневом и тёмно-синем. Высококачественная натуральная кожа, меховая подкладка, подошва из резины и ТЭП.",
     },
   },
   heritage: {
@@ -95,8 +95,8 @@ export const PAGE_SEO: Record<"home" | "collection" | "heritage" | "atelier" | "
   journal: {
     title: { en: "Notes", ru: "Заметки" },
     description: {
-      en: "Short notes from Andriano Cherini: how the brand started, comfort technologies and the Fermo Derby.",
-      ru: "Короткие заметки Andriano Cherini: как появился бренд, технологии комфорта и модель Fermo Derby.",
+      en: "Short notes from Andriano Cherini: how the brand started, comfort technologies and the Classico Derby.",
+      ru: "Короткие заметки Andriano Cherini: как появился бренд, технологии комфорта и модель Classico.",
     },
   },
 };

@@ -12,21 +12,22 @@ import styles from "./home.module.scss";
 export default function Signature() {
   const p = getProduct(SIGNATURE_SLUG)!;
   const { t, L } = useLocale();
+  const detailImgs = [p.images[2] ?? p.images[0]!, p.images[3] ?? p.images[1]!, p.images[4] ?? p.images[0]!];
 
   return (
     <section className={"section light"}>
       <div className={`container ${styles.signatureGrid}`}>
         <div className={styles.signatureMedia}>
           <ParallaxImage
-            src="/images/product/fermo-marble.jpg"
-            alt="Fermo Derby"
+            src={p.images[0]!}
+            alt={`${p.name} Derby`}
             className={styles.signatureImg}
             sizes="(max-width: 1100px) 100vw, 55vw"
             speed={14}
           />
           <span className={styles.signatureStamp}>
             {t.signature.since}
-            <strong>2016</strong>
+            <strong>2014</strong>
           </span>
         </div>
 
@@ -57,17 +58,14 @@ export default function Signature() {
       </div>
 
       <Reveal className={`container ${styles.signatureDetails}`} stagger={0.12}>
-        {t.signature.details.map((label, i) => {
-          const imgs = [p.images[8]!, p.images[4]!, p.images[10]!];
-          return (
-            <figure key={label} className={styles.signatureDetail}>
-              <div className={styles.signatureDetailImg}>
-                <ParallaxImage src={imgs[i]!} alt={`Fermo Derby — ${label}`} speed={8 + i * 4} sizes="33vw" />
-              </div>
-              <figcaption>{label}</figcaption>
-            </figure>
-          );
-        })}
+        {t.signature.details.map((label, i) => (
+          <figure key={label} className={styles.signatureDetail}>
+            <div className={styles.signatureDetailImg}>
+              <ParallaxImage src={detailImgs[i]!} alt={`${p.name} — ${label}`} speed={8 + i * 4} sizes="33vw" />
+            </div>
+            <figcaption>{label}</figcaption>
+          </figure>
+        ))}
       </Reveal>
     </section>
   );

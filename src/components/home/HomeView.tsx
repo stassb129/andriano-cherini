@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Hero from "@/components/home/Hero/Hero";
 import Manifesto from "@/components/home/Manifesto";
@@ -27,7 +27,7 @@ export default function HomeView() {
       <Numbers />
       <Technologies />
       <AtelierMosaic />
-      <Quote text={t.quote.text} by="Andriano Cherini" role={t.quote.role} image="/images/collection/fermo-derby-nero/04.jpg" />
+      <Quote text={t.quote.text} by="Andriano Cherini" role={t.quote.role} />
     </>
   );
 }

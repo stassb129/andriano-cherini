@@ -85,7 +85,12 @@ export default function CollectionGrid({ initial }: { initial: Filter }) {
         {filter === "All" && (
           <aside className={styles.gridEditorial}>
             <div className={styles.gridEditorialImg}>
-              <Image src="/images/life/navy-suit.jpg" alt="" fill sizes="(max-width: 1100px) 100vw, 33vw" />
+              <Image
+                src="/images/atelier/workshop.jpg"
+                alt=""
+                fill
+                sizes="(max-width: 1100px) 100vw, 33vw"
+              />
             </div>
             <blockquote>
               “{c.editorial}”

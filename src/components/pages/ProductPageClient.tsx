@@ -46,16 +46,16 @@ export default function ProductPageClient({ product }: { product: Product }) {
             </Reveal>
             <Reveal className={styles.storyStats} stagger={0.1}>
               <div>
-                <Counter value={getVariants(product).length} className={styles.storyNum} />
-                <span>{t.productUi.colours}</span>
-              </div>
-              <div>
                 <Counter value={6} className={styles.storyNum} />
                 <span>{ru ? "технологий комфорта" : "comfort technologies"}</span>
               </div>
               <div>
                 <Counter value={2014} className={styles.storyNum} />
                 <span>{ru ? "год основания" : "year founded"}</span>
+              </div>
+              <div>
+                <span className={styles.storyNum}>IT</span>
+                <span>{ru ? "сделано в Италии" : "made in Italy"}</span>
               </div>
             </Reveal>
             <Reveal>

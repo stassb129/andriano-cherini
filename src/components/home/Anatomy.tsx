@@ -1,9 +1,17 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import ShoeCanvas from "@/components/three/ShoeCanvas";
 import { useLocale } from "@/i18n/LocaleProvider";
 import styles from "./home.module.scss";
+
+/** Close-up photos that stand in for the old 3D poses — one per construction detail. */
+const DETAIL_IMAGES = [
+  "/andreano_cherini_collection/model_1/color_1/3.png",
+  "/andreano_cherini_collection/model_1/color_1/2.png",
+  "/andreano_cherini_collection/model_2/color_2/1.png",
+  "/andreano_cherini_collection/model_1/color_2/1.png",
+] as const;
 
 export default function Anatomy() {
   const [active, setActive] = useState(0);
@@ -28,7 +36,22 @@ export default function Anatomy() {
     <section className={styles.anatomy} aria-label={t.anatomy.aria}>
       <div className={styles.anatomySticky}>
         <div className={styles.anatomyStage}>
-          <ShoeCanvas mode="anatomy" pose={active} />
+          {DETAIL_IMAGES.map((src, i) => (
+            <div
+              key={src}
+              className={`${styles.anatomyFrame} ${i === active ? styles.anatomyFrameActive : ""}`}
+              aria-hidden={i !== active}
+            >
+              <Image
+                src={src}
+                alt=""
+                fill
+                sizes="(max-width: 1100px) 100vw, 58vw"
+                priority={i === 0}
+                className={styles.anatomyImg}
+              />
+            </div>
+          ))}
         </div>
         <div className={styles.anatomyHud} aria-hidden="true">
           <p className="eyebrow">{t.anatomy.eyebrow}</p>

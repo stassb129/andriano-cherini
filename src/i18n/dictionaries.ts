@@ -104,8 +104,9 @@ export type Dictionary = {
     house: string;
     place: string;
     since: string;
-    fermoDerby: string;
-    oxfords: string;
+    modelA: string;
+    modelB: string;
+    modelC: string;
     heritage: string;
     atelier: string;
     copy: string;
@@ -118,8 +119,9 @@ export type Dictionary = {
     modelsEyebrow: string;
     modelsTitle: string;
     modelsLead: string;
-    modelsFermo: string;
-    modelsUrbino: string;
+    modelsA: string;
+    modelsB: string;
+    modelsC: string;
     modelsColours: string;
     timeEyebrow: string;
     timeTitle: string;
@@ -154,10 +156,10 @@ export type Dictionary = {
     title: string;
     intro: string;
     meta: string[];
-    featureEyebrow: string;
-    featureTitle: string;
-    featureLead: string;
-    featureCta: string;
+    showcaseEyebrow: string;
+    showcaseCta: string;
+    showcasePlace: string;
+    showcaseHandmade: string;
     careEyebrow: string;
     careTitle: string;
     care: { title: string; text: string }[];
@@ -207,7 +209,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       est: "Since 2014",
       place: "Fermo · Marche · Italia",
       handmade: "Handcrafted",
-      kicker: "Fermo Derby",
+      kicker: "Classico Derby",
       lead: "Classic men's shoes, made by hand in Italy.",
       cta: "Explore the collection",
       story: "Our story",
@@ -219,7 +221,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     manifesto: {
       eyebrow: "Why we started",
       aside: "Andriano Cherini founded the brand in 2014 after years in the footwear industry.",
-      text: "One clear task: *classic shoes that stay comfortable all day.* Clean lines, careful finishing and considered comfort inside.",
+      text: "One clear task: *classic shoes with form and comfort together.* Clean lines, careful finishing and considered comfort inside.",
       sign: "Andriano Cherini",
       link: "Read the story",
       placeEyebrow: "Le Marche, Italia",
@@ -237,13 +239,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     signature: {
       eyebrow: "Signature model",
-      title: "The Fermo\n*Derby.*",
+      title: "The Classico\n*Derby.*",
       since: "Since",
-      cta: "View the Fermo",
-      details: ["Fur lining", "Ammortizzo heel", "Treaded sole"],
+      cta: "View the Classico",
+      details: ["Fur lining", "Grained panels", "Treaded sole"],
     },
     anatomy: {
-      aria: "Fermo Derby details",
+      aria: "Classico Derby details",
       eyebrow: "Details",
       eyebrowSide: "The construction",
       title: "Four details",
@@ -278,7 +280,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     collection: {
       eyebrow: "Collection 2026",
       title: "Classic,\n*for every day.*",
-      intro: "A cap-toe derby and a croc-embossed Oxford, each in black and dark brown.",
+      intro: "Derbies and Oxfords — Classico, Caiman, Apron — with finishes described on each model.",
       viewAll: "View the collection",
     },
     numbers: {
@@ -286,26 +288,26 @@ export const dictionaries: Record<Locale, Dictionary> = {
       title: "A small brand.\n*Clear* choices.",
       items: [
         { value: 2014, suffix: "", label: "year the brand was founded" },
-        { value: 2, suffix: "", label: "models in the collection" },
-        { value: 2, suffix: "", label: "colours for each model" },
         { value: 6, suffix: "", label: "comfort technologies" },
+        { value: 12, suffix: "", label: "years of one idea" },
+        { value: 1, suffix: "", label: "workshop in Fermo" },
       ],
     },
     tech: {
       eyebrow: "Technology",
       title: "Comfort inside\na *classic.*",
-      intro: "Six details developed since 2014. Invisible from the outside, noticeable by the end of the day.",
+      intro: "Six details developed since 2014. Invisible from the outside, clear when you walk.",
       tag: "Ammortizzo · cushioned heel",
     },
     mosaic: {
       eyebrow: "The workshop",
       title: "How the\n*collection* takes shape.",
       lead: "Patterns, lasts, leather and careful finishing.",
-      body: "We keep the collection small and refine every model rather than adding new ones.",
+      body: "We refine every model we make — and leave room for new collections when they are ready.",
       cta: "How we work",
     },
     quote: {
-      text: "A good shoe is one you forget you are wearing.",
+      text: "A good shoe is one you forget about while you walk.",
       role: "Founder",
     },
     common: {
@@ -322,8 +324,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       house: "Brand",
       place: "Origin",
       since: "Since 2014",
-      fermoDerby: "The Fermo Derby",
-      oxfords: "The Urbino Oxford",
+      modelA: "Classico",
+      modelB: "Caiman",
+      modelC: "Apron",
       heritage: "Story",
       atelier: "Workshop",
       copy: "© 2026 Andriano Cherini · Fermo since 2014",
@@ -332,15 +335,16 @@ export const dictionaries: Record<Locale, Dictionary> = {
       eyebrow: "Story · Since 2014",
       title: "One idea.\n*Form and comfort.*",
       intro:
-        "Andriano Cherini founded the brand in 2014 in the Marche. The aim: a classic shoe you can wear all day.",
+        "Andriano Cherini founded the brand in 2014 in the Marche. The aim: classic shoes with form and comfort together.",
       meta: ["Founded 2014", "Fermo, Marche", "Forma e comfort"],
       modelsEyebrow: "The collection",
-      modelsTitle: "Two models.\n*Four variants.*",
+      modelsTitle: "The line\n*today.*",
       modelsLead:
-        "A small line built around two silhouettes: the Fermo Derby and the Urbino Oxford. Each comes in black and dark brown.",
-      modelsFermo: "Open-laced cap-toe derby with a warm lining — for the office and for winter streets.",
-      modelsUrbino: "Closed-laced Oxford in croc-embossed leather — a narrower, more formal profile.",
-      modelsColours: "Nero and Moro — the same lasts, two finishes of leather.",
+        "Classico, Caiman and Apron — derby and Oxford silhouettes. New collections join as they are ready.",
+      modelsA: "Cap-toe derby with grained panels and a warm lining.",
+      modelsB: "Closed-laced Oxford with a marble grain — finishes on the model page.",
+      modelsC: "Apron-toe derby with burnished natural leather.",
+      modelsColours: "Finishes vary by model — colours are added as the line grows.",
       timeEyebrow: "Timeline",
       timeTitle: "From idea\nto *collection.*",
       timeIntro: "Key dates in the brand's history.",
@@ -364,32 +368,32 @@ export const dictionaries: Record<Locale, Dictionary> = {
       leatherTitle: "Materials\nwe *choose.*",
       leatherIntro: "High-quality natural leather, warm lining, soles chosen for grip and durability.",
       promiseEyebrow: "Care",
-      promiseTitle: "Made to be\n*worn.*",
+      promiseTitle: "Made to\n*walk in.*",
       promiseLead: "With regular care the leather keeps its look for years.",
       next: "The collection",
       nextEyebrow: "Next",
     },
     collectionPage: {
       eyebrow: "Collection · 2026",
-      title: "Two models.\nOne *idea.*",
-      intro: "A cap-toe derby and a croc-embossed Oxford, each in black and dark brown.",
-      meta: ["2 models", "2 colours", "Since 2014"],
-      featureEyebrow: "Signature · Since 2016",
-      featureTitle: "The Fermo,\n*up close.*",
-      featureLead: "Polished cap toe, fur lining, treaded sole — the brand's signature derby.",
-      featureCta: "View the Fermo",
+      title: "One idea.\nSeveral *lines.*",
+      intro: "Classico, Caiman and Apron — classic lines, warm lining, high-quality natural leather. More as they arrive.",
+      meta: ["Classico", "Caiman", "Apron"],
+      showcaseEyebrow: "Collection / Classic",
+      showcaseCta: "View the model",
+      showcasePlace: "Fermo Marche · Italia",
+      showcaseHandmade: "Handcrafted / Dal 2014",
       careEyebrow: "Good to know",
       careTitle: "Materials\nand *care.*",
       care: [
-        { title: "Leather", text: "Smooth polished leather on the Fermo, croc-embossed leather on the Urbino. Both take a cream well." },
+        { title: "Leather", text: "High-quality natural leather — smooth or textured. Finishes are named on each model." },
         { title: "Fit", text: "The ComfortForma last leaves room for the toes and holds the heel — a formal silhouette with an everyday fit." },
         { title: "Care", text: "Brush after wear, use a cream in the shoe's colour, keep shoe trees inside between wears." },
       ],
       filterAll: "All shoes",
       filterNote: "Sizes EU 39–46",
       filterShowing: "Showing",
-      editorial: "Fewer pairs, chosen well.",
-      editorialBy: "Andriano Cherini",
+      editorial: "Form outside. Comfort inside.",
+      editorialBy: "Andriano Cherini · Fermo",
     },
     productUi: {
       collection: "Collection",
@@ -405,7 +409,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     journalPage: {
       eyebrow: "Notes",
       title: "Short notes\nfrom the *brand.*",
-      intro: "The brand's beginnings, its comfort technologies and the Fermo Derby.",
+      intro: "The brand's beginnings, its comfort technologies and the Classico Derby.",
       meta: ["Since 2014", "Fermo", "Forma e comfort"],
       nextEyebrow: "Next",
       next: "The collection",
@@ -430,7 +434,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       est: "С 2014",
       place: "Fermo · Marche · Italia",
       handmade: "Ручная работа",
-      kicker: "Fermo Derby",
+      kicker: "Classico Derby",
       lead: "Классические мужские туфли, созданные вручную в Италии.",
       cta: "Открыть коллекцию",
       story: "История бренда",
@@ -442,7 +446,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     manifesto: {
       eyebrow: "С чего всё началось",
       aside: "Андриано Черини основал бренд в 2014 году после нескольких лет работы в обувной индустрии.",
-      text: "Одна ясная задача: *классические туфли, в которых удобно весь день.* Чистые линии, аккуратная отделка и продуманный комфорт внутри.",
+      text: "Одна ясная задача: *классические туфли, где форма и комфорт идут вместе.* Чистые линии, аккуратная отделка и продуманный комфорт внутри.",
       sign: "Андриано Черини",
       link: "Читать историю",
       placeEyebrow: "Марке, Италия",
@@ -460,13 +464,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     signature: {
       eyebrow: "Фирменная модель",
-      title: "Fermo\n*Derby.*",
+      title: "Classico\n*Derby.*",
       since: "С",
-      cta: "Открыть Fermo",
-      details: ["Меховая подкладка", "Каблук Ammortizzo", "Протекторная подошва"],
+      cta: "Открыть Classico",
+      details: ["Меховая подкладка", "Зернистые панели", "Протекторная подошва"],
     },
     anatomy: {
-      aria: "Детали Fermo Derby",
+      aria: "Детали Classico Derby",
       eyebrow: "Детали",
       eyebrowSide: "Конструкция",
       title: "Четыре детали",
@@ -501,7 +505,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     collection: {
       eyebrow: "Коллекция 2026",
       title: "Классика\n*на каждый день.*",
-      intro: "Дерби с мыском и оксфорд с тиснением под крокодила — каждая модель в чёрном и тёмно-коричневом цвете.",
+      intro: "Дерби и оксфорды — Classico, Caiman, Apron; отделки описаны на страницах моделей.",
       viewAll: "Вся коллекция",
     },
     numbers: {
@@ -509,26 +513,26 @@ export const dictionaries: Record<Locale, Dictionary> = {
       title: "Небольшой бренд.\n*Понятные* решения.",
       items: [
         { value: 2014, suffix: "", label: "год основания бренда" },
-        { value: 2, suffix: "", label: "модели в коллекции" },
-        { value: 2, suffix: "", label: "цвета для каждой модели" },
         { value: 6, suffix: "", label: "технологий комфорта" },
+        { value: 12, suffix: "", label: "лет одной идеи" },
+        { value: 1, suffix: "", label: "мастерская в Фермо" },
       ],
     },
     tech: {
       eyebrow: "Технологии",
       title: "Комфорт внутри\n*классики.*",
-      intro: "Шесть решений, которые мы развиваем с 2014 года. Снаружи их не видно — они заметны к концу дня.",
+      intro: "Шесть решений, которые мы развиваем с 2014 года. Снаружи их не видно — они заметны в ходьбе.",
       tag: "Ammortizzo · амортизирующий каблук",
     },
     mosaic: {
       eyebrow: "Мастерская",
       title: "Как складывается\n*коллекция.*",
       lead: "Лекала, колодки, кожа и аккуратная отделка.",
-      body: "Мы держим коллекцию небольшой и дорабатываем каждую модель, а не добавляем новые.",
+      body: "Мы дорабатываем каждую модель — и оставляем место для новых коллекций, когда они будут готовы.",
       cta: "Как мы работаем",
     },
     quote: {
-      text: "Хорошие туфли — те, о которых забываешь, пока их носишь.",
+      text: "Хорошие туфли — те, о которых забываешь, пока в них ходишь.",
       role: "Основатель",
     },
     common: {
@@ -545,8 +549,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       house: "Бренд",
       place: "Происхождение",
       since: "С 2014",
-      fermoDerby: "Fermo Derby",
-      oxfords: "Urbino Oxford",
+      modelA: "Classico",
+      modelB: "Caiman",
+      modelC: "Apron",
       heritage: "История",
       atelier: "Мастерская",
       copy: "© 2026 Andriano Cherini · Фермо с 2014",
@@ -555,15 +560,16 @@ export const dictionaries: Record<Locale, Dictionary> = {
       eyebrow: "История · С 2014",
       title: "Одна идея.\n*Форма и комфорт.*",
       intro:
-        "Андриано Черини основал бренд в 2014 году в Марке. Цель — классические туфли, которые можно носить весь день.",
+        "Андриано Черини основал бренд в 2014 году в Марке. Цель — классические туфли, где форма и комфорт идут вместе.",
       meta: ["Основан в 2014", "Фермо, Марке", "Forma e comfort"],
       modelsEyebrow: "Коллекция",
-      modelsTitle: "Две модели.\n*Четыре варианта.*",
+      modelsTitle: "Линия\n*сегодня.*",
       modelsLead:
-        "Небольшая линия из двух силуэтов: Fermo Derby и Urbino Oxford. Каждая — в чёрном и тёмно-коричневом цвете.",
-      modelsFermo: "Дерби с мыском на открытой шнуровке и тёплой подкладке — для офиса и зимней улицы.",
-      modelsUrbino: "Оксфорд на закрытой шнуровке из кожи с тиснением под крокодила — более узкий и строгий профиль.",
-      modelsColours: "Nero и Moro — те же колодки, две отделки кожи.",
+        "Classico, Caiman и Apron — дерби и оксфорды. Новые коллекции появляются по мере готовности.",
+      modelsA: "Дерби с мыском, зернистыми боками и тёплой подкладкой.",
+      modelsB: "Оксфорд на закрытой шнуровке с мраморной фактурой — отделки на странице модели.",
+      modelsC: "Дерби с мыском-фартуком из патинированной натуральной кожи.",
+      modelsColours: "Отделки зависят от модели — цвета добавляем по мере пополнения линии.",
       timeEyebrow: "Хроника",
       timeTitle: "От идеи\nк *коллекции.*",
       timeIntro: "Ключевые даты в истории бренда.",
@@ -587,32 +593,32 @@ export const dictionaries: Record<Locale, Dictionary> = {
       leatherTitle: "Материалы,\nкоторые мы *выбираем.*",
       leatherIntro: "Высококачественная натуральная кожа, тёплая подкладка, подошвы с хорошим сцеплением и долгим сроком службы.",
       promiseEyebrow: "Уход",
-      promiseTitle: "Сделаны,\nчтобы *носить.*",
+      promiseTitle: "Сделаны,\nчтобы в них *ходить.*",
       promiseLead: "При регулярном уходе кожа сохраняет вид годами.",
       next: "Коллекция",
       nextEyebrow: "Дальше",
     },
     collectionPage: {
       eyebrow: "Коллекция · 2026",
-      title: "Две модели.\nОдна *идея.*",
-      intro: "Дерби с мыском и оксфорд с тиснением под крокодила — каждая модель в чёрном и тёмно-коричневом цвете.",
-      meta: ["2 модели", "2 цвета", "С 2014"],
-      featureEyebrow: "Фирменная · С 2016",
-      featureTitle: "Fermo\n*вблизи.*",
-      featureLead: "Полированный мысок, меховая подкладка, протекторная подошва — фирменная модель бренда.",
-      featureCta: "Открыть Fermo",
+      title: "Одна идея.\nНесколько *линий.*",
+      intro: "Classico, Caiman и Apron — классические линии, тёплая подкладка, высококачественная натуральная кожа. Дальше — по мере появления.",
+      meta: ["Classico", "Caiman", "Apron"],
+      showcaseEyebrow: "Коллекция / Classic",
+      showcaseCta: "Смотреть модель",
+      showcasePlace: "Fermo Marche · Italia",
+      showcaseHandmade: "Handcrafted / Dal 2014",
       careEyebrow: "Полезно знать",
       careTitle: "Материалы\nи *уход.*",
       care: [
-        { title: "Кожа", text: "Гладкая полированная кожа у Fermo, тиснение под крокодила у Urbino. Обе хорошо принимают крем." },
+        { title: "Кожа", text: "Высококачественная натуральная кожа — гладкая или фактурная. Отделки названы на страницах моделей." },
         { title: "Посадка", text: "Колодка ComfortForma даёт свободу пальцам и держит пятку — строгий силуэт с повседневной посадкой." },
         { title: "Уход", text: "Чистите щёткой после носки, используйте крем в цвет обуви, храните с колодками." },
       ],
       filterAll: "Все модели",
       filterNote: "Размеры EU 39–46",
       filterShowing: "Показано",
-      editorial: "Меньше пар, но выбранных точно.",
-      editorialBy: "Андриано Черини",
+      editorial: "Снаружи форма. Внутри комфорт.",
+      editorialBy: "Andriano Cherini · Фермо",
     },
     productUi: {
       collection: "Коллекция",
@@ -628,7 +634,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     journalPage: {
       eyebrow: "Заметки",
       title: "Короткие заметки\nот *бренда.*",
-      intro: "О том, как появился бренд, о технологиях комфорта и о модели Fermo Derby.",
+      intro: "О том, как появился бренд, о технологиях комфорта и о модели Classico.",
       meta: ["С 2014", "Фермо", "Forma e comfort"],
       nextEyebrow: "Дальше",
       next: "Коллекция",

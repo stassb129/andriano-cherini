@@ -12,7 +12,7 @@ export default function Numbers() {
   return (
     <section className={styles.numbers}>
       <ParallaxImage
-        src="/images/collection/fermo-derby-moro/07.jpg"
+        src="/andreano_cherini_collection/model_1/color_2/2.png"
         alt=""
         className={styles.numbersBg}
         sizes="100vw"

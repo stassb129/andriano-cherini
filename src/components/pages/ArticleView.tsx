@@ -69,7 +69,7 @@ export default function ArticleView({ article }: { article: Article }) {
         href="/collection"
         eyebrow={t.collection.eyebrow}
         title={t.common.viewAll}
-        image="/images/collection/urbino-oxford-nero/08.jpg"
+        image="/andreano_cherini_collection/model_2/color_2/1.png"
       />
     </>
   );

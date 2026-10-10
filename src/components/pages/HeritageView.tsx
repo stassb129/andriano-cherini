@@ -25,8 +25,8 @@ export default function HeritageView() {
         <div className={`container ${styles.modelsBand}`}>
           <Reveal className={styles.modelsMedia}>
             <Image
-              src="/images/collection/fermo-derby-nero/08.jpg"
-              alt="Fermo Derby and Urbino Oxford"
+              src="/andreano_cherini_collection/model_1/color_1/3.png"
+              alt="Andriano Cherini collection"
               fill
               sizes="(max-width: 900px) 100vw, 40vw"
             />
@@ -41,15 +41,19 @@ export default function HeritageView() {
             </Reveal>
             <Reveal as="ul" className={styles.modelsLegend} stagger={0.08}>
               <li>
-                <strong>FERMO DERBY</strong>
-                <span>{h.modelsFermo}</span>
+                <strong>CLASSICO</strong>
+                <span>{h.modelsA}</span>
               </li>
               <li>
-                <strong>URBINO OXFORD</strong>
-                <span>{h.modelsUrbino}</span>
+                <strong>CAIMAN</strong>
+                <span>{h.modelsB}</span>
               </li>
               <li>
-                <strong>NERO · MORO</strong>
+                <strong>APRON</strong>
+                <span>{h.modelsC}</span>
+              </li>
+              <li>
+                <strong>NERO · MORO · BLU</strong>
                 <span>{h.modelsColours}</span>
               </li>
             </Reveal>
@@ -81,9 +85,9 @@ export default function HeritageView() {
         </div>
       </section>
 
-      <Quote text={t.quote.text} by="Andriano Cherini" role={t.quote.role} image="/images/collection/urbino-oxford-moro/06.jpg" />
+      <Quote text={t.quote.text} by="Andriano Cherini" role={t.quote.role} />
 
-      <NextChapter href="/atelier" eyebrow={h.nextEyebrow} title={h.next} image="/images/collection/urbino-oxford-nero/07.jpg" />
+      <NextChapter href="/atelier" eyebrow={h.nextEyebrow} title={h.next} image="/andreano_cherini_collection/model_2/color_2/3.png" />
     </>
   );
 }

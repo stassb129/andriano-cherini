@@ -19,7 +19,7 @@ export default function Technologies({ compact = false }: { compact?: boolean })
             <div className={styles.techVisual}>
               <ParallaxImage
                 src="/images/product/fermo-side.jpg"
-                alt="Fermo Derby — Ammortizzo"
+                alt="Classico — Ammortizzo"
                 className={styles.techImg}
                 speed={10}
               />

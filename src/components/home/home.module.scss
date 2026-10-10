@@ -418,11 +418,26 @@
 
 .anatomyStage {
   position: absolute;
-  inset: -4% 0 8%;
+  inset: 0;
+  overflow: hidden;
+  background: #0a0a0a;
+}
 
-  @include m.respond-to(laptop) {
-    inset: -4% -2% 8% -2%;
-  }
+.anatomyFrame {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.85s v.$ease-premium;
+  pointer-events: none;
+}
+
+.anatomyFrameActive {
+  opacity: 1;
+}
+
+.anatomyImg {
+  object-fit: cover;
+  object-position: center;
 }
 
 .anatomyHud {
@@ -862,14 +877,8 @@
   position: relative;
   width: 120px;
   aspect-ratio: 1;
-  border-radius: 50%;
-  overflow: hidden;
   border: 1px solid v.$brass;
-
-  img {
-    object-fit: cover;
-    filter: grayscale(0.4);
-  }
+  @include m.crest-disc;
 }
 
 .quoteMark {

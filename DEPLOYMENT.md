@@ -68,9 +68,8 @@ For a staging app, use a separate domain and set `NEXT_PUBLIC_SITE_ENV=staging` 
 
 The same commit still deploys to Vercel.
 
-- `vercel.json` — region `fra1` and a 1-year cache header for `/models/*`. The same
-  `/models` header is now also in `next.config.mjs`, so the 3D model is cached identically
-  off Vercel. Rename `public/models/fermo.glb` when replacing the model.
+- `vercel.json` — region `fra1` (and a leftover `/models/*` cache header that is unused
+  after the 3D model was removed).
 - `src/app/robots.ts` falls back to `VERCEL_ENV` when `NEXT_PUBLIC_SITE_ENV` is empty, so
   Vercel preview deployments stay non-indexable.
 - No `@vercel/*` packages, Edge runtime, Blob/KV/Postgres or `*.vercel.app` URLs are used.

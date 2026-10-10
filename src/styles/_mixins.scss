@@ -93,3 +93,21 @@ $breakpoints: (
   width: 100%;
   height: 100%;
 }
+
+/** Soft dissolve on photo edges — single radial mask (reliable across browsers). */
+@mixin photo-soft-edge {
+  -webkit-mask-image: radial-gradient(
+    ellipse 88% 84% at 50% 50%,
+    #000 42%,
+    rgba(0, 0, 0, 0.7) 62%,
+    rgba(0, 0, 0, 0.25) 78%,
+    transparent 96%
+  );
+  mask-image: radial-gradient(
+    ellipse 88% 84% at 50% 50%,
+    #000 42%,
+    rgba(0, 0, 0, 0.7) 62%,
+    rgba(0, 0, 0, 0.25) 78%,
+    transparent 96%
+  );
+}
