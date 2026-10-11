@@ -17,6 +17,8 @@ type Props = {
   reveal?: boolean;
   revealFrom?: "bottom" | "top" | "left" | "right";
   position?: string;
+  /** Use `contain` for product shots so toes/heels stay in frame. */
+  fit?: "cover" | "contain";
 };
 
 const INSETS = {
@@ -41,9 +43,11 @@ export default function ParallaxImage({
   reveal = true,
   revealFrom = "bottom",
   position = "center",
+  fit = "cover",
 }: Props) {
   const frame = useRef<HTMLDivElement>(null);
   const inner = useRef<HTMLDivElement>(null);
+  const contain = fit === "contain";
 
   useIsoLayoutEffect(() => {
     const el = frame.current;
@@ -56,7 +60,10 @@ export default function ParallaxImage({
     }
 
     const coarse = isCoarsePointer();
-    const travel = coarse ? Math.min(speed, 6) : speed;
+    // Contain mode: little/no scale or scrub — otherwise toes/heels clip again.
+    const travel = contain ? 0 : coarse ? Math.min(speed, 6) : speed;
+    const fromScale = contain ? 1 : coarse ? 1.18 : 1.28;
+    const toScale = contain ? 1 : coarse ? 1.06 : 1.1;
 
     const ctx = gsap.context(() => {
       if (reveal) {
@@ -72,9 +79,9 @@ export default function ParallaxImage({
         );
         gsap.fromTo(
           img,
-          { scale: coarse ? 1.18 : 1.28 },
+          { scale: fromScale },
           {
-            scale: coarse ? 1.06 : 1.1,
+            scale: toScale,
             duration: coarse ? 1.2 : 1.8,
             ease: "expo.out",
             scrollTrigger: { trigger: el, start: "top 88%", once: true },
@@ -101,7 +108,7 @@ export default function ParallaxImage({
       }
     }, el);
     return () => ctx.revert();
-  }, [src, speed, reveal, revealFrom]);
+  }, [src, speed, reveal, revealFrom, contain]);
 
   return (
     <div
@@ -110,14 +117,18 @@ export default function ParallaxImage({
       style={style}
       data-reveal-img={reveal ? "" : undefined}
     >
-      <div ref={inner} className={styles.inner} style={{ transform: "scale(1.1)" }}>
+      <div ref={inner} className={styles.inner} style={{ transform: contain ? "none" : "scale(1.1)" }}>
         <Image
           src={src}
           alt={alt}
           fill
           sizes={sizes}
           priority={priority}
-          style={{ objectFit: "cover", objectPosition: position }}
+          style={{
+            objectFit: fit,
+            objectPosition: position,
+            ...(contain ? { padding: "8%" } : null),
+          }}
         />
       </div>
     </div>

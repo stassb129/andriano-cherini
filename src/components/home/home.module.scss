@@ -187,17 +187,19 @@
 .chapterImage {
   position: relative;
   z-index: 1;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
+  background: #0a0a0a;
 
   @include m.respond-to(laptop) {
-    height: 62vh;
+    height: 58vh;
     aspect-ratio: auto;
   }
 
   img {
-    object-fit: cover;
-    transform: scale(1.25);
+    object-fit: contain;
+    object-position: center;
+    padding: 6%;
   }
 }
 
@@ -273,7 +275,8 @@
 }
 
 .signatureImg {
-  aspect-ratio: 763 / 535;
+  aspect-ratio: 4 / 3;
+  background: #0c0c0b;
 }
 
 .signatureStamp {
@@ -376,7 +379,7 @@
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: v.$ink-soft;
+  background: #111110;
 
   /* ParallaxImage must fill this sized frame — its own box has no intrinsic height. */
   > * {
@@ -387,7 +390,8 @@
   }
 
   img {
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
     transition: transform 1.4s v.$ease-premium;
   }
 }
@@ -436,8 +440,9 @@
 }
 
 .anatomyImg {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  padding: 8%;
 }
 
 .anatomyHud {

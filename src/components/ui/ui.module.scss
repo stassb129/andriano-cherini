@@ -14,14 +14,14 @@
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: #111110;
+  background: #0c0c0b;
 }
 
 .cardImg,
 .cardImgHover {
   object-fit: contain;
   object-position: center;
-  padding: 7%;
+  padding: 10%;
   transition:
     transform 1.6s v.$ease-premium,
     opacity 0.9s ease,
@@ -35,13 +35,13 @@
 
 .card:hover {
   .cardImg {
-    transform: scale(1.06);
+    transform: scale(1.03);
   }
 
   .cardImgHover {
     opacity: 1;
     clip-path: inset(0 0 0% 0);
-    transform: scale(1.02);
+    transform: scale(1.01);
   }
 
   .cardName {

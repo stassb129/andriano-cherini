@@ -75,7 +75,7 @@ export default function ProductView({ product }: { product: Product }) {
                     aria-current={v.slug === product.slug ? "page" : undefined}
                     aria-label={L(v.colour)}
                   >
-                    <Image src={v.images[0]!} alt="" fill sizes="72px" style={{ objectPosition: v.frame }} />
+                    <Image src={v.images[0]!} alt="" fill sizes="72px" style={{ objectFit: "contain", padding: "12%" }} />
                   </TLink>
                 ))}
               </div>
@@ -122,7 +122,7 @@ export default function ProductView({ product }: { product: Product }) {
                 className={`${styles.showcaseThumb} ${i === active ? styles.showcaseThumbActive : ""}`}
                 onClick={() => setActive(i)}
               >
-                <Image src={src} alt="" fill sizes="96px" style={{ objectPosition: product.frame }} />
+                <Image src={src} alt="" fill sizes="96px" style={{ objectFit: "contain", padding: "10%" }} />
               </button>
             ))}
           </div>

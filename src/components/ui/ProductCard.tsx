@@ -19,7 +19,6 @@ export default function ProductCard({ product, priority }: { product: Product; p
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1400px) 50vw, 25vw"
           className={styles.cardImg}
-          style={{ objectPosition: product.frame }}
           priority={priority}
         />
         {hover && (
@@ -29,7 +28,6 @@ export default function ProductCard({ product, priority }: { product: Product; p
             fill
             sizes="(max-width: 768px) 100vw, 25vw"
             className={styles.cardImgHover}
-            style={{ objectPosition: product.frame }}
           />
         )}
       </div>

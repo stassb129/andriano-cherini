@@ -23,7 +23,8 @@ export default function Signature() {
             alt={`${p.name} Derby`}
             className={styles.signatureImg}
             sizes="(max-width: 1100px) 100vw, 55vw"
-            speed={14}
+            fit="contain"
+            speed={0}
           />
           <span className={styles.signatureStamp}>
             {t.signature.since}
@@ -61,7 +62,13 @@ export default function Signature() {
         {t.signature.details.map((label, i) => (
           <figure key={label} className={styles.signatureDetail}>
             <div className={styles.signatureDetailImg}>
-              <ParallaxImage src={detailImgs[i]!} alt={`${p.name} — ${label}`} speed={8 + i * 4} sizes="33vw" />
+              <ParallaxImage
+                src={detailImgs[i]!}
+                alt={`${p.name} — ${label}`}
+                fit="contain"
+                speed={0}
+                sizes="33vw"
+              />
             </div>
             <figcaption>{label}</figcaption>
           </figure>

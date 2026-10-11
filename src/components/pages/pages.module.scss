@@ -122,9 +122,11 @@
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
+  background: #0c0c0b;
 
   img {
     object-fit: cover;
+    object-position: center;
   }
 }
 
@@ -934,11 +936,14 @@
 .modelsMedia {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
+  background: #0c0c0b;
 
   img {
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+    padding: 8%;
   }
 }
 
@@ -1050,10 +1055,12 @@
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: v.$ink-soft;
+  background: #0c0c0b;
 
   img {
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+    padding: 8%;
   }
 }
 
@@ -1099,11 +1106,14 @@
 
 .familyImg {
   position: relative;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
+  background: #0c0c0b;
 
   img {
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+    padding: 8%;
   }
 }
 
@@ -1230,11 +1240,14 @@
 
 .leatherImg {
   position: relative;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
+  background: #0c0c0b;
 
   img {
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+    padding: 10%;
   }
 }
 

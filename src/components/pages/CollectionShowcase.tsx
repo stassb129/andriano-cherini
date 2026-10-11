@@ -95,7 +95,7 @@ export default function CollectionShowcase() {
                   alt=""
                   fill
                   sizes="140px"
-                  style={{ objectPosition: p.frame }}
+                  style={{ objectFit: "contain", padding: "10%" }}
                 />
               </button>
             ))}
