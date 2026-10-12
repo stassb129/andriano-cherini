@@ -76,6 +76,16 @@ $breakpoints: (
   --color-text: var(--c-on-ink);
 }
 
+// Fixed black stage in both themes: cream text + the brighter dark-theme brass.
+@mixin on-black {
+  @include on-ink;
+
+  --c-brass: #b08d57;
+  --c-brass-light: #cfae7a;
+  --c-brass-dim: rgba(176, 141, 87, 0.35);
+  --c-brass-faint: rgba(176, 141, 87, 0.12);
+}
+
 @mixin crest-disc {
   background: var(--crest-disc);
   border-radius: 50%;

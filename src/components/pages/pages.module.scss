@@ -204,10 +204,11 @@
 // Soft edges on the photo itself; no inner scrollbars.
 // =====================================================
 .showcase {
+  @include m.on-black;
+
   position: relative;
   display: grid;
   min-height: 100svh;
-  color: v.$cream;
   background: #050505;
 
   @include m.respond-to(laptop) {
@@ -572,10 +573,11 @@
 // Photo sticky in viewport (full pair); page scrolls, no inner bars.
 // =====================================================
 .productShow {
+  @include m.on-black;
+
   position: relative;
   display: grid;
   min-height: 100svh;
-  color: v.$cream;
   background: #050505;
 
   @include m.respond-to(laptop) {
