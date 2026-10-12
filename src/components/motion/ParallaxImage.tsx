@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRef, type CSSProperties } from "react";
 import { gsap, useIsoLayoutEffect, prefersReducedMotion } from "@/lib/gsap";
+import { imageRatio } from "@/lib/imageRatio";
 import styles from "./motion.module.scss";
 
 type Props = {
@@ -114,7 +115,7 @@ export default function ParallaxImage({
     <div
       ref={frame}
       className={`${styles.frame} ${className ?? ""}`}
-      style={style}
+      style={contain ? { aspectRatio: imageRatio(src), ...style } : style}
       data-reveal-img={reveal ? "" : undefined}
     >
       <div ref={inner} className={styles.inner} style={{ transform: contain ? "none" : "scale(1.1)" }}>
@@ -124,11 +125,7 @@ export default function ParallaxImage({
           fill
           sizes={sizes}
           priority={priority}
-          style={{
-            objectFit: fit,
-            objectPosition: position,
-            ...(contain ? { padding: "8%" } : null),
-          }}
+          style={{ objectFit: fit, objectPosition: position }}
         />
       </div>
     </div>

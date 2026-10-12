@@ -31,7 +31,8 @@ export default function ProductPageClient({ product }: { product: Product }) {
             alt=""
             className={styles.storyImg}
             sizes="(max-width: 1100px) 100vw, 45vw"
-            speed={14}
+            fit="contain"
+            speed={0}
           />
           <div className={styles.storyCopy}>
             <Reveal>

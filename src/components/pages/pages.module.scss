@@ -936,14 +936,12 @@
 .modelsMedia {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
-  background: #0c0c0b;
 
   img {
     object-fit: contain;
     object-position: center;
-    padding: 8%;
   }
 }
 
@@ -1053,14 +1051,12 @@
 
 .tlMedia {
   position: relative;
-  aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: #0c0c0b;
 
   img {
-    object-fit: contain;
-    object-position: center;
-    padding: 8%;
+    display: block;
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -1108,12 +1104,10 @@
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: #0c0c0b;
 
   img {
     object-fit: contain;
     object-position: center;
-    padding: 8%;
   }
 }
 
@@ -1243,12 +1237,6 @@
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background: #0c0c0b;
-
-  img {
-    object-fit: contain;
-    object-position: center;
-    padding: 10%;
-  }
 }
 
 .atelierWide {

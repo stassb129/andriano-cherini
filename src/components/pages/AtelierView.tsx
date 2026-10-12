@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import PageHero from "@/components/ui/PageHero";
+import FitImage from "@/components/ui/FitImage";
+import { imageRatio } from "@/lib/imageRatio";
 import SectionHead from "@/components/ui/SectionHead";
 import NextChapter from "@/components/pages/NextChapter";
 import Technologies from "@/components/home/Technologies";
@@ -47,8 +49,8 @@ export default function AtelierView() {
                   <h3 className="t-h3">{L(step.title)}</h3>
                   <p className="t-body">{L(step.text)}</p>
                 </div>
-                <div className={styles.craftMedia}>
-                  <Image src={step.image} alt={L(step.title)} fill sizes="(max-width: 1100px) 100vw, 32vw" />
+                <div className={styles.craftMedia} style={{ aspectRatio: imageRatio(step.image) }}>
+                  <FitImage src={step.image} alt={L(step.title)} sizes="(max-width: 1100px) 100vw, 32vw" />
                 </div>
               </li>
             ))}
@@ -64,8 +66,8 @@ export default function AtelierView() {
           <Reveal className={styles.leathers} stagger={0.1}>
             {leathers.map((l) => (
               <figure key={L(l.name)} className={styles.leather}>
-                <div className={styles.leatherImg}>
-                  <Image src={l.image} alt={L(l.name)} fill sizes="(max-width: 768px) 100vw, 25vw" />
+                <div className={styles.leatherImg} style={{ aspectRatio: imageRatio(l.image) }}>
+                  <FitImage src={l.image} alt={L(l.name)} sizes="(max-width: 768px) 100vw, 25vw" />
                 </div>
                 <figcaption>
                   <h3>{L(l.name)}</h3>

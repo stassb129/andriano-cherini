@@ -62,7 +62,13 @@ export default function Chapters() {
               {c.year}
             </span>
             <div className={styles.chapterImage}>
-              <Image src={c.image} alt={L(c.caption)} fill sizes="(max-width: 1100px) 100vw, 34vw" />
+              <Image
+                src={c.image}
+                alt={L(c.caption)}
+                width={1312}
+                height={1199}
+                sizes="(max-width: 1100px) 100vw, 34vw"
+              />
               <span className={styles.chapterCaption}>{L(c.caption)}</span>
             </div>
             <div className={styles.chapterText}>
